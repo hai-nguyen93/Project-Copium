@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dash/Backstep Settings")]
     public ParticleSystem dashParticle;
+    public float backStepPower = 10f;
+    public float backStepTime = 0.15f;
     public float dashPower = 20f;
     public float dashTime = 0.15f;
     public float dashCooldown = 1f;
@@ -33,6 +35,20 @@ public class PlayerController : MonoBehaviour
 
 
     #region Movement
+    public IEnumerator BackStep()
+    {
+        // begin back step
+        canDash = false;
+        isDashing = true;
+        rb.velocity = new Vector2(-backStepPower * transform.localScale.x, 0f);
+        yield return new WaitForSeconds(backStepTime);
+
+        // end back step
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
+
     public IEnumerator Dash()
     {
         // begin Dash
@@ -70,11 +86,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnDash()
     {
-        if (!canDash || moveDirection.magnitude < 0.1f) return;
+        if (!canDash || isDashing) return;
 
         // dash if on ground && can dash
-        Debug.Log("Dash");
-        StartCoroutine(Dash());
+        if (moveDirection.magnitude < 0.1f)
+        {
+            StartCoroutine(BackStep());
+        }
+        else
+        {
+            StartCoroutine(Dash());
+        }
     }
     
     public void OnMove(InputValue value)
