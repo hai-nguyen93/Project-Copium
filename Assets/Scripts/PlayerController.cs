@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 5f;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public bool unlockDoubleJump = false;
+    private bool  doubleJump = false;
 
     void Start()
     {
@@ -114,11 +116,28 @@ public class PlayerController : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
+    public bool canDoubleJump()
+    {
+        if (unlockDoubleJump)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void OnJump(InputValue value)
     {
         if (IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            doubleJump = true;
+        }else if (canDoubleJump() && doubleJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            doubleJump = false;
         }
         
     }
