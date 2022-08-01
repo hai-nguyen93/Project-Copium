@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
     public bool isDashing = false;
     public bool canDash = true;
 
+    [Header("Jump Settings")]
+    public float jumpPower = 5f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -102,6 +107,20 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveDirection = new Vector2(value.Get<Vector2>().x, 0f);
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    public void OnJump(InputValue value)
+    {
+        if (IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
+        
     }
     #endregion
 }
