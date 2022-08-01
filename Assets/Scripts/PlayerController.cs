@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -10,7 +11,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Move Settings")]
     public float moveSpeed = 2f;
+    public float defaultGravityScale = 1f;
     public bool facingRight = true;
+    public bool canMove = true;
+    public bool isGrounded = false;
+    public bool isOnWall = false;
     private Vector2 moveDirection;
 
     [Header("Dash/Backstep Settings")]
@@ -23,12 +28,14 @@ public class PlayerController : MonoBehaviour
     public bool isDashing = false;
     public bool canDash = true;
 
-    [Header("Jump Settings")]
+    [Header("Jump/Wall Settings")]
     public float jumpPower = 5f;
+    public Transform wallCheck;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public bool unlockDoubleJump = false;
     private bool  doubleJump = false;
+    private float fallSpeedModifier = 1f;
 
     void Start()
     {
@@ -37,11 +44,34 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = IsGrounded();
+        isOnWall = IsOnWall();
         UpdateMovement();
     }
 
 
     #region Movement
+    void UpdateMovement()
+    {
+        if (isDashing) return;
+
+        if (isOnWall && (moveDirection.x * transform.localScale.x > 0.5f))
+        {
+            rb.gravityScale = 0f;
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
+        // gravity update
+        rb.gravityScale = defaultGravityScale;
+        fallSpeedModifier = 1f;
+
+        if (!canMove) return;
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y * fallSpeedModifier);
+        if (moveDirection.x > 0.5f && !facingRight) Flip();
+        else if (moveDirection.x < -0.5f && facingRight) Flip();
+    }
+
     public IEnumerator BackStep()
     {
         // begin back step
@@ -76,20 +106,18 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    public IEnumerator DisableMovement(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
+    }
+
     public void Flip()
     {
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         facingRight = !facingRight;
-    }
-
-    void UpdateMovement()
-    {
-        if (isDashing) return;
-
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
-        if (moveDirection.x > 0.5f && !facingRight) Flip();
-        else if (moveDirection.x < -0.5f && facingRight) Flip();
-    }
+    }  
 
     public void OnDash()
     {
@@ -116,21 +144,41 @@ public class PlayerController : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
+    public bool IsOnWall()
+    {
+        return !isGrounded && Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
+    }
+
     public bool canDoubleJump()
     {
-        if (unlockDoubleJump)
+        /*if (unlockDoubleJump)
         {
             return true;
         }
         else
         {
             return false;
-        }
+        }*/
+
+        return unlockDoubleJump;
     }
 
     public void OnJump(InputValue value)
     {
-        if (IsGrounded())
+        // wall jump if is on wall
+        if (isOnWall)
+        {
+            rb.velocity = new Vector2(moveSpeed * transform.localScale.x * -1, jumpPower);
+            Flip();
+            doubleJump = true;
+            StopCoroutine(DisableMovement(0));
+            StartCoroutine(DisableMovement(0.15f));
+
+            return;
+        }
+
+        // else normal jump
+        if (isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             doubleJump = true;
@@ -140,6 +188,15 @@ public class PlayerController : MonoBehaviour
             doubleJump = false;
         }
         
+    }
+    #endregion
+
+
+    #region Draw gizmos
+    public void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(wallCheck.position, new Vector3(0, 0, 1), 0.2f);
     }
     #endregion
 }

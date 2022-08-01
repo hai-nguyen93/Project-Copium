@@ -42,7 +42,7 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
                     ""id"": ""aba4dcd6-53ed-4448-aa91-4c8619f25e11"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -115,7 +115,7 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""ef021005-2879-45fa-b6e7-f336d461b61b"",
                     ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Dash"",
