@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
+    Animator anim;
 
     [Header("Move Settings")]
     public float moveSpeed = 2f;
@@ -40,12 +41,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         isGrounded = IsGrounded();
         isOnWall = IsOnWall();
+        anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isWallSliding", isOnWall);
         UpdateMovement();
     }
 
@@ -55,10 +59,12 @@ public class PlayerController : MonoBehaviour
     {
         if (isDashing) return;
 
+        // check if grabbing wall
         if (isOnWall && (moveDirection.x * transform.localScale.x > 0.5f))
         {
             rb.gravityScale = 0f;
             rb.velocity = Vector2.zero;
+            anim.Play("WallSlide");
             return;
         }
 
@@ -68,6 +74,8 @@ public class PlayerController : MonoBehaviour
 
         if (!canMove) return;
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y * fallSpeedModifier);
+        anim.SetFloat("speedX", Mathf.Abs(moveDirection.x));
+        anim.SetFloat("speedY", Mathf.Abs(rb.velocity.y));
         if (moveDirection.x > 0.5f && !facingRight) Flip();
         else if (moveDirection.x < -0.5f && facingRight) Flip();
     }
@@ -171,6 +179,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(moveSpeed * transform.localScale.x * -1, jumpPower);
             Flip();
             doubleJump = true;
+            anim.Play("Jump");
             StopCoroutine(DisableMovement(0));
             StartCoroutine(DisableMovement(0.15f));
 
@@ -181,10 +190,12 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            anim.Play("Jump");
             doubleJump = true;
         }else if (canDoubleJump() && doubleJump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            anim.Play("Jump");
             doubleJump = false;
         }
         
@@ -197,6 +208,7 @@ public class PlayerController : MonoBehaviour
     {
         Handles.color = Color.red;
         Handles.DrawWireDisc(wallCheck.position, new Vector3(0, 0, 1), 0.2f);
+        Handles.DrawWireDisc(groundCheck.position, new Vector3(0, 0, 1), 0.2f);
     }
     #endregion
 }

@@ -2658,7 +2658,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RockChunk_11: 21300208
       RockChunk_9: 21300204
       MushroomCap_1: 21300082
       RockChunk_3: 21300192
@@ -2760,6 +2759,7 @@ TextureImporter:
       BrokenTrunk_1: 21300022
       HangingLeaves_8: 21300144
       BrokenTrunkCracks_1: 21300024
+      RockChunk_11: 21300208
       FalseFloor_2: 21300162
       StoneLedge_4: 21300102
       BrokenTrunk_4: 21300000
