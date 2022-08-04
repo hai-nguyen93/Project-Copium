@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEditor;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     Rigidbody2D rb;
     Animator anim;
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        PlayerData.Instance.SetPlayerController(this);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -57,8 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMovement();
     }
-
-
+    
     #region Movement
     void UpdateMovement()
     {
@@ -77,13 +77,14 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = (isGrounded) ? 0f : defaultGravityScale;
         float yVel = rb.velocity.y;
 
-        if (isGrounded)
+        // slope velocity in y-axis
+        /*if (isGrounded)
         {
             if (Mathf.Abs(moveInput.x) > 0.1f)
             {
                 yVel = moveDirection.y * moveSpeed;
             }
-        }
+        }*/
 
         if (!canMove) return;
         //yVel = rb.velocity.y;
@@ -91,7 +92,8 @@ public class PlayerController : MonoBehaviour
 
         // update animation
         anim.SetFloat("speedX", Mathf.Abs(moveInput.x));
-        anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
+        anim.SetFloat("speedY", rb.velocity.y);
+        //anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
         if (moveInput.x > 0.5f && !facingRight) Flip();
         else if (moveInput.x < -0.5f && facingRight) Flip();
     }
@@ -165,8 +167,12 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        // return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        moveDirection.Set(moveInput.x, 0f);
+        return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+    }
 
+    public bool IsGroundedSlope()
+    {       
         Debug.DrawRay(groundCheck.position, Vector2.down * checkRadius, Color.green);
         var hit =  Physics2D.Raycast(groundCheck.position, Vector2.down, checkRadius, groundLayer);
         if (hit)
@@ -234,6 +240,10 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    public void Damage(int dmg)
+    {
+        PlayerData.Instance.ReceiveDamage(dmg);
+    }
 
     #region Draw gizmos
     public void OnDrawGizmosSelected()
