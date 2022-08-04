@@ -4881,10 +4881,10 @@ GameObject:
   - component: {fileID: 3112573844488612119}
   - component: {fileID: 3112573844488612118}
   - component: {fileID: 3112573844488612115}
+  - component: {fileID: 7230739242901541700}
   - component: {fileID: 3112573844488612116}
   - component: {fileID: 3112573844488612113}
   - component: {fileID: 3112573844488612112}
-  - component: {fileID: 7230739242901541700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4951,12 +4951,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300016, guid: de0d69c6ad2333a4e9cda7c92473c106, type: 3}
+  m_Sprite: {fileID: 21300016, guid: 9a20f6634a3130e4bb85ffeb96c0c1d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.21, y: 3.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4982,6 +4982,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &7230739242901541700
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112573844488612123}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19455004, y: 0}
+  m_Size: {x: 1.4868412, y: 3.99}
+  m_Direction: 0
 --- !u!50 &3112573844488612116
 Rigidbody2D:
   serializedVersion: 4
@@ -5045,7 +5061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718fdffa9822771438fb9461f848db12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 6
   defaultGravityScale: 1
   facingRight: 1
   canMove: 1
@@ -5062,26 +5078,11 @@ MonoBehaviour:
   jumpPower: 7
   wallCheck: {fileID: 3112573844945084408}
   groundCheck: {fileID: 3112573845635915356}
+  checkRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   unlockDoubleJump: 1
---- !u!70 &7230739242901541700
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3112573844488612123}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.19455004, y: 0}
-  m_Size: {x: 1.4868412, y: 3.99}
-  m_Direction: 0
 --- !u!1 &3112573844945084415
 GameObject:
   m_ObjectHideFlags: 0
@@ -5137,7 +5138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3112573845635915331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.94, z: 0}
+  m_LocalPosition: {x: -0.16, y: -1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

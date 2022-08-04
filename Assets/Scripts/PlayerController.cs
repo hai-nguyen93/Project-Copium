@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
     public bool isGrounded = false;
     public bool isOnWall = false;
+    private Vector2 moveInput;
     private Vector2 moveDirection;
 
     [Header("Dash/Backstep Settings")]
@@ -33,10 +34,10 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 5f;
     public Transform wallCheck;
     public Transform groundCheck;
+    public float checkRadius = 0.2f;
     public LayerMask groundLayer;
     public bool unlockDoubleJump = false;
     private bool  doubleJump = false;
-    private float fallSpeedModifier = 1f;
 
     void Start()
     {
@@ -50,6 +51,10 @@ public class PlayerController : MonoBehaviour
         isOnWall = IsOnWall();
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isWallSliding", isOnWall);
+    }
+
+    void FixedUpdate()
+    {
         UpdateMovement();
     }
 
@@ -60,7 +65,7 @@ public class PlayerController : MonoBehaviour
         if (isDashing) return;
 
         // check if grabbing wall
-        if (isOnWall && (moveDirection.x * transform.localScale.x > 0.5f))
+        if (isOnWall && (moveInput.x * transform.localScale.x > 0.5f))
         {
             rb.gravityScale = 0f;
             rb.velocity = Vector2.zero;
@@ -68,16 +73,27 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // gravity update
-        rb.gravityScale = defaultGravityScale;
-        fallSpeedModifier = 1f;
+        // gravity update       
+        rb.gravityScale = (isGrounded) ? 0f : defaultGravityScale;
+        float yVel = rb.velocity.y;
+
+        if (isGrounded)
+        {
+            if (Mathf.Abs(moveInput.x) > 0.1f)
+            {
+                yVel = moveDirection.y * moveSpeed;
+            }
+        }
 
         if (!canMove) return;
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y * fallSpeedModifier);
-        anim.SetFloat("speedX", Mathf.Abs(moveDirection.x));
-        anim.SetFloat("speedY", Mathf.Abs(rb.velocity.y));
-        if (moveDirection.x > 0.5f && !facingRight) Flip();
-        else if (moveDirection.x < -0.5f && facingRight) Flip();
+        //yVel = rb.velocity.y;
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, yVel);
+
+        // update animation
+        anim.SetFloat("speedX", Mathf.Abs(moveInput.x));
+        anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
+        if (moveInput.x > 0.5f && !facingRight) Flip();
+        else if (moveInput.x < -0.5f && facingRight) Flip();
     }
 
     public IEnumerator BackStep()
@@ -101,7 +117,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         float originalGravityScale = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.velocity = new Vector2(moveDirection.x * dashPower, 0f);        
+        rb.velocity = new Vector2(moveInput.x * dashPower, 0f);        
         dashParticle.Play();
         yield return new WaitForSeconds(dashTime);
 
@@ -132,7 +148,7 @@ public class PlayerController : MonoBehaviour
         if (!canDash || isDashing) return;
 
         // dash if on ground && can dash
-        if (moveDirection.magnitude < 0.1f)
+        if (moveInput.magnitude < 0.1f)
         {
             StartCoroutine(BackStep());
         }
@@ -144,17 +160,30 @@ public class PlayerController : MonoBehaviour
     
     public void OnMove(InputValue value)
     {
-        moveDirection = new Vector2(value.Get<Vector2>().x, 0f);
+        moveInput = new Vector2(value.Get<Vector2>().x, 0f);
     }
 
     public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        // return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
+        Debug.DrawRay(groundCheck.position, Vector2.down * checkRadius, Color.green);
+        var hit =  Physics2D.Raycast(groundCheck.position, Vector2.down, checkRadius, groundLayer);
+        if (hit)
+        {
+            Vector2 groundNormalPerp = Vector2.Perpendicular(hit.normal);
+            moveDirection = new Vector2(-moveInput.x * groundNormalPerp.x, -moveInput.x * groundNormalPerp.y).normalized;
+            Debug.DrawRay(transform.position, groundNormalPerp.normalized, Color.green);
+            return true;
+        }
+
+        moveDirection = new Vector2(moveInput.x, 0f);
+        return false;
     }
 
     public bool IsOnWall()
     {
-        return !isGrounded && Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
+        return !isGrounded && Physics2D.OverlapCircle(wallCheck.position, checkRadius, groundLayer);
     }
 
     public bool canDoubleJump()
@@ -180,6 +209,7 @@ public class PlayerController : MonoBehaviour
             Flip();
             doubleJump = true;
             anim.Play("Jump");
+            anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
             StopCoroutine(DisableMovement(0));
             StartCoroutine(DisableMovement(0.15f));
 
@@ -191,11 +221,13 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             anim.Play("Jump");
+            anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
             doubleJump = true;
         }else if (canDoubleJump() && doubleJump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             anim.Play("Jump");
+            anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
             doubleJump = false;
         }
         
@@ -207,8 +239,8 @@ public class PlayerController : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
-        Handles.DrawWireDisc(wallCheck.position, new Vector3(0, 0, 1), 0.2f);
-        Handles.DrawWireDisc(groundCheck.position, new Vector3(0, 0, 1), 0.2f);
+        Handles.DrawWireDisc(wallCheck.position, new Vector3(0, 0, 1), checkRadius);
+        Handles.DrawWireDisc(groundCheck.position, new Vector3(0, 0, 1), checkRadius);
     }
     #endregion
 }
