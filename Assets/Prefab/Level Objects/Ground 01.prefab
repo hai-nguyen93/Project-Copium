@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4104952050266960}
-  - component: {fileID: 60976503795192060}
+  - component: {fileID: 537268859799701257}
   m_Layer: 0
   m_Name: Ground 01
   m_TagString: Untagged
@@ -214,8 +214,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60976503795192060
-PolygonCollider2D:
+--- !u!61 &537268859799701257
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,27 +227,19 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.16578388, y: -0.7535603}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.21, y: 1.26}
-    newSize: {x: 1.21, y: 1.26}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 4.1012926, y: 0.20589256}
-      - {x: 7.979317, y: 0.3718977}
-      - {x: 11.669158, y: 0.5017128}
-      - {x: 11.61901, y: -0.8571806}
-      - {x: -11.932124, y: -1.3148041}
-      - {x: -12.108377, y: 0.6573734}
-      - {x: -9.521751, y: 0.6346712}
-      - {x: -5.147991, y: 0.08904648}
-      - {x: -1.1678236, y: 0.04406643}
+  serializedVersion: 2
+  m_Size: {x: 23.154676, y: 1.9042726}
+  m_EdgeRadius: 0
 --- !u!1 &294446465246016359
 GameObject:
   m_ObjectHideFlags: 0

@@ -849,7 +849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044399552792016}
-  - component: {fileID: 60179815039525708}
+  - component: {fileID: 3819708358112411461}
   m_Layer: 0
   m_Name: Ground 04
   m_TagString: Untagged
@@ -884,7 +884,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60179815039525708
+--- !u!60 &3819708358112411461
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -909,14 +909,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.0846882, y: 2.1889029}
-      - {x: 2.739561, y: 1.9034681}
-      - {x: 4.7135887, y: 1.9422407}
-      - {x: 6.0727816, y: 2.1943316}
-      - {x: 5.9609017, y: 0.98202753}
-      - {x: -3.4786062, y: 1.2962506}
-      - {x: -5.0025644, y: 1.1682181}
-      - {x: -5.0358686, y: 2.2257562}
+    - - {x: -5.0914025, y: 2.1147625}
+      - {x: -5.0888433, y: -1.5065426}
+      - {x: -1.1479425, y: -1.4936535}
+      - {x: 0.029823542, y: -2.936518}
+      - {x: 6.1271167, y: -3.0185256}
+      - {x: 6.114753, y: 2.089602}
 --- !u!1 &1873539269669344
 GameObject:
   m_ObjectHideFlags: 0

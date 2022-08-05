@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4036788038344830}
-  - component: {fileID: 60781229356471336}
+  - component: {fileID: 4876936829415227065}
   m_Layer: 0
   m_Name: Ledge Low
   m_TagString: Untagged
@@ -34,8 +34,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60781229356471336
-PolygonCollider2D:
+--- !u!61 &4876936829415227065
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -47,7 +47,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.3713169, y: 0.15709579}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,13 +57,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.20409584, y: 2.4662046}
-      - {x: 0.41289902, y: 2.4803743}
-      - {x: 0.6434765, y: -2.1266727}
-      - {x: -0.42072296, y: -1.922574}
-      - {x: -0.3015194, y: 0.27191448}
+  serializedVersion: 2
+  m_Size: {x: 3.170776, y: 4.398978}
+  m_EdgeRadius: 0
 --- !u!1 &1702894333468098
 GameObject:
   m_ObjectHideFlags: 0
