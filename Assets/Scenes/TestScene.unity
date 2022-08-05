@@ -782,8 +782,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 1
-  m_YDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
@@ -1923,6 +1923,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3112573844488612112, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
+      propertyPath: jumpPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112573844488612112, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
+      propertyPath: fallModifier
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3112573844488612118, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: m_SortingLayer
       value: 1

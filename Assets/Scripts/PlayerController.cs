@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("Move Settings")]
     public float moveSpeed = 2f;
     public float defaultGravityScale = 1f;
+    public float fallModifier = 1.5f;
     public bool facingRight = true;
     public bool canMove = true;
     public bool isGrounded = false;
@@ -74,7 +75,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
 
         // gravity update       
-        rb.gravityScale = (isGrounded) ? 0f : defaultGravityScale;
+        if (isGrounded)
+        {
+            rb.gravityScale = 0f;
+        }
+        else
+        {
+            rb.gravityScale = (rb.velocity.y > 0f) ? defaultGravityScale : defaultGravityScale * fallModifier;
+        }
         float yVel = rb.velocity.y;
 
         // slope velocity in y-axis
@@ -208,35 +216,47 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnJump(InputValue value)
     {
-        // wall jump if is on wall
-        if (isOnWall)
+        float input = value.Get<float>();
+        // if pressed
+        if (input > 0.5f)
         {
-            rb.velocity = new Vector2(moveSpeed * transform.localScale.x * -1, jumpPower);
-            Flip();
-            doubleJump = true;
-            anim.Play("Jump");
-            anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-            StopCoroutine(DisableMovement(0));
-            StartCoroutine(DisableMovement(0.15f));
+            // wall jump if is on wall
+            if (isOnWall)
+            {
+                rb.velocity = new Vector2(moveSpeed * transform.localScale.x * -1, jumpPower);
+                Flip();
+                doubleJump = true;
+                anim.Play("Jump");
+                anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
+                StopCoroutine(DisableMovement(0));
+                StartCoroutine(DisableMovement(0.15f));
 
-            return;
+                return;
+            }
+
+            // else normal jump
+            if (isGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                anim.Play("Jump");
+                anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
+                doubleJump = true;
+            }
+            else if (canDoubleJump() && doubleJump)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                anim.Play("Jump");
+                anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
+                doubleJump = false;
+            }
         }
 
-        // else normal jump
-        if (isGrounded)
+        // if released
+        else
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            anim.Play("Jump");
-            anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-            doubleJump = true;
-        }else if (canDoubleJump() && doubleJump)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            anim.Play("Jump");
-            anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-            doubleJump = false;
+            if (rb.velocity.y > 0f && !isGrounded)
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
         }
-        
     }
     #endregion
 
