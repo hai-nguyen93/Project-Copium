@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask attackLayer;
     public float attackCooldown = 1f;
     public bool canAttack = true;
+    public bool isGuarding = false;
     public SpriteRenderer attackHitBoxVisual;
 
     private Animator anim;
@@ -22,6 +23,16 @@ public class PlayerCombat : MonoBehaviour
         anim = GetComponent<Animator>();
         pc = GetComponent<PlayerController>();
         attackHitBoxVisual.enabled = false;
+        isGuarding = false;
+    }
+
+    private void Update()
+    {
+        if (!pc.isGrounded && isGuarding) // break guard if player is NOT grounded
+        {
+            isGuarding = false;
+            anim.SetBool("isGuarding", false);
+        }
     }
 
     public void CheckHit()
@@ -45,6 +56,23 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(CooldownAttack());
             }
         }
+    }
+
+    public void OnGuard(InputValue value)
+    {
+        if (!pc.isGrounded) return;
+
+        float input = value.Get<float>();
+        if (input > 0.5f)
+        {
+            isGuarding = true;           
+        }
+        else
+        {
+            isGuarding = false;
+        }
+
+        anim.SetBool("isGuarding", isGuarding);
     }
 
     IEnumerator CooldownAttack()

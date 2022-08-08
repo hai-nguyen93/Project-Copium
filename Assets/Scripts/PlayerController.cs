@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 {
     Rigidbody2D rb;
     Animator anim;
+    PlayerCombat pCombat;
 
     [Header("Move Settings")]
     public float moveSpeed = 2f;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         PlayerData.Instance.SetPlayerController(this);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        pCombat = GetComponent<PlayerCombat>();
     }
 
     void Update()
@@ -155,7 +157,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnDash()
     {
-        if (!canDash || isDashing) return;
+        if (!canDash || isDashing || pCombat.isGuarding) return;
 
         // dash if on ground && can dash
         if (moveInput.magnitude < 0.1f)
@@ -170,6 +172,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     
     public void OnMove(InputValue value)
     {
+        if (pCombat.isGuarding) return;
+
         moveInput = new Vector2(value.Get<Vector2>().x, 0f);
     }
 
@@ -216,6 +220,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnJump(InputValue value)
     {
+        if (pCombat.isGuarding) return;
+
         float input = value.Get<float>();
         // if pressed
         if (input > 0.5f)
