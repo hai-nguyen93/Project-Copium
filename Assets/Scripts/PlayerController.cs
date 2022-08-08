@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     [Header("Move Settings")]
     public float moveSpeed = 2f;
+    [Tooltip("Force applied to self when staggered")] public float staggerForce = 2f;
     public float defaultGravityScale = 1f;
     public float fallModifier = 1.5f;
     public bool facingRight = true;
@@ -77,15 +78,16 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
 
         // gravity update       
+        float yVel = rb.velocity.y;
         if (isGrounded)
         {
             rb.gravityScale = 0f;
+            //yVel = 0f;
         }
         else
         {
             rb.gravityScale = (rb.velocity.y > 0f) ? defaultGravityScale : defaultGravityScale * fallModifier;
         }
-        float yVel = rb.velocity.y;
 
         // slope velocity in y-axis
         /*if (isGrounded)
@@ -269,6 +271,15 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void Damage(int dmg)
     {
         PlayerData.Instance.ReceiveDamage(dmg);
+    }
+
+    public void Stagger(int direction)
+    {
+        Debug.Log(direction);
+        rb.velocity = new Vector2(0f, rb.velocity.y);
+        rb.AddForce(new Vector2((direction > 0) ? 1 : -1, 0f) * staggerForce, ForceMode2D.Impulse);
+        StopCoroutine(DisableMovement(0));
+        StartCoroutine(DisableMovement(1f));
     }
 
     #region Draw gizmos
