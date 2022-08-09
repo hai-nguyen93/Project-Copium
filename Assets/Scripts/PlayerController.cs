@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private bool  doubleJump = false;
 
     void Start()
-    {
+    {       
         PlayerData.Instance.SetPlayerController(this);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -273,9 +273,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         PlayerData.Instance.ReceiveDamage(dmg);
     }
 
+    // direction > 0: push player right
+    //           <= 0: push player left
     public void Stagger(int direction)
     {
-        Debug.Log(direction);
+        Debug.Log("stagger push direction" + direction);
         rb.velocity = new Vector2(0f, rb.velocity.y);
         rb.AddForce(new Vector2((direction > 0) ? 1 : -1, 0f) * staggerForce, ForceMode2D.Impulse);
         StopCoroutine(DisableMovement(0));

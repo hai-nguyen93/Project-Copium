@@ -28,7 +28,7 @@ public class PlayerData : MonoBehaviour
 
     public CharacterStats stats;
     public bool isDead = false;
-    private PlayerController pc;
+    public PlayerController pc;
 
     private void Awake()
     {

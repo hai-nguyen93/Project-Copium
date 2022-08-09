@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Goomba : EnemyBase
 {
-    public bool facingRight = false;
     public float speed = 3f;
     private float xVel;
     public Transform forwardDetection;
@@ -41,14 +40,22 @@ public class Goomba : EnemyBase
         transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         var player = collision.gameObject.GetComponent<PlayerController>();
         if (player)
         {
             Debug.Log("hit player");
-            player.Stagger((int)xVel);
-            Flip();
+            float xDifferenceToPlayer = player.transform.position.x - transform.position.x;
+            if (xDifferenceToPlayer * xVel > 0)
+            {
+                player.Stagger((int)xVel);
+                Flip();
+            }
+            else
+            {
+                player.Stagger((int)-xVel);
+            }
         }
     }
 }

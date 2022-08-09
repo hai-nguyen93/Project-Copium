@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="MyAssets/Enemy")]
-public class EnemyData: ScriptableObject
-{
-    public string enemyName = "New Enemy";
-    public int maxHp = 5;
-    public int atk = 1;
-}
-
 public class EnemyBase : MonoBehaviour
 {
-    public EnemyData data;  
+    public EnemyData data;
+    private int currentHp;
+    public bool facingRight = false;
     public bool isDead = false;
 
     protected Rigidbody2D rb;
@@ -28,7 +22,7 @@ public class EnemyBase : MonoBehaviour
     
     void Start()
     {
-
+        currentHp = data.maxHp;
     }
 
     void Update()
@@ -36,7 +30,11 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    public virtual void Flip() { }
+    public virtual void Flip()
+    {
+        facingRight = !facingRight;
+        transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
+    }
 
     public virtual void Die()
     {
