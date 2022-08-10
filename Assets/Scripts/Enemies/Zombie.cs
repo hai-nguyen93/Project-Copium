@@ -7,15 +7,14 @@ public class Zombie : EnemyBase
 {
     public float speed = 3f;
     public float aggroRange = 5f;
+
     private PlayerController player;
-    private float startPositionX;
     private bool isChasing = false;
     private float xVel;
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        startPositionX = transform.position.x;
         isChasing = false;
     }
 
@@ -37,13 +36,13 @@ public class Zombie : EnemyBase
         else
         {
             // return to original position.x
-            if (Mathf.Abs(transform.position.x - startPositionX) > 0.1f)
+            if (Mathf.Abs(transform.position.x - startPosition.x) > 0.1f)
             {
-                float moveDirectionX = Mathf.Sign(startPositionX - transform.position.x);
+                float moveDirectionX = Mathf.Sign(startPosition.x - transform.position.x);
                 xVel = moveDirectionX * speed;
                 rb.velocity = new Vector2(xVel, rb.velocity.y);
             }
-            else
+            else // stay at original position.x
             {
                 xVel = 0f;
                 rb.velocity = new Vector2(xVel, rb.velocity.y);

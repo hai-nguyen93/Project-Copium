@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     public EnemyData data;
+    protected Vector2 startPosition;
     private int currentHp;
     public bool facingRight = false;
     public bool isDead = false;
@@ -18,6 +19,7 @@ public class EnemyBase : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<Collider2D>();
+        startPosition = transform.position;
     }
     
     void Start()
