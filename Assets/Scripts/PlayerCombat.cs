@@ -1,8 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
+
+    public enum AbilityState { ready, cooldown, active}
+
+[System.Serializable]
+public class ActiveAbility
+{
+    public Ability abilityData;
+    public float cdTimer;
+    public AbilityState state;
+
+    public void SetCdTimer(float time) { cdTimer = time; }
+
+    public void SetAbilityState (AbilityState newState) { state = newState; }
+
+    public void UpdateAbility()
+    {
+        switch (state)
+        {
+            case AbilityState.ready:
+                break;
+            case AbilityState.cooldown:
+                if (cdTimer > 0f)
+                {
+                    cdTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    cdTimer = 0f;
+                    state = AbilityState.ready;
+                    Debug.Log(abilityData.abilityName + " is ready.");
+                }
+                break;
+            case AbilityState.active:
+                break;
+        }
+    }
+
+    public void Activate(GameObject user)
+    {
+        abilityData.Activate(user);
+        cdTimer = abilityData.cooldown;
+        state = AbilityState.cooldown;
+    }
+}
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -14,6 +59,10 @@ public class PlayerCombat : MonoBehaviour
     public bool isGuarding = false;
     public SpriteRenderer attackHitBoxVisual;
 
+    [Header("Abilities")]
+    public List<ActiveAbility> equippedAbilities;
+
+    private bool skillKeyPressed = false;
     private Animator anim;
     private PlayerController pc;
 
@@ -24,10 +73,21 @@ public class PlayerCombat : MonoBehaviour
         pc = GetComponent<PlayerController>();
         attackHitBoxVisual.enabled = false;
         isGuarding = false;
+
+        foreach (var a in equippedAbilities)
+        {
+            a.SetCdTimer(0f);
+            a.SetAbilityState(AbilityState.ready);
+        }
     }
 
     private void Update()
     {
+        foreach (var a in equippedAbilities)
+        {
+            a.UpdateAbility();
+        }
+
         if (!pc.isGrounded && isGuarding) // break guard if player is NOT grounded
         {
             isGuarding = false;
@@ -47,6 +107,8 @@ public class PlayerCombat : MonoBehaviour
 
     public void OnAttack(InputValue value)
     {
+        if (skillKeyPressed) return;
+
         float input = value.Get<float>();
         if (input > 0.5f)
         {
@@ -60,12 +122,12 @@ public class PlayerCombat : MonoBehaviour
 
     public void OnGuard(InputValue value)
     {
-        if (!pc.isGrounded) return;
+        if (!pc.isGrounded || skillKeyPressed) return;
 
         float input = value.Get<float>();
         if (input > 0.5f)
         {
-            isGuarding = true;           
+            isGuarding = true;
         }
         else
         {
@@ -73,6 +135,67 @@ public class PlayerCombat : MonoBehaviour
         }
 
         anim.SetBool("isGuarding", isGuarding);
+    }
+
+    public void OnAbilityTrigger(InputValue value)
+    {
+        float input = value.Get<float>();
+        skillKeyPressed = (input > 0.5f);
+    }
+
+    public void OnAbility0(InputValue value)
+    {
+        float input = value.Get<float>();
+        if (input > 0.5f)
+        {
+            UseEquippedAbility(0);
+        }
+    }
+
+    public void OnAbility1(InputValue value)
+    {
+        float input = value.Get<float>();
+        if (input > 0.5f)
+        {
+            UseEquippedAbility(1);
+        }
+    }
+
+    public void OnAbility2(InputValue value)
+    {
+        float input = value.Get<float>();
+        if (input > 0.5f)
+        {
+            UseEquippedAbility(2);
+        }
+    }
+
+    public void OnAbility3(InputValue value)
+    {
+        float input = value.Get<float>();
+        if (input > 0.5f)
+        {
+            UseEquippedAbility(3);
+        }
+    }
+
+    public void UseEquippedAbility(int index)
+    {
+        var ability = equippedAbilities.ElementAtOrDefault(index);
+        if (ability == null || ability.abilityData == null)
+        {
+            Debug.Log("No Ability in this slot");
+            return;
+        }
+
+        if (ability.state == AbilityState.ready)
+        {
+            ability.Activate(gameObject);
+        }
+        else
+        {
+            Debug.Log(ability.abilityData.abilityName + " not ready");
+        }
     }
 
     IEnumerator CooldownAttack()

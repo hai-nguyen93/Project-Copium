@@ -27,6 +27,8 @@ public class PlayerData : MonoBehaviour
     #endregion
 
     public CharacterStats stats;
+    public List<Ability> abilities;
+
     public bool isDead = false;
     public PlayerController pc;
 

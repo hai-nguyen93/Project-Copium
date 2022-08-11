@@ -71,6 +71,51 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AbilityTrigger"",
+                    ""type"": ""Value"",
+                    ""id"": ""e08919ec-df05-4e2f-83f5-1c9ea2985499"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Ability0"",
+                    ""type"": ""Value"",
+                    ""id"": ""04286b71-3f99-4d75-a37f-7553b4893476"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Ability1"",
+                    ""type"": ""Value"",
+                    ""id"": ""b12d8bb1-b2fd-4409-8be6-9c94b5244ca9"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Ability2"",
+                    ""type"": ""Value"",
+                    ""id"": ""c30db5fc-aed3-451e-86e2-b11ee0f066b1"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Ability3"",
+                    ""type"": ""Value"",
+                    ""id"": ""17eb412e-67e6-49e8-a8b9-cea1eafc3fe8"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -172,6 +217,149 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
                     ""action"": ""Guard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""26cdbfc3-0b69-4c85-87f8-7b9c3319ebc9"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability0"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Modifier"",
+                    ""id"": ""48e5301b-a4d2-4821-b8ca-4a097c4f32db"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button"",
+                    ""id"": ""0eb54147-d5eb-46ca-8930-c96969bfa4da"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d62f3259-86b6-44e2-a216-e3b8df6f3842"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AbilityTrigger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""ffb1c85c-d6dd-4ac6-9db8-571f7d33282f"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Modifier"",
+                    ""id"": ""8bba164a-e2dd-4bcd-8f12-1b07b6a619c2"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button"",
+                    ""id"": ""3d106131-feec-4828-aab0-d0f4b4358832"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""4d54dc50-1fab-40c4-82bd-87f6f959cfba"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability2"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Modifier"",
+                    ""id"": ""129f23d3-e3aa-425b-bb3f-73d3f38076ef"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button"",
+                    ""id"": ""affe5ad3-b5a4-449c-b237-8435da0ecede"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""8646ca02-52eb-49a5-87ad-92874542fe97"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability3"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Modifier"",
+                    ""id"": ""f03220fe-3dec-4f5e-8daa-238a614e57a1"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button"",
+                    ""id"": ""6dd999f8-ae85-4a1a-858a-a8b7c3e773ee"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -213,6 +401,11 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Guard = m_Player.FindAction("Guard", throwIfNotFound: true);
+        m_Player_AbilityTrigger = m_Player.FindAction("AbilityTrigger", throwIfNotFound: true);
+        m_Player_Ability0 = m_Player.FindAction("Ability0", throwIfNotFound: true);
+        m_Player_Ability1 = m_Player.FindAction("Ability1", throwIfNotFound: true);
+        m_Player_Ability2 = m_Player.FindAction("Ability2", throwIfNotFound: true);
+        m_Player_Ability3 = m_Player.FindAction("Ability3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -280,6 +473,11 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Guard;
+    private readonly InputAction m_Player_AbilityTrigger;
+    private readonly InputAction m_Player_Ability0;
+    private readonly InputAction m_Player_Ability1;
+    private readonly InputAction m_Player_Ability2;
+    private readonly InputAction m_Player_Ability3;
     public struct PlayerActions
     {
         private @MyControls m_Wrapper;
@@ -289,6 +487,11 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Guard => m_Wrapper.m_Player_Guard;
+        public InputAction @AbilityTrigger => m_Wrapper.m_Player_AbilityTrigger;
+        public InputAction @Ability0 => m_Wrapper.m_Player_Ability0;
+        public InputAction @Ability1 => m_Wrapper.m_Player_Ability1;
+        public InputAction @Ability2 => m_Wrapper.m_Player_Ability2;
+        public InputAction @Ability3 => m_Wrapper.m_Player_Ability3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -313,6 +516,21 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
                 @Guard.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGuard;
                 @Guard.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGuard;
                 @Guard.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGuard;
+                @AbilityTrigger.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityTrigger;
+                @AbilityTrigger.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityTrigger;
+                @AbilityTrigger.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityTrigger;
+                @Ability0.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility0;
+                @Ability0.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility0;
+                @Ability0.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility0;
+                @Ability1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility1;
+                @Ability2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility2;
+                @Ability2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility2;
+                @Ability2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility2;
+                @Ability3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility3;
+                @Ability3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility3;
+                @Ability3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility3;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -332,6 +550,21 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
                 @Guard.started += instance.OnGuard;
                 @Guard.performed += instance.OnGuard;
                 @Guard.canceled += instance.OnGuard;
+                @AbilityTrigger.started += instance.OnAbilityTrigger;
+                @AbilityTrigger.performed += instance.OnAbilityTrigger;
+                @AbilityTrigger.canceled += instance.OnAbilityTrigger;
+                @Ability0.started += instance.OnAbility0;
+                @Ability0.performed += instance.OnAbility0;
+                @Ability0.canceled += instance.OnAbility0;
+                @Ability1.started += instance.OnAbility1;
+                @Ability1.performed += instance.OnAbility1;
+                @Ability1.canceled += instance.OnAbility1;
+                @Ability2.started += instance.OnAbility2;
+                @Ability2.performed += instance.OnAbility2;
+                @Ability2.canceled += instance.OnAbility2;
+                @Ability3.started += instance.OnAbility3;
+                @Ability3.performed += instance.OnAbility3;
+                @Ability3.canceled += instance.OnAbility3;
             }
         }
     }
@@ -376,6 +609,11 @@ public partial class @MyControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnGuard(InputAction.CallbackContext context);
+        void OnAbilityTrigger(InputAction.CallbackContext context);
+        void OnAbility0(InputAction.CallbackContext context);
+        void OnAbility1(InputAction.CallbackContext context);
+        void OnAbility2(InputAction.CallbackContext context);
+        void OnAbility3(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
