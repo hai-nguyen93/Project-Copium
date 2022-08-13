@@ -42,17 +42,29 @@ public class Bullet : MonoBehaviour
 
     public void HandleCollision(Collider2D collider)
     {
-        if (collider.tag == "Player" && isEnemy)
+        if (isEnemy) // if bullet is from enemy
         {
-            Debug.Log("bullet hit player");
-            collider.GetComponent<PlayerController>().Stagger((int)velocity.x);
-            Destroy(gameObject);
+            if (collider.tag == "Player")
+            {
+                Debug.Log("bullet hit player");
+                collider.GetComponent<PlayerController>().Stagger((int)velocity.x);
+                Destroy(gameObject);
+                return;
+            }
         }
-        else
+        else // if bullet is from player
         {
-            Debug.Log("bullet hit platform");
-            Destroy(gameObject);
+            if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                Debug.Log("Player bullet hit enemy");
+                Destroy(gameObject);
+                return;
+            }
         }
+        
+        // if hit ground
+        Debug.Log("bullet hit platform");
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()

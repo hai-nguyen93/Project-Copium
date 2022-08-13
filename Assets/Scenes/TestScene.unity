@@ -869,7 +869,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772512, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 475851341}
   - component: {fileID: 475851340}
   - component: {fileID: 475851339}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyArcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   firePoint: {fileID: 576033864}
   aggroRange: 20
   bulletSpeed: 1
-  fireCooldown: 1
+  fireCooldown: 3
 --- !u!1001 &487268404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1497,7 +1497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576033864}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1108237850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2183,7 +2183,7 @@ GameObject:
   - component: {fileID: 1223665132}
   - component: {fileID: 1223665128}
   - component: {fileID: 1223665127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3236,7 +3236,7 @@ PrefabInstance:
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[1].abilityData
       value: 
-      objectReference: {fileID: 11400000, guid: 046b86b467a630b4887d98e9ad46ac54, type: 2}
+      objectReference: {fileID: 11400000, guid: 9a4418b961ed643408595d2ddb4dc0cb, type: 2}
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[2].abilityData
       value: 
