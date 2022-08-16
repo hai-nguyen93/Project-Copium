@@ -61,6 +61,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Abilities")]
     public List<ActiveAbility> equippedAbilities;
+    public GameObject AbilityPanelUI;
 
     private bool skillKeyPressed = false;
     private Animator anim;
@@ -140,7 +141,23 @@ public class PlayerCombat : MonoBehaviour
     public void OnAbilityTrigger(InputValue value)
     {
         float input = value.Get<float>();
-        skillKeyPressed = (input > 0.5f);
+
+        if (input > 0.5f)
+        {
+            skillKeyPressed = true;
+            if (AbilityPanelUI != null)
+            {
+                AbilityPanelUI.GetComponent<AbilityPanel>().Show();
+            }
+        }
+        else
+        {
+            skillKeyPressed = false;
+            if (AbilityPanelUI != null)
+            {
+                AbilityPanelUI.GetComponent<AbilityPanel>().Hide();
+            }
+        }
     }
 
     public void OnAbility0(InputValue value)

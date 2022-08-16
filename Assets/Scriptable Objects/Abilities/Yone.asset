@@ -15,3 +15,4 @@ MonoBehaviour:
   abilityName: Yone
   cooldown: 1
   cost: 1
+  abilityIcon: {fileID: 21300000, guid: f6d3a7c5e6d0a5246b59766e65d529d5, type: 3}

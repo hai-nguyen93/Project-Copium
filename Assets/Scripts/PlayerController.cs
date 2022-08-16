@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private bool  doubleJump = false;
 
     void Start()
-    {       
+    {
         PlayerData.Instance.SetPlayerController(this);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

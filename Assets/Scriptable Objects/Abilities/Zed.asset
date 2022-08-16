@@ -15,3 +15,4 @@ MonoBehaviour:
   abilityName: Zed
   cooldown: 5
   cost: 1
+  abilityIcon: {fileID: 21300000, guid: d8ce43ad743faf24782bda7e7e24eb15, type: 3}
