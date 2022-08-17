@@ -19,7 +19,7 @@ public class PlayerData : MonoBehaviour
         {
             if (_instance == null)
             {
-                Debug.LogError("null Singleton");
+                Debug.LogError("null Singleton PlayerData");
             }
             return _instance;
         }

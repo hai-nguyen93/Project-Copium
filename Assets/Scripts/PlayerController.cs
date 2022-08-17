@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     Rigidbody2D rb;
     Animator anim;
     PlayerCombat pCombat;
+    public UnityEngine.InputSystem.PlayerInput input;
 
     [Header("Move Settings")]
     public float moveSpeed = 2f;
@@ -208,15 +209,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public bool canDoubleJump()
     {
-        /*if (unlockDoubleJump)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }*/
-
         return unlockDoubleJump;
     }
 
@@ -271,6 +263,16 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void Damage(int dmg)
     {
         PlayerData.Instance.ReceiveDamage(dmg);
+    }
+
+    public void DisableInput()
+    {
+        input.currentActionMap.Disable();
+    }
+
+    public void EnableInput()
+    {
+        input.currentActionMap.Enable();
     }
 
     // direction > 0: push player right
