@@ -4983,7 +4983,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1367834987
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300016, guid: 9a20f6634a3130e4bb85ffeb96c0c1d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5104,9 +5104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718fdffa9822771438fb9461f848db12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 3112573844488612113}
   moveSpeed: 6
-  defaultGravityScale: 1
-  fallModifier: 2.5
+  staggerForce: 3
+  defaultGravityScale: 2
+  fallModifier: 3.5
   facingRight: 1
   canMove: 1
   isGrounded: 0
@@ -5119,7 +5121,7 @@ MonoBehaviour:
   dashCooldown: 1
   isDashing: 0
   canDash: 1
-  jumpPower: 10
+  jumpPower: 14
   wallCheck: {fileID: 3112573844945084408}
   groundCheck: {fileID: 3112573845635915356}
   checkRadius: 0.2
@@ -5148,6 +5150,8 @@ MonoBehaviour:
   canAttack: 1
   isGuarding: 0
   attackHitBoxVisual: {fileID: 0}
+  equippedAbilities: []
+  AbilityPanelUI: {fileID: 0}
 --- !u!1 &3112573844945084415
 GameObject:
   m_ObjectHideFlags: 0

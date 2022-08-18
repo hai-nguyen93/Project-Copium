@@ -35,7 +35,15 @@ public class EnemyBase : MonoBehaviour
     public virtual void Flip()
     {
         facingRight = !facingRight;
-        transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
+        //transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
+        transform.Rotate(new Vector3(0, 180, 0));
+    }
+
+    public void LookAtPlayer(float playerPositionX)
+    {
+        if (facingRight && transform.position.x > playerPositionX) Flip();
+        if (!facingRight && transform.position.x < playerPositionX) Flip();
+
     }
 
     public virtual void Die()

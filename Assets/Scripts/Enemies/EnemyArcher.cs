@@ -24,13 +24,13 @@ public class EnemyArcher : EnemyBase
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if ((distanceToPlayer < aggroRange) && canFire)
+        if (distanceToPlayer < aggroRange)
         {
-            FireBullet();
-        }
+            LookAtPlayer(player.transform.position.x);
 
-        if (player.transform.position.x < transform.position.x && facingRight) Flip();
-        if (player.transform.position.x > transform.position.x && !facingRight) Flip();
+            if (canFire)
+                FireBullet();
+        }       
     }
 
     IEnumerator FireCooldown(float time)
