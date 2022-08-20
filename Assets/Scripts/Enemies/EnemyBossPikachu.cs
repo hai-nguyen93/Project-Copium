@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 public class EnemyBossPikachu : EnemyBase
 {
     private PlayerController player;
+    public PlayableDirector director;
     
     [Header("Ram Attack Settings")]
     public bool isAttacking;
@@ -16,6 +19,9 @@ public class EnemyBossPikachu : EnemyBase
     public float attackCooldown = 5f;
     public GameObject ramHitbox;
 
+    [Header("Laser Attack Settings")]
+    public TimelineAsset laserTimeline;
+    public GameObject laserHitbox;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +30,7 @@ public class EnemyBossPikachu : EnemyBase
         isAttacking = false;
 
         ramHitbox.SetActive(false);
+        laserHitbox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,7 +44,11 @@ public class EnemyBossPikachu : EnemyBase
 
         if (Vector2.Distance(player.transform.position, transform.position) < ramAggroRange && !isAttacking)
         {
-            StartCoroutine(RamAttack());
+            int rand = Random.Range(0, 2);
+            if (rand == 0)
+                StartCoroutine(RamAttack());
+            else
+                StartCoroutine(LaserAttack());
         }
     }
 
@@ -47,9 +58,12 @@ public class EnemyBossPikachu : EnemyBase
         float ramTimer = ramTime;
         float targetX = player.transform.position.x;
         int direction = (transform.position.x < targetX) ? 1 : -1;
+
+        // build up
         sr.color = Color.red;
         yield return new WaitForSeconds(0.5f);
 
+        // attack    
         ramHitbox.SetActive(true);
         while ((direction == 1 && transform.position.x < targetX)
             || (direction == -1 && transform.position.x > targetX)){
@@ -74,6 +88,18 @@ public class EnemyBossPikachu : EnemyBase
         sr.color = Color.white;
 
         yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
+    }
+
+    public IEnumerator LaserAttack()
+    {
+        isAttacking = true;
+        LookAtPlayer(player.transform.position.x);
+        director.playableAsset = laserTimeline;
+        float time = (float) laserTimeline.duration;
+        director.Play();
+
+        yield return new WaitForSeconds(time + 2f);
         isAttacking = false;
     }
 
