@@ -631,9 +631,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    maxHp: 2
+    maxHp: 5
     hp: 0
-    atk: 0
+    atk: 2
   abilities: []
   isDead: 0
   pc: {fileID: 0}
@@ -782,6 +782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScene: PauseMenu
+  playerMenuScene: PlayerMenuScene
+  activeMenu: 
 --- !u!4 &192313255
 Transform:
   m_ObjectHideFlags: 0
