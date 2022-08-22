@@ -18,7 +18,10 @@ public class DamageTriggerCollider : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            //if (PlayerData.Instance.isDead) return;
+
             Debug.Log(gameObject.name + " hit Player.");
+            collision.gameObject.GetComponent<PlayerController>().Damage(damageValue);
         }
     }
 }

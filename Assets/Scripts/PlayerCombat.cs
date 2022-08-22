@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
 
-    public enum AbilityState { ready, cooldown, active}
+public enum AbilityState { ready, cooldown, active}
 
 [System.Serializable]
 public class ActiveAbility

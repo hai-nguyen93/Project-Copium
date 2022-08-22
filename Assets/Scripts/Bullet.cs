@@ -46,6 +46,8 @@ public class Bullet : MonoBehaviour
         {
             if (collider.tag == "Player")
             {
+                //if (PlayerData.Instance.isDead) return;
+
                 Debug.Log("bullet hit player");
                 collider.GetComponent<PlayerController>().Stagger((int)velocity.x);
                 Destroy(gameObject);

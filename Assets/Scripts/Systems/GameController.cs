@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
         SceneManager.UnloadSceneAsync(pauseScene);
         Time.timeScale = 1f;
         state = GameState.Gameplay;
-        PlayerData.Instance.pc.EnableInput();
+        if (!PlayerData.Instance.isDead) PlayerData.Instance.pc.EnableInput();
     }
     
     public void QuitGame()

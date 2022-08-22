@@ -32,6 +32,10 @@ public class PlayerData : MonoBehaviour
     public bool isDead = false;
     public PlayerController pc;
 
+    [Header("UI elements")]
+    public HpPanel hpPanel;
+    public GameObject pfDmgPopup;
+
     private void Awake()
     {
         if (_instance == null) _instance = this;
@@ -42,23 +46,44 @@ public class PlayerData : MonoBehaviour
     {
         stats.hp = stats.maxHp;
         isDead = false;
+
+        hpPanel.UpdateFillAmount((1f * stats.hp) / stats.maxHp);
     }
 
     public void CheckHp()
     {
         isDead = (stats.hp <= 0);
+
+        if (isDead)
+        {
+            pc.Die();
+        }
     }
 
     public void ReceiveDamage(int value)
     {
         stats.hp = Mathf.Clamp(stats.hp - value, 0, stats.maxHp);
+
+        hpPanel.UpdateFillAmount((1f * stats.hp) / stats.maxHp);
+        CreatePopupText(value, Color.red);
         CheckHp();
     }
 
     public void ReceiveHp(int value)
     {
         stats.hp = Mathf.Clamp(stats.hp + value, 0, stats.maxHp);
+
+        hpPanel.UpdateFillAmount((1f * stats.hp) / stats.maxHp);
+        CreatePopupText(value, Color.green);
         CheckHp();
+    }
+
+    public void CreatePopupText(int value, Color color)
+    {
+        Vector3 spriteExtents = pc.GetComponent<SpriteRenderer>().bounds.extents;
+        Vector3 pos = new Vector3(pc.transform.position.x, pc.transform.position.y + spriteExtents.y, pc.transform.position.z);
+        GameObject popupText = Instantiate(pfDmgPopup, pos, Quaternion.identity);
+        popupText.GetComponent<PopupText>().Setup(value.ToString(), color);
     }
 
     public void SetPlayerController(PlayerController _playerController)

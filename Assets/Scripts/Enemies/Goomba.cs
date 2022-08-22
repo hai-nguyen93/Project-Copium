@@ -45,6 +45,8 @@ public class Goomba : EnemyBase
         var player = collision.gameObject.GetComponent<PlayerController>();
         if (player)
         {
+            //if (PlayerData.Instance.isDead) return;
+
             Debug.Log("hit player");
             float xDifferenceToPlayer = player.transform.position.x - transform.position.x;
             if (xDifferenceToPlayer * xVel > 0)

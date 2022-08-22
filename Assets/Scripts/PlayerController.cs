@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEditor;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
-public class PlayerController : MonoBehaviour, IDamageable
+public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         pCombat = GetComponent<PlayerCombat>();
+        EnableInput();
     }
 
     void Update()
@@ -260,8 +261,16 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     #endregion
 
+    public void Die()
+    {
+        Debug.Log("Player died.");
+        DisableInput();
+    }
+
     public void Damage(int dmg)
     {
+        if (PlayerData.Instance.isDead) return;
+
         PlayerData.Instance.ReceiveDamage(dmg);
     }
 
@@ -279,6 +288,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     //           <= 0: push player left
     public void Stagger(int direction)
     {
+        if (PlayerData.Instance.isDead) return;
+
         Debug.Log("stagger push direction" + direction);
         rb.velocity = new Vector2(0f, rb.velocity.y);
         rb.AddForce(new Vector2((direction > 0) ? 1 : -1, 0f) * staggerForce, ForceMode2D.Impulse);
