@@ -634,7 +634,12 @@ MonoBehaviour:
     maxHp: 5
     hp: 0
     atk: 2
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: 9a4418b961ed643408595d2ddb4dc0cb, type: 2}
+  - {fileID: 11400000, guid: c189c4f25bf2f3246ac8b427dce3a65f, type: 2}
+  - {fileID: 11400000, guid: ba256209742039041966f56d375374bb, type: 2}
+  - {fileID: 11400000, guid: 046b86b467a630b4887d98e9ad46ac54, type: 2}
+  - {fileID: 11400000, guid: 7de7ffd09b65599468f4bc21aedfea9a, type: 2}
   isDead: 0
   pc: {fileID: 0}
   hpPanel: {fileID: 447560689}
