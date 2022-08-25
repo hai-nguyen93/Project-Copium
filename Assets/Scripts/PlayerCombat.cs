@@ -61,7 +61,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Abilities")]
     public List<ActiveAbility> equippedAbilities;
-    public GameObject AbilityPanelUI;
+    public GameObject abilityPanelUI;
 
     private bool skillKeyPressed = false;
     private Animator anim;
@@ -106,6 +106,11 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    public void RefreshAbilityIcons()
+    {
+        abilityPanelUI.GetComponent<AbilityPanel>().UpdateAbilitySlots();
+    }
+
     public void OnAttack(InputValue value)
     {
         if (skillKeyPressed) return;
@@ -145,17 +150,17 @@ public class PlayerCombat : MonoBehaviour
         if (input > 0.5f)
         {
             skillKeyPressed = true;
-            if (AbilityPanelUI != null)
+            if (abilityPanelUI != null)
             {
-                AbilityPanelUI.GetComponent<AbilityPanel>().Show();
+                abilityPanelUI.GetComponent<AbilityPanel>().Show();
             }
         }
         else
         {
             skillKeyPressed = false;
-            if (AbilityPanelUI != null)
+            if (abilityPanelUI != null)
             {
-                AbilityPanelUI.GetComponent<AbilityPanel>().Hide();
+                abilityPanelUI.GetComponent<AbilityPanel>().Hide();
             }
         }
     }

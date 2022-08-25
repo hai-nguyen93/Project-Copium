@@ -13,11 +13,32 @@ public class MenuAbilitySlot : MonoBehaviour
     private MenuAbilityPanel parentPanel;
     public Button button;
 
+    private void OnEnable()
+    {
+        button.onClick.AddListener(EquipAbility);
+    }
+
+    private void OnDisable()
+    {
+        button.onClick.RemoveListener(EquipAbility);
+    }
+
+    public void EquipAbility()
+    {
+        parentPanel.EquipSelectedAbility();
+    }
+
     private void Update()
     {
         if  (EventSystem.current.currentSelectedGameObject == this.gameObject)
         {
             parentPanel.currentIndex = index;
+
+            if (EventSystem.current.currentInputModule.input.GetButtonDown("Cancel"))
+            {
+                int index = parentPanel.activeAbilitiesPanel.currentSlot;
+                parentPanel.activeAbilitiesPanel.activeAbilitySlots[index].button.Select();
+            }
         }
     }
 

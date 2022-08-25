@@ -15,6 +15,9 @@ public class MenuAbilityPanel : MonoBehaviour
     public int currentIndex = 0;
     public int oldIndex = 0;
 
+    [Header("Active Abilities Panel")]
+    public MenuActiveAbilityPanel activeAbilitiesPanel;
+
     [Header("Ability Description Panel")]
     public TextMeshProUGUI aDescription;
 
@@ -43,14 +46,17 @@ public class MenuAbilityPanel : MonoBehaviour
             item.GetComponent<MenuAbilitySlot>().SetNavigation();
         }
 
+        // Set Active Abilities Panel
+        activeAbilitiesPanel.activeAbilitySlots[0].button.Select();
+
         // Set scroll view to top
-        abilityItems[0].GetComponent<Button>().Select();
+        // abilityItems[0].GetComponent<Button>().Select();
         currentIndex = 0;
         oldIndex = currentIndex;
         //StartCoroutine(SetScrollbarTop());
         //scrollBar.value = 1f;
         scrollView.GetComponent<RectTransform>().anchoredPosition = new Vector2(scrollView.GetComponent<RectTransform>().anchoredPosition.x, 0);
-        SetDescription();              
+        //UpdateDescription();              
     }
 
     private void Update()
@@ -58,7 +64,7 @@ public class MenuAbilityPanel : MonoBehaviour
         if (currentIndex != oldIndex)
         {
             RepositionScrollview();
-            SetDescription();
+            UpdateDescription();
             oldIndex = currentIndex;
         }
     }
@@ -77,11 +83,16 @@ public class MenuAbilityPanel : MonoBehaviour
         scrollBar.value = 1 - ((float)currentIndex / (float)(abilityItems.Count - 1));
     }
 
-    public void SetDescription()
+    public void UpdateDescription()
     {
         string desc = PlayerData.Instance.abilities[currentIndex].abilityName + "\nCooldown: " 
             + PlayerData.Instance.abilities[currentIndex].cooldown + "s";
         aDescription.text = desc;
+    }
+
+    public void EquipSelectedAbility()
+    {
+        activeAbilitiesPanel.SetAbilityToCurrentSlot(PlayerData.Instance.abilities[currentIndex]);
     }
 
     IEnumerator SetScrollbarTop()
