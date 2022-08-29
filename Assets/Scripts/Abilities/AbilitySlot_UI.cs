@@ -56,6 +56,7 @@ public class AbilitySlot_UI : MonoBehaviour
     {
         //Debug.Log(gameObject.name + "remove icon");
         abilityIcon.sprite = defaultIcon;
+        cdFillImage.fillAmount = 0f;
     }
 
     public void RemoveAbility()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class MenuActiveAbilitySlot : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class MenuActiveAbilitySlot : MonoBehaviour
             if (EventSystem.current.currentInputModule.input.GetButtonDown("Cancel"))
             {
                 parentPanel.defaultButtonExitTo.Select();
+            }
+
+            if (InputSystem.GetDevice<Keyboard>().uKey.wasPressedThisFrame)
+            {
+                parentPanel.UnequipAbility(index);
             }
         }
 
