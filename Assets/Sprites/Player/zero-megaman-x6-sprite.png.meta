@@ -1,0 +1,4544 @@
+fileFormatVersion: 2
+guid: c5529f9a6a96e094c9548731a5f15f01
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 1508
+        width: 8
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4f638e72a16f0448234a960eb3cdc1
+      internalID: 1950592249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1508
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f39d92b02cebb045ac7041709023c74
+      internalID: 2045290697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1508
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798e65b0a4a4e684ba172ddd595d9521
+      internalID: 1550472091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1508
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96342977b26f20439497f3e3614c474
+      internalID: -415690113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1508
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e168075c1df6f544397f314a7dfb5836
+      internalID: 1334051791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1508
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8476a035f7aecb64bbe959f92523929b
+      internalID: 1376783298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1508
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0840fc131d3124290d4100cccef22c
+      internalID: 1717082060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1508
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88781ea3fd5444446bcdde97f0019f19
+      internalID: 209077590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_2
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1508
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fa320b2b0a88a49acc81f2f218ccd2
+      internalID: 12471850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_3
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1508
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed8c61fa76a4384f9a5bb81b1ee4ccb
+      internalID: -1894008828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_4
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1508
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d53ef510d15cf4488ac60fd7ff75eec
+      internalID: -1660064416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_11
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1508
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823dc924ae84f294792dad37e9c27504
+      internalID: 381746199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1508
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4d279920583124fbd6b6142aa65042
+      internalID: 318659676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1452
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755ea1b9e93fbdd4891a91c5a3c6f1fb
+      internalID: 218729839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1452
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79bdcff51c98764c9e030095be679f5
+      internalID: -116545675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_3
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1452
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc524587f5d1a14698f180d92345d8b
+      internalID: -632783038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1452
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57826f5cd3fc3114cab3152470e82420
+      internalID: -96112713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_5
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1452
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8094b9414b2b7479f35f580dafe9ae
+      internalID: -1541540563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_6
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1452
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216506568c10fd848806ce0c930b5423
+      internalID: 2000763315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_7
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 1452
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c399fed4e700c548bf4a275b6e30b3a
+      internalID: -1337481042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_8
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1452
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05131ad68d75f934fa8dc1b7e65d7a0d
+      internalID: -1539129291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_9
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1452
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd75f1e301bd7547a3186647123aca4
+      internalID: 1586239664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_10
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1452
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9ef19557e6e5b4eb90544d4eefd1b1
+      internalID: 1436532261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_11
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1452
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc212aecfdb6c2946b87804323c50222
+      internalID: 914225436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_24
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1396
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d565247eb865dd419ed909f8cb99fcd
+      internalID: 1428966622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_25
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1396
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6436496f0a9d5184eaa97c2d1192919e
+      internalID: -1760985463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_26
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1396
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96e04f177b5ad14aa48e0b1e37476b8
+      internalID: 1379409103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_27
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1396
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a035ffc02ed70884c9fc0511d06d903a
+      internalID: 2016262721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_28
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1396
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1988f0e4472cbfc41bffe9a7c2b6f536
+      internalID: -1043602824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_29
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1396
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dd66cfb60cc5145af0f4ea4652c2bc
+      internalID: -1292743739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_30
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 1396
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b730b703e91d77d41bb8a1abe1b4bca0
+      internalID: -1716431118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_31
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1396
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3412e9ac3fe38e4f9f2285ea4cd1131
+      internalID: -877261230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_32
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1396
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375d881365b548443bf0ae4f435fde57
+      internalID: -781079790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_33
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1396
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c54161d15bbe342a1fa1918ec84c40
+      internalID: -182795799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1319
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b62dcf0009e924ca5f5d5740691ed4
+      internalID: -305251149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_2
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1319
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e73f6073737fd14b992128e35c65f31
+      internalID: 1938501418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_3
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1319
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a115716e3e410c4789317207fcc4281
+      internalID: -22251341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1319
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b9d0c5d5bd91f4ca426b22b120c688
+      internalID: -552836021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_5
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1319
+        width: 39
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793eba2a8fb256b468d7782f995d325d
+      internalID: -1738460188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall_1
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1319
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999f00a65c0f5bb4188c17e01acb0b7f
+      internalID: -1459727060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fall_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1319
+        width: 34
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad605dca8a2c00418a678538090b793
+      internalID: 970484559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: land_1
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 1319
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454d4c49b9f660d4e8ded4ce5822cb25
+      internalID: -655157828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: land_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1319
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dbd52b8a029854583a4230c2105c23
+      internalID: -1638115579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_43
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1242
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa931893022a7df4582ccbb0cb6a8072
+      internalID: 1981624239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_44
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1242
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42cfcd923148f9e4faacee4c69b93fd6
+      internalID: -1204237774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_45
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1242
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029ae56e00ee2a74db17be6a6196c6ad
+      internalID: -1790256785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_46
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1242
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeae7673638b93748889cfd5e7a6a462
+      internalID: -1689813898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_47
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1242
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2936c71d80f06b04b8804a21977577ca
+      internalID: -407384252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_48
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1242
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c18a6e2d0dfd7c44a44f75ea796134a
+      internalID: 597718547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_49
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1242
+        width: 43
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbca3a3aa568ae42814a826295d6ae8
+      internalID: 686503808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_50
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1242
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b3016316c48a54cbcd404abf71f525
+      internalID: -202086619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_51
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1242
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dd59ddeb2c00044aafeae40159c5ba
+      internalID: 1243915540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_1
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1191
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85ac1fdc3a8a2947968b26df6ad8688
+      internalID: 264154363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1190
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f102f7d40425b488832423667e13f2
+      internalID: 658076634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1191
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2224acac4977f22408c264c72fafaffb
+      internalID: -2143719124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1189
+        width: 50
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f172af50eef3e4593069605648148c
+      internalID: -2032779661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_56
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1138
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfe5b0c43103b148ae711dadfb2827a
+      internalID: 2044581487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_57
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1138
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b737ea0207c71147a3a1e166621939d
+      internalID: 541892118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_58
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1138
+        width: 60
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1926625c3bd2e974aba3d52e3009659c
+      internalID: 261527359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_59
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1138
+        width: 60
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d89666cdd211344a72d0d3ba97d706
+      internalID: 1031381837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_60
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1099
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cba3664308edc7449684355eb1b8f5d
+      internalID: 1678752062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_61
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1108
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0815987bc05e504789181a9c9dc5a43
+      internalID: -1801218726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_62
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 1104
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918cf2b0d47bb9f4b941d99c01f94b09
+      internalID: -103209401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_63
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1107
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459b9adca0832d34a9e55c2440aca649
+      internalID: -403606920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_64
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1042
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0877fe12428baca4f884c1716199e174
+      internalID: -114185335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_65
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1042
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040565f219daadf4087748d6d7a24c5a
+      internalID: 277243396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_66
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1042
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fea3078d0831124e8c3d8d2dd08741c
+      internalID: 1381188430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_67
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1042
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf8d8806b9b1be4497e7f0bfc98b2f8
+      internalID: -1493047877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_68
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1042
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e63a55733057f142a1633296905ae04
+      internalID: -1829194745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_69
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1042
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8a93cf53ffd554ca112e1b445283ec
+      internalID: 520775019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_70
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1042
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b407b197dfffabd4bbccd3f77ca13129
+      internalID: 756228026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_71
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1042
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9caeddc597c69c64c9ab2ce5cc753fba
+      internalID: -534281460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_72
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1042
+        width: 53
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88864770aefa9148bf489c9a9ac23ed
+      internalID: 1562150441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_73
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 973
+        width: 47
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6ac58c07c5c034b90f961927728930
+      internalID: 1733783235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_74
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 973
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9be71d65c3d654598bbbd75cfb5162
+      internalID: -1916371807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_75
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 973
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff02fcc0a249fa4eb4ae4231508882f
+      internalID: 33560203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_76
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 973
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3102c8a2c0d069743b4f4daa3db56c19
+      internalID: -866517169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_77
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 973
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9ca03cf7df6b947a696ddf9be658ae
+      internalID: 2069577785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_78
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 973
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55b0f0b0c312894087c26fbbadcd656
+      internalID: 184689482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_79
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 973
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8acf4e626a94bb49ab4387d671dd7b3
+      internalID: -873620993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_80
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 973
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3994336acaa96ea4b825b3802f71d3ec
+      internalID: -1314307722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 895
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ad2221a9502444db81935a88419737
+      internalID: -1933416215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 895
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21132546d00a74e44acaeffbaf4594f0
+      internalID: 1198830697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_3
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 895
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc45efa58d43d142a3cc93e2a0b017e
+      internalID: 530801048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_4
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 895
+        width: 52
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404c7a7c561c5e54cb75d4eb559690ac
+      internalID: 1837697912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 895
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc000039c85c28748a176f60b2c447a1
+      internalID: 507855582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 895
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b27a83c066e59a4482dec93d452ece6
+      internalID: 1084304919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_7
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 895
+        width: 80
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fed3ac2cfe810e44a8480849845ad90
+      internalID: 1386777066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_8
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 842
+        width: 80
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a6c3dc39385e842a29250ad101cbac
+      internalID: 1024976949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_9
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 842
+        width: 80
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe42e220fc22d964289f19b9c55cd0fc
+      internalID: 1952851642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_10
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 842
+        width: 76
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1b8305e26e7d84d81278a0c13e689d
+      internalID: -372127063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_11
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 842
+        width: 59
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0e4712dbe9880418cfa2f293b599b7
+      internalID: 233890455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_12
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 842
+        width: 56
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1091b988f57a4c24c82f357ef51043e1
+      internalID: -73761871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_93
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 842
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b4e6b2b7672fe4bad50680dff01e0d
+      internalID: -1603881742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_94
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 788
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f3a0173b9b93c469f7a02b925d0b77
+      internalID: -1935715167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_95
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 788
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10c69f13ea5ae64f8d3385eeeb4d2c7
+      internalID: -892494627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_96
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 788
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e59a4eb7cefb64439509df77ad50405
+      internalID: -1910496909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_97
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 788
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f747339f30978a4ab2e39863031df6a
+      internalID: -1359495223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_98
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 788
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f7394f63cb86c4bb8ed5f5702178fe
+      internalID: 1792346693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_99
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 788
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe2269ee5c90a142aca739914c74a8d
+      internalID: -1527789034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_100
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 788
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4130a4642185907499dcd541ff58d21f
+      internalID: 1483306916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_101
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 705
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8db4415ef23f49408272839b6025e32
+      internalID: 1176388722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_102
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 705
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b75a1fca368c4f4ebd45fefbb7dc5ee
+      internalID: 1764854556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_103
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 705
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bb8dd5233a293478da41fb9972cb94
+      internalID: 1131409788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_104
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 705
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e43df8961489f843ab667a46cdd83f4
+      internalID: 1379723698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_105
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 705
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b324281fc154534cb282a50270cc5c5
+      internalID: -1317593039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_106
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 705
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fedf07db03d4b834ab88a92c3cd9b3f8
+      internalID: 1604534698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_107
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 705
+        width: 72
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60eb74ac4ff23a442836c26642ee9256
+      internalID: 219231508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_108
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 641
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd146a2cbb3b6842903c8d96e833548
+      internalID: 72194281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_109
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 641
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca2906b0a454024fa699fe6e6dfee0a
+      internalID: -164901942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_110
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 641
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e479e9f82d1a0584ba49975334ecc206
+      internalID: -437744720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_111
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 641
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16c0767939a27240ad803cfccdedc10
+      internalID: 1906359674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_112
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 641
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60051e9ccdc374741a2808fc07889232
+      internalID: -1479209025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_113
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 641
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3232306094759d46b8d9e4d5cad9c9b
+      internalID: 1269059106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_114
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 577
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b20e04a711b074438270fa22ebb8c36
+      internalID: -1611037097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_115
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 577
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03346dc60268664b846195a1f208444
+      internalID: 440940354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_116
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 577
+        width: 34
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0557f36c142691845afe34d2f962bd8d
+      internalID: -1302552761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_117
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 577
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f292877c6610f414795643fdb0c877f5
+      internalID: 1336627925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_118
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 577
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b4b25117ef91541b2462bc8a98f61e
+      internalID: 1507598336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_119
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 577
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae94b0981cec764ea9d9cca3f1b2876
+      internalID: 248490920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_120
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 577
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ab776e6017ba347b73c4837e0f82cb
+      internalID: 1085173127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_121
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 520
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fba4fd960e26a345a2eac682f005d03
+      internalID: -2029102027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_122
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 504
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0a03989e849f2468f8fe9d5fd3a203
+      internalID: -969590325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_123
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 527
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7719858bf76380845acc185c4772ab8d
+      internalID: 1603793721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_124
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 503
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4897bb1de01fc647a6fe3a6aa436559
+      internalID: -1018657581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_125
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 502
+        width: 37
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663dc429a7303474b92b589aca0fcf6c
+      internalID: -1767836801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_126
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 502
+        width: 33
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68ded5e4a2aade4fa91a68460c55494
+      internalID: -1903025817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_127
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 503
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac31beeb318b85a41bed64cf96fe753c
+      internalID: -1821561771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_128
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 441
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1d5119d588bf34dbc32ceff1f6efaa
+      internalID: 1146560321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_129
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 441
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e2a47b578a89542984026968e7aab3
+      internalID: -265014490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_grab
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 441
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246ad12fa2f800043ba6812fad724ea1
+      internalID: -862431875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_131
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 441
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a20ff6edc2cf040aad013bad9a0147
+      internalID: 2044666625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_132
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 441
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2ea30d35611414c95bad2989a47823
+      internalID: 2087212706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_133
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 380
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925b82d2fa394564baf406f21ac4b9a2
+      internalID: 1167303076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_134
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 380
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448ae6a352501f646b5d7014b88f3582
+      internalID: -1380639196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_135
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 380
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f593f6c2ecd664ea4768d5fc3b6435
+      internalID: -2079695502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_136
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 380
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f797df426b3e94f8f9a0e7075dafea
+      internalID: 374230255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_137
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 380
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7bcc1d5ce61c35418406ff54b01b67e
+      internalID: 797184403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_138
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 317
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fc8aed580b32246a6f76d2b8d7daba
+      internalID: -1372117835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_139
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 313
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be516dead104ce842b856c9cb332c400
+      internalID: 2118104099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_140
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 318
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a093e493e8f0ddf4eb94979ecd8eb9d8
+      internalID: -925105050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_141
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 318
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc72579250f0cea43afc0fa4110fa802
+      internalID: -1171572097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_142
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 313
+        width: 26
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d07038602d3daf44b3a6354dec83754
+      internalID: 631496659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_143
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 320
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b66e35277d68da49af3d54cb34791d2
+      internalID: 1679653003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_144
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 322
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755737cf1bcedc245bd065816afe58b3
+      internalID: 1682512093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_145
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 313
+        width: 35
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d82b39ed73f3a844be2b60217b2665c
+      internalID: -423544414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_146
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 252
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23960c03ff96ec5408c61fff759d5a72
+      internalID: 1015047402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_147
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 252
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbb6ad81f606354ca3a1dd29a3757bb
+      internalID: 558440645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_148
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 247
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d031d5890ac51478b1e4da54f133d5
+      internalID: 1857899151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_149
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 252
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7d34ada6e353549b081bbb2f8b03c6
+      internalID: -1869118218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_150
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 252
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6be7ef793a43f24a986fdbf96afe7a5
+      internalID: -1938024138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_151
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 252
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f270c31afcdb042bb50c545a79cd1c
+      internalID: -945957540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_152
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 252
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b3efdc0b2e2c24694258dd4d0b7178
+      internalID: -1815609233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_153
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 252
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c674b9c462f854ebb93c9b2ada9d4f
+      internalID: -12941269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_154
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 252
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b1fb3a052caee40b81fd5d8af3c788
+      internalID: 252423635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_155
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 252
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4159534c6148ec5409922c4e83fd6f7b
+      internalID: 1486554122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_156
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 193
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c342f124070944894f5e6d85bbb5ff
+      internalID: -798038834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_157
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 193
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a42bc1514b9c04085c59970ebf1943
+      internalID: 1176638558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_158
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 193
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c578d8516898246b42545f5e6e1706
+      internalID: 1502667668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_159
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 193
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c301848d5d445c43a486c750c89b98c
+      internalID: -590033149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_160
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 177
+        width: 81
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af97df1309ce95c4abf504057a648f44
+      internalID: 1182256551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_161
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 170
+        width: 81
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3c978ce7bb08e4ba552f6678c76662
+      internalID: -1287687098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_162
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 163
+        width: 81
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887ad96dc8913164380646e3d30c0fc0
+      internalID: 1127898390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_163
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 141
+        width: 116
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdcc9e138a52d74186fbad8daed5ef6
+      internalID: -74858288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_164
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 141
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7210752561effb49859bfbca46e6aeb
+      internalID: -1300435930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_165
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 117
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdbccbf7de49834ab94e688fcd341cf
+      internalID: 1705136865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_166
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 141
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1ba8f2b1ec7fb43b41031bcf7a5cf8
+      internalID: 73364506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_167
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 141
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e8aa4006de3414eabecc7b0843c8f2
+      internalID: -1412673542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_168
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 141
+        width: 19
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50635808e07f1b443ba1b5059d1b089f
+      internalID: 321494057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_169
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 141
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672e423c7edf4654a99ca42cc4bd4f56
+      internalID: -330401249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_170
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 121
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e44d4850bdae440a1a76eef825c6f9
+      internalID: -761298777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_171
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 118
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427e458c45d0118459dddd35f364c71b
+      internalID: -400788818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_172
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 116
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116deb5f881f03a42af95a99baeee1d7
+      internalID: -1577027972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_173
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 87
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4eab61369ee264691782164235c145
+      internalID: -554521283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_174
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 82
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660958f2a0beec94fabc42bb30c790f7
+      internalID: 415082940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_175
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 86
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fc50dc6926dcb4ab4f7177ba54a6e7
+      internalID: -1189285119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_176
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 85
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1861db1211b0a4dae6a638ebe0c49a
+      internalID: -765030310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_177
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 86
+        width: 44
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9668a9ac4f28a804daebf55cf1833e31
+      internalID: 69997983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_178
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 83
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f409a05c92c5c2244a1c21a086ba371b
+      internalID: -173492698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_179
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 85
+        width: 40
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b3346dcf257c4469b8c59173c77f5e
+      internalID: 1290426221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_180
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 86
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3cdf6bcf701d243a18386d2c48f13b
+      internalID: 654425605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_181
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 82
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e8c34efabcfe24cb79ab09ed8e2968
+      internalID: -1204600635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_182
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 83
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76eb284ab35ac54e9e98bffbbab7846
+      internalID: -238439532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_183
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 82
+        width: 53
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a2621664ded6246b5a162edd79987e
+      internalID: -1564750018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_184
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 47
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d102f1dbe3dc54ca372c09e2eb5c4e
+      internalID: 885559532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_185
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 43
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79aaa77b48b86fd4e9653c3743686c70
+      internalID: -507538835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_186
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 46
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29893d143bf935d4b97ce9c79ec0ec00
+      internalID: 1107886191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_187
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 43
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c70066d1a4d0340b5241b71038156d
+      internalID: -1200330174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_188
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 43
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fd8e059d082134eb2c1eb3e04b9ed8
+      internalID: 62470579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_189
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 45
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54998406ba97ef54faad330fb14efac6
+      internalID: 722314802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_190
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 41
+        width: 60
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b228fbdc1aba2f34a9d840f4dc62595b
+      internalID: 1379740657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_191
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 54
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d385e8f13b40b418aaa27eb91dc5b3
+      internalID: 1941624195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_192
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 43
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac8ab45a0473d948b42cdf0615cdce9
+      internalID: 1614526845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_193
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 42
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b18444e52b3ec448f8aaafb1abbc5c
+      internalID: 1647163839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_194
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 41
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6270bac38c2d3474d861f03655581b50
+      internalID: -1950579246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_195
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 40
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed2219d97a2e1849a487115c736a233
+      internalID: -156060797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_196
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 60
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0602220359593d4ca02b6345331a672
+      internalID: -999233671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_197
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 50
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df67132eef8f9c449cf15d35343d388
+      internalID: 1499598391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_198
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 54
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889ffd8550636c24eb0cbf5abe236def
+      internalID: -194079840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_199
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 40
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1f7fa2c5117f9419db5c66a2edba5a
+      internalID: -1654650762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero-megaman-x6-sprite_200
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 40
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ef014ea50c63345864facc44e9c1f6
+      internalID: -1059861871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      zero-megaman-x6-sprite_115: 440940354
+      zero-megaman-x6-sprite_199: -1654650762
+      zero-megaman-x6-sprite_79: -873620993
+      walk_10: 1436532261
+      zero-megaman-x6-sprite_178: -173492698
+      zero-megaman-x6-sprite_103: 1131409788
+      zero-megaman-x6-sprite_121: -2029102027
+      zero-megaman-x6-sprite_137: 797184403
+      jump_5: -1738460188
+      zero-megaman-x6-sprite_63: -403606920
+      zero-megaman-x6-sprite_62: -103209401
+      zero-megaman-x6-sprite_148: 1857899151
+      zero-megaman-x6-sprite_45: -1790256785
+      fall_1: -1459727060
+      zero-megaman-x6-sprite_97: -1359495223
+      zero-megaman-x6-sprite_111: 1906359674
+      zero-megaman-x6-sprite_120: 1085173127
+      zero-megaman-x6-sprite_77: 2069577785
+      zero-megaman-x6-sprite_141: -1171572097
+      zero-megaman-x6-sprite_142: 631496659
+      zero-megaman-x6-sprite_106: 1604534698
+      zero-megaman-x6-sprite_117: 1336627925
+      slash_4: 1837697912
+      zero-megaman-x6-sprite_61: -1801218726
+      zero-megaman-x6-sprite_133: 1167303076
+      jump_3: -22251341
+      walk_2: -116545675
+      zero-megaman-x6-sprite_78: 184689482
+      zero-megaman-x6-sprite_109: -164901942
+      zero-megaman-x6-sprite_185: -507538835
+      slash_5: 507855582
+      zero-megaman-x6-sprite_93: -1603881742
+      zero-megaman-x6-sprite_44: -1204237774
+      jump_2: 1938501418
+      zero-megaman-x6-sprite_94: -1935715167
+      zero-megaman-x6-sprite_3: -415690113
+      zero-megaman-x6-sprite_110: -437744720
+      walk_6: 2000763315
+      zero-megaman-x6-sprite_31: -877261230
+      slash_1: -1933416215
+      zero-megaman-x6-sprite_153: -12941269
+      zero-megaman-x6-sprite_160: 1182256551
+      zero-megaman-x6-sprite_193: 1647163839
+      zero-megaman-x6-sprite_119: 248490920
+      dash_2: 658076634
+      zero-megaman-x6-sprite_129: -265014490
+      zero-megaman-x6-sprite_162: 1127898390
+      dash_3: -2143719124
+      zero-megaman-x6-sprite_75: 33560203
+      zero-megaman-x6-sprite_49: 686503808
+      dash_1: 264154363
+      slash_12: -73761871
+      zero-megaman-x6-sprite_190: 1379740657
+      walk_11: 914225436
+      zero-megaman-x6-sprite_198: -194079840
+      zero-megaman-x6-sprite_33: -182795799
+      zero-megaman-x6-sprite_73: 1733783235
+      zero-megaman-x6-sprite_158: 1502667668
+      zero-megaman-x6-sprite_156: -798038834
+      zero-megaman-x6-sprite_11: 381746199
+      idle_1: 209077590
+      zero-megaman-x6-sprite_112: -1479209025
+      zero-megaman-x6-sprite_196: -999233671
+      fall_2: 970484559
+      zero-megaman-x6-sprite_169: -330401249
+      zero-megaman-x6-sprite_181: -1204600635
+      zero-megaman-x6-sprite_48: 597718547
+      zero-megaman-x6-sprite_12: 318659676
+      zero-megaman-x6-sprite_157: 1176638558
+      zero-megaman-x6-sprite_101: 1176388722
+      zero-megaman-x6-sprite_60: 1678752062
+      slash_7: 1386777066
+      zero-megaman-x6-sprite_58: 261527359
+      zero-megaman-x6-sprite_72: 1562150441
+      zero-megaman-x6-sprite_96: -1910496909
+      zero-megaman-x6-sprite_172: -1577027972
+      zero-megaman-x6-sprite_43: 1981624239
+      zero-megaman-x6-sprite_99: -1527789034
+      slash_10: -372127063
+      zero-megaman-x6-sprite_135: -2079695502
+      idle_4: -1660064416
+      zero-megaman-x6-sprite_95: -892494627
+      zero-megaman-x6-sprite_80: -1314307722
+      zero-megaman-x6-sprite_140: -925105050
+      zero-megaman-x6-sprite_71: -534281460
+      slash_6: 1084304919
+      zero-megaman-x6-sprite_2: 1550472091
+      zero-megaman-x6-sprite_50: -202086619
+      zero-megaman-x6-sprite_195: -156060797
+      zero-megaman-x6-sprite_194: -1950579246
+      slash_11: 233890455
+      zero-megaman-x6-sprite_168: 321494057
+      zero-megaman-x6-sprite_128: 1146560321
+      zero-megaman-x6-sprite_189: 722314802
+      zero-megaman-x6-sprite_4: 1334051791
+      zero-megaman-x6-sprite_139: 2118104099
+      zero-megaman-x6-sprite_98: 1792346693
+      zero-megaman-x6-sprite_176: -765030310
+      land_1: -655157828
+      zero-megaman-x6-sprite_125: -1767836801
+      zero-megaman-x6-sprite_46: -1689813898
+      zero-megaman-x6-sprite_179: 1290426221
+      zero-megaman-x6-sprite_6: 1717082060
+      zero-megaman-x6-sprite_159: -590033149
+      zero-megaman-x6-sprite_70: 756228026
+      zero-megaman-x6-sprite_65: 277243396
+      zero-megaman-x6-sprite_166: 73364506
+      zero-megaman-x6-sprite_134: -1380639196
+      zero-megaman-x6-sprite_76: -866517169
+      zero-megaman-x6-sprite_108: 72194281
+      zero-megaman-x6-sprite_28: -1043602824
+      zero-megaman-x6-sprite_147: 558440645
+      zero-megaman-x6-sprite_102: 1764854556
+      zero-megaman-x6-sprite_184: 885559532
+      zero-megaman-x6-sprite_144: 1682512093
+      zero-megaman-x6-sprite_116: -1302552761
+      slash_8: 1024976949
+      zero-megaman-x6-sprite_118: 1507598336
+      slash_9: 1952851642
+      zero-megaman-x6-sprite_66: 1381188430
+      zero-megaman-x6-sprite_114: -1611037097
+      zero-megaman-x6-sprite_154: 252423635
+      walk_3: -632783038
+      zero-megaman-x6-sprite_192: 1614526845
+      zero-megaman-x6-sprite_29: -1292743739
+      zero-megaman-x6-sprite_105: -1317593039
+      walk_5: -1541540563
+      zero-megaman-x6-sprite_167: -1412673542
+      zero-megaman-x6-sprite_145: -423544414
+      zero-megaman-x6-sprite_165: 1705136865
+      zero-megaman-x6-sprite_0: 1950592249
+      zero-megaman-x6-sprite_186: 1107886191
+      zero-megaman-x6-sprite_191: 1941624195
+      zero-megaman-x6-sprite_24: 1428966622
+      zero-megaman-x6-sprite_124: -1018657581
+      walk_1: 218729839
+      zero-megaman-x6-sprite_180: 654425605
+      zero-megaman-x6-sprite_175: -1189285119
+      zero-megaman-x6-sprite_107: 219231508
+      jump_1: -305251149
+      zero-megaman-x6-sprite_51: 1243915540
+      zero-megaman-x6-sprite_187: -1200330174
+      zero-megaman-x6-sprite_64: -114185335
+      zero-megaman-x6-sprite_68: -1829194745
+      zero-megaman-x6-sprite_30: -1716431118
+      zero-megaman-x6-sprite_25: -1760985463
+      zero-megaman-x6-sprite_161: -1287687098
+      zero-megaman-x6-sprite_74: -1916371807
+      zero-megaman-x6-sprite_113: 1269059106
+      zero-megaman-x6-sprite_177: 69997983
+      zero-megaman-x6-sprite_69: 520775019
+      jump_4: -552836021
+      zero-megaman-x6-sprite_26: 1379409103
+      walk_7: -1337481042
+      zero-megaman-x6-sprite_143: 1679653003
+      wall_grab: -862431875
+      idle_3: -1894008828
+      zero-megaman-x6-sprite_123: 1603793721
+      zero-megaman-x6-sprite_56: 2044581487
+      dash_4: -2032779661
+      zero-megaman-x6-sprite_183: -1564750018
+      zero-megaman-x6-sprite_127: -1821561771
+      slash_3: 530801048
+      zero-megaman-x6-sprite_197: 1499598391
+      zero-megaman-x6-sprite_27: 2016262721
+      zero-megaman-x6-sprite_163: -74858288
+      idle_2: 12471850
+      zero-megaman-x6-sprite_132: 2087212706
+      zero-megaman-x6-sprite_1: 2045290697
+      zero-megaman-x6-sprite_188: 62470579
+      zero-megaman-x6-sprite_5: 1376783298
+      zero-megaman-x6-sprite_59: 1031381837
+      zero-megaman-x6-sprite_170: -761298777
+      zero-megaman-x6-sprite_173: -554521283
+      slash_2: 1198830697
+      zero-megaman-x6-sprite_138: -1372117835
+      zero-megaman-x6-sprite_200: -1059861871
+      zero-megaman-x6-sprite_67: -1493047877
+      zero-megaman-x6-sprite_152: -1815609233
+      zero-megaman-x6-sprite_171: -400788818
+      walk_9: 1586239664
+      zero-megaman-x6-sprite_57: 541892118
+      land_2: -1638115579
+      zero-megaman-x6-sprite_100: 1483306916
+      zero-megaman-x6-sprite_126: -1903025817
+      zero-megaman-x6-sprite_122: -969590325
+      zero-megaman-x6-sprite_104: 1379723698
+      zero-megaman-x6-sprite_164: -1300435930
+      zero-megaman-x6-sprite_174: 415082940
+      zero-megaman-x6-sprite_182: -238439532
+      zero-megaman-x6-sprite_47: -407384252
+      zero-megaman-x6-sprite_150: -1938024138
+      zero-megaman-x6-sprite_131: 2044666625
+      zero-megaman-x6-sprite_155: 1486554122
+      zero-megaman-x6-sprite_136: 374230255
+      zero-megaman-x6-sprite_151: -945957540
+      zero-megaman-x6-sprite_32: -781079790
+      zero-megaman-x6-sprite_146: 1015047402
+      walk_4: -96112713
+      zero-megaman-x6-sprite_149: -1869118218
+      walk_8: -1539129291
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
