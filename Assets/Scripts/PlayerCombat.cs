@@ -12,7 +12,9 @@ public class ActiveAbility
 {
     public Ability abilityData;
     public float cdTimer;
+    public float castTimter;
     public AbilityState state;
+    private GameObject _user;
 
     public void SetCdTimer(float time) { cdTimer = time; }
 
@@ -24,6 +26,7 @@ public class ActiveAbility
         {
             case AbilityState.ready:
                 break;
+
             case AbilityState.cooldown:
                 if (cdTimer > 0f)
                 {
@@ -36,16 +39,52 @@ public class ActiveAbility
                     Debug.Log(abilityData.abilityName + " is ready.");
                 }
                 break;
+
             case AbilityState.active:
+                if (abilityData.castType == CastType.channeling)
+                {
+                    if (_user == null)
+                    {
+                        Debug.LogWarning("There is no user casting this " + abilityData.abilityName + " ability.");
+                        cdTimer = abilityData.cooldown;
+                        state = AbilityState.cooldown;
+                        return;
+                    }
+
+                    if (castTimter > 0f) // casting ability
+                    {
+                        castTimter -= Time.deltaTime;
+                    }
+                    else // finish casting
+                    {
+                        Debug.Log("Finish casting " + abilityData.abilityName);
+                        castTimter = 0f;
+                        abilityData.Activate(_user);
+                        cdTimer = abilityData.cooldown;
+                        state = AbilityState.cooldown;
+                    }
+                }
                 break;
         }
     }
 
     public void Activate(GameObject user)
     {
-        abilityData.Activate(user);
-        cdTimer = abilityData.cooldown;
-        state = AbilityState.cooldown;
+        _user = user;
+        switch (abilityData.castType)
+        {
+            case CastType.instant:
+                abilityData.Activate(user);
+                cdTimer = abilityData.cooldown;
+                state = AbilityState.cooldown;
+                break;
+
+            case CastType.channeling:
+                castTimter = abilityData.castTime;
+                state = AbilityState.active;
+                Debug.Log("Start casting " + abilityData.abilityName);
+                break;
+        }
     }
 }
 
@@ -168,56 +207,65 @@ public class PlayerCombat : MonoBehaviour
     public void OnAbility0(InputValue value)
     {
         float input = value.Get<float>();
-        if (input > 0.5f)
-        {
-            UseEquippedAbility(0);
-        }
+        UseEquippedAbility(0, input);
     }
 
     public void OnAbility1(InputValue value)
     {
         float input = value.Get<float>();
-        if (input > 0.5f)
-        {
-            UseEquippedAbility(1);
-        }
+        UseEquippedAbility(1, input);
     }
 
     public void OnAbility2(InputValue value)
     {
         float input = value.Get<float>();
-        if (input > 0.5f)
-        {
-            UseEquippedAbility(2);
-        }
+        UseEquippedAbility(2, input);
     }
 
     public void OnAbility3(InputValue value)
     {
         float input = value.Get<float>();
-        if (input > 0.5f)
-        {
-            UseEquippedAbility(3);
-        }
+        UseEquippedAbility(3, input);
     }
 
-    public void UseEquippedAbility(int index)
+    public void UseEquippedAbility(int index, float input)
     {
         var ability = equippedAbilities.ElementAtOrDefault(index);
         if (ability == null || ability.abilityData == null)
         {
-            Debug.Log("No Ability in this slot");
+            Debug.Log("No Ability in slot " + index);
             return;
         }
 
-        if (ability.state == AbilityState.ready)
+        if (input > 0.5f) // key pressed
         {
-            ability.Activate(gameObject);
+            if (ability.state == AbilityState.ready)
+            {
+                ability.Activate(gameObject);
+            }
+            else
+            {
+                Debug.Log(ability.abilityData.abilityName + " not ready");
+            }
         }
-        else
+        else // key released
         {
-            Debug.Log(ability.abilityData.abilityName + " not ready");
+            if (ability.abilityData.castType == CastType.channeling)
+            {
+                if (ability.state == AbilityState.active)
+                {
+                    // Cancel cast
+                    Debug.Log("Cancel casting " + ability.abilityData.abilityName);
+                    ability.SetCdTimer(ability.abilityData.cooldown);
+                    ability.SetAbilityState(AbilityState.cooldown);
+                }
+            }
         }
+    }
+
+    public void CancelCastAbility(int index)
+    {
+
     }
 
     IEnumerator CooldownAttack()

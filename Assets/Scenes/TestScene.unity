@@ -4741,7 +4741,7 @@ PrefabInstance:
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[1].abilityData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 9a4418b961ed643408595d2ddb4dc0cb, type: 2}
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[2].abilityData
       value: 
@@ -4749,7 +4749,7 @@ PrefabInstance:
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[3].abilityData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 7de7ffd09b65599468f4bc21aedfea9a, type: 2}
     - target: {fileID: 3112573844488612113, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: m_Enabled
       value: 1
