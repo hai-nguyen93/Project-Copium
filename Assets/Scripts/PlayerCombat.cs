@@ -5,16 +5,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
 
-public enum AbilityState { ready, cooldown, active}
+public enum AbilityState { ready, cooldown, active, readyToCast}
 
 [System.Serializable]
 public class ActiveAbility
 {
     public Ability abilityData;
     public float cdTimer;
-    public float castTimter;
+    public float castTimer;
     public AbilityState state;
     private GameObject _user;
+    private PlayerCombat pCombat;
 
     public void SetCdTimer(float time) { cdTimer = time; }
 
@@ -51,21 +52,37 @@ public class ActiveAbility
                         return;
                     }
 
-                    if (castTimter > 0f) // casting ability
+                    if (castTimer > 0f) // casting ability
                     {
-                        castTimter -= Time.deltaTime;
+                        castTimer -= Time.deltaTime;
+                        pCombat.castPanel.UpdateCastBar(1f - castTimer / abilityData.castTime);
                     }
                     else // finish casting
                     {
-                        Debug.Log("Finish casting " + abilityData.abilityName);
-                        castTimter = 0f;
-                        abilityData.Activate(_user);
-                        cdTimer = abilityData.cooldown;
-                        state = AbilityState.cooldown;
+                        state = AbilityState.readyToCast;
+                        Debug.Log("Ready to cast " + abilityData.abilityName);                       
                     }
                 }
                 break;
-        }
+        }     
+    }
+
+    public void FinishCastAbility()
+    {
+        Debug.Log("Finish casting " + abilityData.abilityName);
+        castTimer = 0f;
+        abilityData.Activate(_user);
+        cdTimer = abilityData.cooldown;
+        state = AbilityState.cooldown;
+        pCombat.castPanel.Hide();
+    }
+
+    public void CancelCastAbility()
+    {
+        Debug.Log("Cancel casting " + abilityData.abilityName);
+        cdTimer = abilityData.cooldown;
+        state = AbilityState.cooldown;
+        pCombat.castPanel.Hide();
     }
 
     public void Activate(GameObject user)
@@ -80,9 +97,17 @@ public class ActiveAbility
                 break;
 
             case CastType.channeling:
-                castTimter = abilityData.castTime;
+                castTimer = abilityData.castTime;
                 state = AbilityState.active;
                 Debug.Log("Start casting " + abilityData.abilityName);
+
+                // set up UI if user is player
+                pCombat = user.GetComponent<PlayerCombat>();
+                if (pCombat != null)
+                {
+                    pCombat.castPanel.SetUp(abilityData.abilityName);
+                    pCombat.castPanel.Show();
+                }
                 break;
         }
     }
@@ -100,7 +125,8 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Abilities")]
     public List<ActiveAbility> equippedAbilities;
-    public GameObject abilityPanelUI;
+    public AbilityPanel abilityPanelUI;
+    public CastPanel castPanel;
 
     private bool skillKeyPressed = false;
     private Animator anim;
@@ -114,6 +140,7 @@ public class PlayerCombat : MonoBehaviour
         attackHitBoxVisual.enabled = false;
         isGuarding = false;
 
+        castPanel.Hide();
         foreach (var a in equippedAbilities)
         {
             a.SetCdTimer(0f);
@@ -147,7 +174,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void RefreshAbilityIcons()
     {
-        abilityPanelUI.GetComponent<AbilityPanel>().UpdateAbilitySlots();
+        abilityPanelUI.UpdateAbilitySlots();
     }
 
     public void OnAttack(InputValue value)
@@ -191,7 +218,7 @@ public class PlayerCombat : MonoBehaviour
             skillKeyPressed = true;
             if (abilityPanelUI != null)
             {
-                abilityPanelUI.GetComponent<AbilityPanel>().Show();
+                abilityPanelUI.Show();
             }
         }
         else
@@ -199,7 +226,7 @@ public class PlayerCombat : MonoBehaviour
             skillKeyPressed = false;
             if (abilityPanelUI != null)
             {
-                abilityPanelUI.GetComponent<AbilityPanel>().Hide();
+                abilityPanelUI.Hide();
             }
         }
     }
@@ -252,20 +279,20 @@ public class PlayerCombat : MonoBehaviour
         {
             if (ability.abilityData.castType == CastType.channeling)
             {
+                if (ability.state == AbilityState.readyToCast)
+                {
+                    ability.FinishCastAbility();
+                    return;
+                }
+
                 if (ability.state == AbilityState.active)
                 {
-                    // Cancel cast
-                    Debug.Log("Cancel casting " + ability.abilityData.abilityName);
-                    ability.SetCdTimer(ability.abilityData.cooldown);
-                    ability.SetAbilityState(AbilityState.cooldown);
+                    // Cancel/Interrupt cast
+                    ability.CancelCastAbility();
+                    return;
                 }
             }
         }
-    }
-
-    public void CancelCastAbility(int index)
-    {
-
     }
 
     IEnumerator CooldownAttack()
