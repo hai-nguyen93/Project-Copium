@@ -57,10 +57,11 @@ public class ActiveAbility
                         castTimer -= Time.deltaTime;
                         pCombat.castPanel.UpdateCastBar(1f - castTimer / abilityData.castTime);
                     }
-                    else // finish casting
+                    else // finish channeling, waiting to cast
                     {
                         state = AbilityState.readyToCast;
-                        Debug.Log("Ready to cast " + abilityData.abilityName);                       
+                        Debug.Log("Ready to cast " + abilityData.abilityName);
+                        pCombat.castPS.PlayReadyPS();
                     }
                 }
                 break;
@@ -72,17 +73,21 @@ public class ActiveAbility
         Debug.Log("Finish casting " + abilityData.abilityName);
         castTimer = 0f;
         abilityData.Activate(_user);
-        cdTimer = abilityData.cooldown;
-        state = AbilityState.cooldown;
-        pCombat.castPanel.Hide();
+        ResetCastAbility();
     }
 
     public void CancelCastAbility()
     {
         Debug.Log("Cancel casting " + abilityData.abilityName);
+        ResetCastAbility();
+    }
+
+    public void ResetCastAbility()
+    {
         cdTimer = abilityData.cooldown;
         state = AbilityState.cooldown;
         pCombat.castPanel.Hide();
+        pCombat.castPS.StopAllParticles();
     }
 
     public void Activate(GameObject user)
@@ -107,6 +112,7 @@ public class ActiveAbility
                 {
                     pCombat.castPanel.SetUp(abilityData.abilityName);
                     pCombat.castPanel.Show();
+                    pCombat.castPS.PlayChannelingPS(abilityData.castTime);
                 }
                 break;
         }
@@ -127,6 +133,7 @@ public class PlayerCombat : MonoBehaviour
     public List<ActiveAbility> equippedAbilities;
     public AbilityPanel abilityPanelUI;
     public CastPanel castPanel;
+    public AbilityCastingPS castPS;
 
     private bool skillKeyPressed = false;
     private Animator anim;
