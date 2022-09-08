@@ -175,8 +175,14 @@ public class PlayerCombat : MonoBehaviour
         var hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackLayer);
         foreach (var hit in hits)
         {
-            Debug.Log("hit " + hit.gameObject.name);
+            Debug.Log("Attack hit " + hit.gameObject.name);
         }
+    }
+
+    public void SpawnLightning(GameObject obj)
+    {
+        Vector3 pos = new Vector3(attackPoint.position.x + (pc.facingRight ? 0.5f : -0.5f), attackPoint.position.y + 3f, 0f);
+        GameObject go = Instantiate(obj, pos, Quaternion.identity);
     }
 
     public void RefreshAbilityIcons()

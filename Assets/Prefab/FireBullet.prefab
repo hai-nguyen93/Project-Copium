@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318273620474923352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DetectOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8767788970183182558}
   - component: {fileID: 5992780744599933942}
   - component: {fileID: 1737732665932717250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

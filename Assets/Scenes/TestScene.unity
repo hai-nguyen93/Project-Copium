@@ -5612,6 +5612,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba256209742039041966f56d375374bb, type: 2}
   - {fileID: 11400000, guid: 046b86b467a630b4887d98e9ad46ac54, type: 2}
   - {fileID: 11400000, guid: 7de7ffd09b65599468f4bc21aedfea9a, type: 2}
+  - {fileID: 11400000, guid: cc4fd57250f63744eaafc6695207a56b, type: 2}
   isDead: 0
   pc: {fileID: 0}
   hpPanel: {fileID: 447560689}
@@ -11637,7 +11638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475851336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.495663, y: 7.7001085, z: 0}
+  m_LocalPosition: {x: -2.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11825,6 +11826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
   damageValue: 1
+  playerSide: 0
 --- !u!61 &494723802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12271,6 +12273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 540847209}
   damageValue: 1
+  playerSide: 0
 --- !u!1 &544644716
 GameObject:
   m_ObjectHideFlags: 0
@@ -17603,6 +17606,7 @@ GameObject:
   - component: {fileID: 817375484}
   - component: {fileID: 817375483}
   - component: {fileID: 817375482}
+  - component: {fileID: 817375485}
   m_Layer: 7
   m_Name: EnemyDummy
   m_TagString: Untagged
@@ -17620,7 +17624,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -17696,13 +17700,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817375481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -84.79491, y: 8.170246, z: 0}
+  m_LocalPosition: {x: -13.4, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 4.94, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &817375485
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817375481}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &833203305
 GameObject:
   m_ObjectHideFlags: 0
@@ -17780,7 +17805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833203305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.87, y: 2.62, z: 0}
+  m_LocalPosition: {x: -8.87, y: 9.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22900,7 +22925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043934921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.62, y: 7.68, z: 0}
+  m_LocalPosition: {x: -23.01, y: 7.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23225,7 +23250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108237849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74, y: -1.19, z: 0}
+  m_LocalPosition: {x: -43.4, y: -1.19, z: 0}
   m_LocalScale: {x: 1, y: 4.94, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29250,6 +29275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
   damageValue: 1
+  playerSide: 0
 --- !u!61 &1719550237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44425,7 +44451,7 @@ PrefabInstance:
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[0].abilityData
       value: 
-      objectReference: {fileID: 11400000, guid: ba256209742039041966f56d375374bb, type: 2}
+      objectReference: {fileID: 11400000, guid: cc4fd57250f63744eaafc6695207a56b, type: 2}
     - target: {fileID: 3112573844224161486, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
       propertyPath: equippedAbilities.Array.data[1].abilityData
       value: 

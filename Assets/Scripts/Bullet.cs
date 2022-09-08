@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
     {
         if (isEnemy) // if bullet is from enemy
         {
-            if (collider.tag == "Player")
+            if (collider.CompareTag("Player"))
             {
                 //if (PlayerData.Instance.isDead) return;
 

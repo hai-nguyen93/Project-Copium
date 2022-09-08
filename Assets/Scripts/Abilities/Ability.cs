@@ -14,8 +14,16 @@ public class Ability : ScriptableObject
     public float castTime = 1f;
     public Sprite abilityIcon;
 
+    public bool selfAnimation = false;
+    public string animationName;
+
     public virtual void Activate(GameObject user)
     {
         Debug.Log(user.name + " Activates " + abilityName);
+
+        if (selfAnimation)
+        {
+            user.GetComponent<Animator>().Play(animationName);
+        }
     }
 }
