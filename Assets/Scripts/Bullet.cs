@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public Vector2 velocity = Vector2.zero;
     public float lifeSpan = 5f;
     public int power = 1;
-    public bool isEnemy = false;
+    [Tooltip("Is this from enemy (hit player)?")] public bool isEnemy = false;
 
     [Header("Bullet collision settings")]
     public Transform detectPointOrigin;
