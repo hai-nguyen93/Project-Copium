@@ -28,6 +28,7 @@ public class PlayerData : MonoBehaviour
 
     public CharacterStats stats;
     public List<Ability> abilities;
+    public List<ActiveAbility> equippedAbilities;
 
     public bool isDead = false;
     public PlayerController pc;
@@ -97,6 +98,21 @@ public class PlayerData : MonoBehaviour
     {
         if (stats.maxHp <= 0) stats.maxHp = 1;
         stats.atk = Mathf.Abs(stats.atk);
-    }
 
+        // Resize equipped abilities list if size != 4
+        if (equippedAbilities.Count < 4)
+        {
+            while (equippedAbilities.Count < 4)
+            {
+                equippedAbilities.Add(new ActiveAbility());
+            }
+        }
+        else if (equippedAbilities.Count > 4)
+        {
+            for (int i = equippedAbilities.Count - 1; i > 3; --i)
+            {
+                equippedAbilities.RemoveAt(i);
+            }
+        }
+    }
 }

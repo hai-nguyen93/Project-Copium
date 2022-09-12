@@ -8,7 +8,7 @@ public class DamageTriggerCollider : MonoBehaviour
     public int damageValue;
     public bool playerSide = false;
 
-    void Awake()
+    void Start()
     {
         if (trigger == null) trigger = GetComponent<Collider2D>();
         trigger.isTrigger = true;

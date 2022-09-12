@@ -75,7 +75,7 @@ public class Zombie : EnemyBase
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position, new Vector3(0, 0, 1), aggroRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, aggroRange);
     }
 }

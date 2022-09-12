@@ -148,6 +148,7 @@ public class PlayerCombat : MonoBehaviour
         isGuarding = false;
 
         castPanel.Hide();
+        equippedAbilities = PlayerData.Instance.equippedAbilities;
         foreach (var a in equippedAbilities)
         {
             a.SetCdTimer(0f);

@@ -67,6 +67,7 @@ public class Bomb : MonoBehaviour
     {
         if (isGrounded) return;
 
+
         var hit = Physics2D.Raycast(detectPointOrigin.position, Vector2.down, 0.05f, groundLayer);
         if (hit)
         {
@@ -139,7 +140,7 @@ public class Bomb : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(detectPointOrigin.position, new Vector3(0, 0, 1), radius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(detectPointOrigin.position, radius);
     }
 }

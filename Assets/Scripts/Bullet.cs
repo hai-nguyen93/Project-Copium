@@ -71,7 +71,7 @@ public class Bullet : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(detectPointOrigin.position, new Vector3(0, 0, 1), detectRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(detectPointOrigin.position, detectRange);
     }
 }
