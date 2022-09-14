@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    PlayerMovement pMovement;
     PlayerCombat pCombat;
     public UnityEngine.InputSystem.PlayerInput input;
 
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
+    public LayerMask wallLayer;
     public bool unlockDoubleJump = false;
     private bool  doubleJump = false;
 
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         pCombat = GetComponent<PlayerCombat>();
+        pMovement = GetComponent<PlayerMovement>();
         EnableInput();
     }
 
@@ -65,13 +68,12 @@ public class PlayerController : MonoBehaviour
         UpdateMovement();
     }
     
-    #region Movement
     void UpdateMovement()
     {
         if (isDashing) return;
 
         // check if grabbing wall
-        if (isOnWall && (moveInput.x * transform.localScale.x > 0.5f))
+        if (isOnWall && (moveInput.x * (facingRight? 1 : -1) > 0.5f))
         {
             rb.gravityScale = 0f;
             rb.velocity = Vector2.zero;
@@ -155,7 +157,8 @@ public class PlayerController : MonoBehaviour
 
     public void Flip()
     {
-        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        //transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        transform.Rotate(new Vector3(0, 180, 0));
         facingRight = !facingRight;
     }  
 
@@ -205,7 +208,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsOnWall()
     {
-        return !isGrounded && Physics2D.OverlapCircle(wallCheck.position, checkRadius, groundLayer);
+        return !isGrounded && Physics2D.OverlapCircle(wallCheck.position, checkRadius, wallLayer);
     }
 
     public bool canDoubleJump()
@@ -224,7 +227,8 @@ public class PlayerController : MonoBehaviour
             // wall jump if is on wall
             if (isOnWall)
             {
-                rb.velocity = new Vector2(moveSpeed * transform.localScale.x * -1, jumpPower);
+                float xDirection = facingRight ? 1 : -1;
+                rb.velocity = new Vector2(moveSpeed * xDirection * -1, jumpPower);
                 Flip();
                 doubleJump = true;
                 anim.Play("Jump");
@@ -259,7 +263,6 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
         }
     }
-    #endregion
 
     public void Die()
     {

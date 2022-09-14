@@ -67,8 +67,7 @@ public class Bomb : MonoBehaviour
     {
         if (isGrounded) return;
 
-
-        var hit = Physics2D.Raycast(detectPointOrigin.position, Vector2.down, 0.05f, groundLayer);
+        var hit = Physics2D.Raycast(detectPointOrigin.position, Vector2.down, 0.1f, groundLayer);
         if (hit)
         {
             ySpeed = 0f;
