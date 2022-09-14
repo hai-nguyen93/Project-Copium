@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90644439c7fd17945bb75aa459c1481d, type: 3}
-  m_Name: Door Key
+  m_Name: Gate Key
   m_EditorClassIdentifier: 
-  iName: Door Key
-  description: Key to open door
+  iName: Gate key
+  description: Key to open gate
   icon: {fileID: 21300000, guid: ec2bc2d3edab74443b6cb5f4d53889c8, type: 3}

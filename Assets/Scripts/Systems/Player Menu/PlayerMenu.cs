@@ -8,6 +8,7 @@ public class PlayerMenu : MonoBehaviour
     private GameController gc;
 
     public MenuStatusPanel statusPanel;
+    public MenuItemPanel itemPanel;
     public MenuAbilityPanel menuAbilityPanel;
 
     private void Start()
@@ -22,6 +23,12 @@ public class PlayerMenu : MonoBehaviour
         statusPanel.gameObject.SetActive(true);
     }
 
+    public void ShowItemPanel()
+    {
+        ClearAllPanels();
+        itemPanel.gameObject.SetActive(true);
+    }
+
     public void ShowAbilityPanel()
     {
         ClearAllPanels();
@@ -31,6 +38,7 @@ public class PlayerMenu : MonoBehaviour
     public void ClearAllPanels()
     {
         statusPanel.gameObject.SetActive(false);
+        itemPanel.gameObject.SetActive(false);
         menuAbilityPanel.gameObject.SetActive(false);
     }
 

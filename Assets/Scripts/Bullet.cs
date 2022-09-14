@@ -42,6 +42,8 @@ public class Bullet : MonoBehaviour
 
     public void HandleCollision(Collider2D collider)
     {
+        if (collider.isTrigger) return; // ignore trigger collider
+
         if (isEnemy) // if bullet is from enemy
         {
             if (collider.CompareTag("Player"))
@@ -49,13 +51,15 @@ public class Bullet : MonoBehaviour
                 //if (PlayerData.Instance.isDead) return;
 
                 Debug.Log("bullet hit player");
-                collider.GetComponent<PlayerController>().Stagger((int)velocity.x);
+                collider.GetComponent<PlayerController>().Damage(power, (int) Mathf.Sign(velocity.x));
                 Destroy(gameObject);
                 return;
             }
         }
         else // if bullet is from player
         {
+            if (collider.gameObject.CompareTag("Player")) return;
+
             if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
                 Debug.Log("Player bullet hit enemy");

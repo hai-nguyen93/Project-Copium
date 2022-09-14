@@ -64,11 +64,11 @@ public class Zombie : EnemyBase
             float xDifferenceToPlayer = player.transform.position.x - transform.position.x;
             if (xDifferenceToPlayer * xVel > 0)
             {
-                player.Stagger((int)xVel);
+                player.Damage(1, (int)Mathf.Sign(xVel));
             }
             else
             {
-                player.Stagger((int)-xVel);
+                player.Damage(1, (int)-Mathf.Sign(xVel));
             }
         }
     }

@@ -13,37 +13,11 @@ public class PlayerController : MonoBehaviour
     PlayerCombat pCombat;
     public UnityEngine.InputSystem.PlayerInput input;
 
-    [Header("Move Settings")]
-    public float moveSpeed = 2f;
-    [Tooltip("Force applied to self when staggered")] public float staggerForce = 2f;
-    public float defaultGravityScale = 1f;
-    public float fallModifier = 1.5f;
-    public bool facingRight = true;
+    public bool facingRight { get { return pMovement.facingRight; } }
     public bool canMove = true;
     public bool isGrounded = false;
     public bool isOnWall = false;
     private Vector2 moveInput;
-    private Vector2 moveDirection;
-
-    [Header("Dash/Backstep Settings")]
-    public ParticleSystem dashParticle;
-    public float backStepPower = 10f;
-    public float backStepTime = 0.15f;
-    public float dashPower = 20f;
-    public float dashTime = 0.15f;
-    public float dashCooldown = 1f;
-    public bool isDashing = false;
-    public bool canDash = true;
-
-    [Header("Jump/Wall Settings")]
-    public float jumpPower = 5f;
-    public Transform wallCheck;
-    public Transform groundCheck;
-    public float checkRadius = 0.2f;
-    public LayerMask groundLayer;
-    public LayerMask wallLayer;
-    public bool unlockDoubleJump = false;
-    private bool  doubleJump = false;
 
     void Start()
     {
@@ -57,124 +31,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        isGrounded = IsGrounded();
-        isOnWall = IsOnWall();
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetBool("isWallSliding", isOnWall);
+        isGrounded = pMovement.isGrounded;
+        isOnWall = pMovement.isOnWall;
     }
-
-    void FixedUpdate()
-    {
-        UpdateMovement();
-    }
-    
-    void UpdateMovement()
-    {
-        if (isDashing) return;
-
-        // check if grabbing wall
-        if (isOnWall && (moveInput.x * (facingRight? 1 : -1) > 0.5f))
-        {
-            rb.gravityScale = 0f;
-            rb.velocity = Vector2.zero;
-            anim.Play("WallSlide");
-            return;
-        }
-
-        // gravity update       
-        float yVel = rb.velocity.y;
-        if (isGrounded)
-        {
-            rb.gravityScale = 0f;
-            //yVel = 0f;
-        }
-        else
-        {
-            rb.gravityScale = (rb.velocity.y > 0f) ? defaultGravityScale : defaultGravityScale * fallModifier;
-        }
-
-        // slope velocity in y-axis
-        /*if (isGrounded)
-        {
-            if (Mathf.Abs(moveInput.x) > 0.1f)
-            {
-                yVel = moveDirection.y * moveSpeed;
-            }
-        }*/
-
-        if (!canMove) return;
-        //yVel = rb.velocity.y;
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, yVel);
-
-        // update animation
-        anim.SetFloat("speedX", Mathf.Abs(moveInput.x));
-        anim.SetFloat("speedY", rb.velocity.y);
-        //anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-        if (moveInput.x > 0.5f && !facingRight) Flip();
-        else if (moveInput.x < -0.5f && facingRight) Flip();
-    }
-
-    public IEnumerator BackStep()
-    {
-        // begin back step
-        canDash = false;
-        isDashing = true;
-        rb.velocity = new Vector2(-backStepPower * transform.localScale.x, 0f);
-        yield return new WaitForSeconds(backStepTime);
-
-        // end back step
-        isDashing = false;
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
-    }
-
-    public IEnumerator Dash()
-    {
-        // begin Dash
-        canDash = false;
-        isDashing = true;
-        float originalGravityScale = rb.gravityScale;
-        rb.gravityScale = 0f;
-        rb.velocity = new Vector2(moveInput.x * dashPower, 0f);        
-        dashParticle.Play();
-        yield return new WaitForSeconds(dashTime);
-
-
-        // end Dash, wait for cooldown
-        dashParticle.Stop();
-        isDashing = false;
-        rb.gravityScale = originalGravityScale;
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
-    }
-
-    public IEnumerator DisableMovement(float time)
-    {
-        canMove = false;
-        yield return new WaitForSeconds(time);
-        canMove = true;
-    }
-
-    public void Flip()
-    {
-        //transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-        transform.Rotate(new Vector3(0, 180, 0));
-        facingRight = !facingRight;
-    }  
 
     public void OnDash()
     {
-        if (!canDash || isDashing || pCombat.isGuarding) return;
+        if (pCombat.isGuarding) return;
 
-        // dash if on ground && can dash
-        if (moveInput.magnitude < 0.1f)
-        {
-            StartCoroutine(BackStep());
-        }
-        else
-        {
-            StartCoroutine(Dash());
-        }
+        pMovement.Dash(moveInput.x);
     }
     
     public void OnMove(InputValue value)
@@ -182,38 +47,7 @@ public class PlayerController : MonoBehaviour
         if (pCombat.isGuarding) return;
 
         moveInput = new Vector2(value.Get<Vector2>().x, 0f);
-    }
-
-    public bool IsGrounded()
-    {
-        moveDirection.Set(moveInput.x, 0f);
-        return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-    }
-
-    public bool IsGroundedSlope()
-    {       
-        Debug.DrawRay(groundCheck.position, Vector2.down * checkRadius, Color.green);
-        var hit =  Physics2D.Raycast(groundCheck.position, Vector2.down, checkRadius, groundLayer);
-        if (hit)
-        {
-            Vector2 groundNormalPerp = Vector2.Perpendicular(hit.normal);
-            moveDirection = new Vector2(-moveInput.x * groundNormalPerp.x, -moveInput.x * groundNormalPerp.y).normalized;
-            Debug.DrawRay(transform.position, groundNormalPerp.normalized, Color.green);
-            return true;
-        }
-
-        moveDirection = new Vector2(moveInput.x, 0f);
-        return false;
-    }
-
-    public bool IsOnWall()
-    {
-        return !isGrounded && Physics2D.OverlapCircle(wallCheck.position, checkRadius, wallLayer);
-    }
-
-    public bool canDoubleJump()
-    {
-        return unlockDoubleJump;
+        pMovement.Move(moveInput);
     }
 
     public void OnJump(InputValue value)
@@ -224,40 +58,9 @@ public class PlayerController : MonoBehaviour
         // if pressed
         if (input > 0.5f)
         {
-            // wall jump if is on wall
-            if (isOnWall)
-            {
-                float xDirection = facingRight ? 1 : -1;
-                rb.velocity = new Vector2(moveSpeed * xDirection * -1, jumpPower);
-                Flip();
-                doubleJump = true;
-                anim.Play("Jump");
-                anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-                StopCoroutine(DisableMovement(0));
-                StartCoroutine(DisableMovement(0.15f));
-
-                return;
-            }
-
-            // else normal jump
-            if (isGrounded)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                anim.Play("Jump");
-                anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-                doubleJump = true;
-            }
-            else if (canDoubleJump() && doubleJump)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                anim.Play("Jump");
-                anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
-                doubleJump = false;
-            }
+            pMovement.Jump();
         }
-
-        // if released
-        else
+        else  // if released
         {
             if (rb.velocity.y > 0f && !isGrounded)
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
@@ -270,11 +73,16 @@ public class PlayerController : MonoBehaviour
         DisableInput();
     }
 
-    public void Damage(int dmg)
+    // Stagger direction :  default = 0 = no stagger
+    //                      > 0 = push right
+    //                      < 0 = push left                   
+    public void Damage(int dmg , int staggerDirection = 0)
     {
         if (PlayerData.Instance.isDead) return;
 
         PlayerData.Instance.ReceiveDamage(dmg);
+        if (staggerDirection > 0) pMovement.Stagger(1);
+        if (staggerDirection < 0) pMovement.Stagger(-1);
     }
 
     public void DisableInput()
@@ -286,26 +94,4 @@ public class PlayerController : MonoBehaviour
     {
         input.currentActionMap.Enable();
     }
-
-    // direction > 0: push player right
-    //           <= 0: push player left
-    public void Stagger(int direction)
-    {
-        if (PlayerData.Instance.isDead) return;
-
-        Debug.Log("stagger push direction" + direction);
-        rb.velocity = new Vector2(0f, rb.velocity.y);
-        rb.AddForce(new Vector2((direction > 0) ? 1 : -1, 0f) * staggerForce, ForceMode2D.Impulse);
-        StopCoroutine(DisableMovement(0));
-        StartCoroutine(DisableMovement(1f));
-    }
-
-    #region Draw gizmos
-    public void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(wallCheck.position, new Vector3(0, 0, 1), checkRadius);
-        Handles.DrawWireDisc(groundCheck.position, new Vector3(0, 0, 1), checkRadius);
-    }
-    #endregion
 }

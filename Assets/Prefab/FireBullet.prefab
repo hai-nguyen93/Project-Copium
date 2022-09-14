@@ -137,4 +137,4 @@ MonoBehaviour:
   detectRange: 0.5
   layerToDetect:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 193

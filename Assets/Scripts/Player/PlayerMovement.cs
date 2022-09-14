@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class PlayerMovement : MonoBehaviour
     private PlayerController pc;
 
     [Header("Move Settings")]
+    [Tooltip("Force applied to self when staggered")] public float staggerForce = 2f;
     public bool canMove = true;
     public bool facingRight;
     public float moveSpeed = 2f;
-    public float defaultGravityScale = 1f;
-    public float fallModifier = 1.5f;
+    public float defaultGravityScale = 1.75f;
+    public float fallModifier = 3.5f;
     private Vector2 moveDirection;
-    private float xVel, yVel;
 
     [Header("Jump/Wall Settings")]
     public bool isGrounded = false;
@@ -100,6 +101,8 @@ public class PlayerMovement : MonoBehaviour
         // update animation
         anim.SetFloat("speedX", Mathf.Abs(moveDirection.x));
         anim.SetFloat("speedY", rb.velocity.y);
+        if (facingRight && moveDirection.x < -0.5f) Flip();
+        if (!facingRight && moveDirection.x > 0.5f) Flip();
         //anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
     }
 
@@ -107,8 +110,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = (Mathf.Abs(input.x) > 0.5f) ? Mathf.Sign(input.x) : 0f;
         moveDirection = new Vector2(x , 0f);
-        if (facingRight && moveDirection.x < -0.5f) Flip();
-        if (!facingRight && moveDirection.x > 0.5f) Flip();
     }
 
     public void Jump()
@@ -145,11 +146,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    public void Dash()
+    public void Dash(float xInput)
     {
-        if (!canDash || isDashing ) return;
-        StartCoroutine(DashCoroutine());
+        if (!canDash || isDashing) return;
+
+        if (Mathf.Abs(xInput) < 0.1f) // back step when dash with no movement
+        {
+            StartCoroutine(BackStepCoroutine());
+        }
+        else
+        {
+            StartCoroutine(DashCoroutine());
+        }
     }
     public IEnumerator DashCoroutine()
     {
@@ -161,7 +169,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * dashPower, 0f);
         dashParticle.Play();
         yield return new WaitForSeconds(dashTime);
-
 
         // end Dash, wait for cooldown
         dashParticle.Stop();
@@ -180,13 +187,24 @@ public class PlayerMovement : MonoBehaviour
         // begin back step
         canDash = false;
         isDashing = true;
-        rb.velocity = new Vector2(-backStepPower * transform.localScale.x, 0f);
+        rb.velocity = new Vector2(-backStepPower * (facingRight ? 1 : -1), 0f);
         yield return new WaitForSeconds(backStepTime);
 
         // end back step
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void Stagger(int direction)
+    {
+        if (PlayerData.Instance.isDead) return;
+
+        Debug.Log("stagger push direction" + direction);
+        rb.velocity = new Vector2(0f, rb.velocity.y);
+        rb.AddForce(new Vector2((direction > 0) ? 1 : -1, 0f) * staggerForce, ForceMode2D.Impulse);
+        StopCoroutine(DisableMovement(0));
+        StartCoroutine(DisableMovement(1f));
     }
 
     public IEnumerator DisableMovement(float time)
@@ -217,4 +235,13 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         facingRight = !facingRight;
     }
+
+    #region Draw gizmos
+    public void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(wallCheck.position, new Vector3(0, 0, 1), checkRadius);
+        Handles.DrawWireDisc(groundCheck.position, new Vector3(0, 0, 1), checkRadius);
+    }
+    #endregion
 }

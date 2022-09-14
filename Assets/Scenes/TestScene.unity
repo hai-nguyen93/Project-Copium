@@ -6164,6 +6164,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4094113870239902, guid: a73dcb91236780c42a2b0e3c14a5128f, type: 3}
   m_PrefabInstance: {fileID: 331914467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &386200952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3112573844488612123, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
+  m_PrefabInstance: {fileID: 3112573844224161484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &401063029
 GameObject:
   m_ObjectHideFlags: 0
@@ -17421,6 +17426,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &635352954 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3112573844945084408, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
+  m_PrefabInstance: {fileID: 3112573844224161484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &708069158
 GameObject:
   m_ObjectHideFlags: 0
@@ -23183,6 +23193,11 @@ MonoBehaviour:
   layerToDetect:
     serializedVersion: 2
     m_Bits: 128
+--- !u!4 &1082951056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3112573845635915356, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
+  m_PrefabInstance: {fileID: 3112573844224161484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1088017028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24060,6 +24075,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311754589}
   m_CullTransparentMesh: 1
+--- !u!198 &1348556646 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3112573844092973759, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
+  m_PrefabInstance: {fileID: 3112573844224161484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1425959683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34883,6 +34903,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3112573844488612119, guid: de7d27268d1d75d45b2541283007b3b4, type: 3}
   m_PrefabInstance: {fileID: 3112573844224161484}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992858302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386200952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b545d2c8e519e42890f4e75418e893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staggerForce: 2
+  canMove: 1
+  facingRight: 1
+  moveSpeed: 5
+  defaultGravityScale: 1.75
+  fallModifier: 3.5
+  isGrounded: 0
+  isOnWall: 0
+  jumpPower: 10
+  wallCheck: {fileID: 635352954}
+  groundCheck: {fileID: 1082951056}
+  checkRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  unlockDoubleJump: 1
+  dashParticle: {fileID: 1348556646}
+  backStepPower: 10
+  backStepTime: 0.15
+  dashPower: 20
+  dashTime: 0.15
+  dashCooldown: 1
+  isDashing: 0
+  canDash: 1
 --- !u!1001 &1996038403
 PrefabInstance:
   m_ObjectHideFlags: 0
