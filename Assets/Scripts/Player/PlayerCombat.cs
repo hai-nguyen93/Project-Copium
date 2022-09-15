@@ -127,6 +127,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackCooldown = 1f;
     public bool canAttack = true;
     public bool isGuarding = false;
+    public bool isChargingAbility = false;
     public SpriteRenderer attackHitBoxVisual;
 
     [Header("Abilities")]
@@ -146,6 +147,7 @@ public class PlayerCombat : MonoBehaviour
         pc = GetComponent<PlayerController>();
         attackHitBoxVisual.enabled = false;
         isGuarding = false;
+        isChargingAbility = false;
 
         castPanel.Hide();
         equippedAbilities = PlayerData.Instance.equippedAbilities;
@@ -199,7 +201,7 @@ public class PlayerCombat : MonoBehaviour
         if (input > 0.5f)
         {
             if (canAttack)
-            {
+            {               
                 anim.Play("Attack");
                 StartCoroutine(CooldownAttack());
             }
@@ -214,6 +216,7 @@ public class PlayerCombat : MonoBehaviour
         if (input > 0.5f)
         {
             isGuarding = true;
+            anim.Play("Guard");
         }
         else
         {
@@ -282,6 +285,16 @@ public class PlayerCombat : MonoBehaviour
         {
             if (ability.state == AbilityState.ready)
             {
+                if (ability.abilityData.castType == CastType.channeling)
+                {
+                    if (!pc.isGrounded)
+                    {
+                        Debug.Log("Cannot use channeling ability when in air.");
+                        return;
+                    }
+                    isChargingAbility = true;
+                }
+
                 ability.Activate(gameObject);
             }
             else
@@ -293,6 +306,8 @@ public class PlayerCombat : MonoBehaviour
         {
             if (ability.abilityData.castType == CastType.channeling)
             {
+                isChargingAbility = false;
+
                 if (ability.state == AbilityState.readyToCast)
                 {
                     ability.FinishCastAbility();
