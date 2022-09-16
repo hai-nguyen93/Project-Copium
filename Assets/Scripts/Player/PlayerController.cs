@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
-    public PlayerCombat pCombat;
+    [HideInInspector] public PlayerCombat pCombat;
     public UnityEngine.InputSystem.PlayerInput input;
 
     [Header("Move Settings")]
@@ -124,13 +124,15 @@ public class PlayerController : MonoBehaviour
 
         // Horizontal movement
         float xVel = moveDirection.x * moveSpeed;
-        if (pCombat.isChargingAbility || pCombat.isGuarding) xVel = 0f;
+        if (pCombat.isAttacking) xVel = 0f;
 
         rb.velocity = new Vector2(xVel, yVel);
 
         // update animation
         anim.SetFloat("speedX", Mathf.Abs(xVel));
         anim.SetFloat("speedY", rb.velocity.y);
+
+        if (pCombat.isAttacking) return; 
         if (facingRight && moveDirection.x < -0.5f) Flip();
         if (!facingRight && moveDirection.x > 0.5f) Flip();
         //anim.SetFloat("speedY", Mathf.Clamp(Mathf.Abs(rb.velocity.y), 0f, 10f));
@@ -277,8 +279,7 @@ public class PlayerController : MonoBehaviour
     #region Player Input
     public void OnDash()
     {
-        if (pCombat.isGuarding) return;
-
+        if (pCombat.isAttacking) return;
         Dash(moveInput.x);
     }
     
@@ -290,7 +291,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        if (pCombat.isGuarding || pCombat.isChargingAbility) return;
+        if (pCombat.isAttacking) return;
 
         float input = value.Get<float>();
         // if pressed

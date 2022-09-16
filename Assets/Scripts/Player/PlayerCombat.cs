@@ -126,8 +126,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask attackLayer;
     public float attackCooldown = 1f;
     public bool canAttack = true;
-    public bool isGuarding = false;
-    public bool isChargingAbility = false;
+    public bool isAttacking = false;
     public SpriteRenderer attackHitBoxVisual;
 
     [Header("Abilities")]
@@ -146,8 +145,7 @@ public class PlayerCombat : MonoBehaviour
         anim = GetComponent<Animator>();
         pc = GetComponent<PlayerController>();
         attackHitBoxVisual.enabled = false;
-        isGuarding = false;
-        isChargingAbility = false;
+        isAttacking = false;
 
         castPanel.Hide();
         equippedAbilities = PlayerData.Instance.equippedAbilities;
@@ -163,12 +161,6 @@ public class PlayerCombat : MonoBehaviour
         foreach (var a in equippedAbilities)
         {
             a.UpdateAbility();
-        }
-
-        if (!pc.isGrounded && isGuarding) // break guard if player is NOT grounded
-        {
-            isGuarding = false;
-            anim.SetBool("isGuarding", false);
         }
     }
 
@@ -206,24 +198,6 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(CooldownAttack());
             }
         }
-    }
-
-    public void OnGuard(InputValue value)
-    {
-        if (!pc.isGrounded || skillKeyPressed) return;
-
-        float input = value.Get<float>();
-        if (input > 0.5f)
-        {
-            isGuarding = true;
-            anim.Play("Guard");
-        }
-        else
-        {
-            isGuarding = false;
-        }
-
-        anim.SetBool("isGuarding", isGuarding);
     }
 
     public void OnAbilityTrigger(InputValue value)
@@ -285,6 +259,8 @@ public class PlayerCombat : MonoBehaviour
         {
             if (ability.state == AbilityState.ready)
             {
+                if (isAttacking) return;
+
                 if (ability.abilityData.castType == CastType.channeling)
                 {
                     if (!pc.isGrounded)
@@ -292,7 +268,7 @@ public class PlayerCombat : MonoBehaviour
                         Debug.Log("Cannot use channeling ability when in air.");
                         return;
                     }
-                    isChargingAbility = true;
+                    isAttacking = true;
                 }
 
                 ability.Activate(gameObject);
@@ -306,10 +282,9 @@ public class PlayerCombat : MonoBehaviour
         {
             if (ability.abilityData.castType == CastType.channeling)
             {
-                isChargingAbility = false;
-
                 if (ability.state == AbilityState.readyToCast)
                 {
+                    isAttacking = false;
                     ability.FinishCastAbility();
                     return;
                 }
@@ -317,6 +292,7 @@ public class PlayerCombat : MonoBehaviour
                 if (ability.state == AbilityState.active)
                 {
                     // Cancel/Interrupt cast
+                    isAttacking = false;
                     ability.CancelCastAbility();
                     return;
                 }
