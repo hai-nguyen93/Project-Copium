@@ -258,8 +258,8 @@ TextureImporter:
         y: 1508
         width: 38
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,8 +279,8 @@ TextureImporter:
         y: 1508
         width: 38
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -300,8 +300,8 @@ TextureImporter:
         y: 1508
         width: 38
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -321,8 +321,8 @@ TextureImporter:
         y: 1508
         width: 38
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -384,8 +384,8 @@ TextureImporter:
         y: 1452
         width: 46
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -405,8 +405,8 @@ TextureImporter:
         y: 1452
         width: 42
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -423,11 +423,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 266
-        y: 1452
+        y: 1453
         width: 40
         height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -447,8 +447,8 @@ TextureImporter:
         y: 1452
         width: 42
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -468,8 +468,8 @@ TextureImporter:
         y: 1452
         width: 41
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -489,8 +489,8 @@ TextureImporter:
         y: 1452
         width: 42
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -510,8 +510,8 @@ TextureImporter:
         y: 1452
         width: 41
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -531,8 +531,8 @@ TextureImporter:
         y: 1452
         width: 41
         height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -552,8 +552,8 @@ TextureImporter:
         y: 1452
         width: 47
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -573,8 +573,8 @@ TextureImporter:
         y: 1452
         width: 47
         height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -594,8 +594,8 @@ TextureImporter:
         y: 1452
         width: 46
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -825,8 +825,8 @@ TextureImporter:
         y: 1319
         width: 40
         height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -846,8 +846,8 @@ TextureImporter:
         y: 1319
         width: 38
         height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -867,8 +867,8 @@ TextureImporter:
         y: 1319
         width: 37
         height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -888,8 +888,8 @@ TextureImporter:
         y: 1319
         width: 34
         height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -909,8 +909,8 @@ TextureImporter:
         y: 1319
         width: 39
         height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -930,8 +930,8 @@ TextureImporter:
         y: 1319
         width: 36
         height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -951,8 +951,8 @@ TextureImporter:
         y: 1319
         width: 34
         height: 67
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -972,8 +972,8 @@ TextureImporter:
         y: 1319
         width: 34
         height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -993,8 +993,8 @@ TextureImporter:
         y: 1319
         width: 38
         height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1200,11 +1200,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 331
-        y: 1191
+        y: 1190
         width: 42
         height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1224,8 +1224,8 @@ TextureImporter:
         y: 1190
         width: 42
         height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1242,11 +1242,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 425
-        y: 1191
+        y: 1190
         width: 50
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1263,11 +1263,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 1189
+        y: 1190
         width: 50
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1662,7 +1662,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 296
-        y: 973
+        y: 974
         width: 26
         height: 53
       alignment: 0
@@ -1812,8 +1812,8 @@ TextureImporter:
         y: 895
         width: 39
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1833,8 +1833,8 @@ TextureImporter:
         y: 895
         width: 37
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1854,8 +1854,8 @@ TextureImporter:
         y: 895
         width: 41
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1875,8 +1875,8 @@ TextureImporter:
         y: 895
         width: 52
         height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1896,8 +1896,8 @@ TextureImporter:
         y: 895
         width: 49
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.58, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1917,8 +1917,8 @@ TextureImporter:
         y: 895
         width: 62
         height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.33, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1938,8 +1938,8 @@ TextureImporter:
         y: 895
         width: 80
         height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1959,8 +1959,8 @@ TextureImporter:
         y: 842
         width: 80
         height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1980,8 +1980,8 @@ TextureImporter:
         y: 842
         width: 80
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2001,8 +2001,8 @@ TextureImporter:
         y: 842
         width: 76
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2022,8 +2022,8 @@ TextureImporter:
         y: 842
         width: 59
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.38, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2039,12 +2039,12 @@ TextureImporter:
       name: slash_12
       rect:
         serializedVersion: 2
-        x: 535
+        x: 546
         y: 842
-        width: 56
+        width: 45
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2225,15 +2225,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_101
+      name: jumpSlash_1
       rect:
         serializedVersion: 2
         x: 253
         y: 705
         width: 36
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2246,15 +2246,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_102
+      name: jumpSlash_2
       rect:
         serializedVersion: 2
         x: 294
         y: 705
         width: 32
         height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2267,15 +2267,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_103
+      name: jumpSlash_3
       rect:
         serializedVersion: 2
         x: 331
         y: 705
         width: 34
         height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2288,15 +2288,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_104
+      name: jumpSlash_4
       rect:
         serializedVersion: 2
         x: 370
         y: 705
         width: 45
         height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.62222224, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2309,15 +2309,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_105
+      name: jumpSlash_5
       rect:
         serializedVersion: 2
         x: 420
         y: 705
         width: 44
         height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.6818182, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2330,15 +2330,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_106
+      name: jumpSlash_6
       rect:
         serializedVersion: 2
         x: 469
         y: 705
         width: 63
         height: 73
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3015873, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2351,15 +2351,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_107
+      name: jumpSlash_7
       rect:
         serializedVersion: 2
         x: 537
         y: 705
         width: 72
         height: 61
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.19444445, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2372,15 +2372,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_108
+      name: jumpSlash_8
       rect:
         serializedVersion: 2
         x: 240
         y: 641
         width: 72
         height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.19444445, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2393,15 +2393,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_109
+      name: jumpSlash_9
       rect:
         serializedVersion: 2
         x: 317
         y: 641
         width: 72
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.19444445, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2414,15 +2414,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_110
+      name: jumpSlash_10
       rect:
         serializedVersion: 2
         x: 394
         y: 641
         width: 68
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.22058824, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2435,15 +2435,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_111
+      name: jumpSlash_11
       rect:
         serializedVersion: 2
         x: 467
         y: 641
         width: 51
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.29411766, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2456,15 +2456,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_112
+      name: jumpSlash_12
       rect:
         serializedVersion: 2
-        x: 523
+        x: 534
         y: 641
-        width: 48
+        width: 37
         height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4054054, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2841,8 +2841,8 @@ TextureImporter:
         y: 441
         width: 35
         height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4339,8 +4339,8 @@ TextureImporter:
       zero-megaman-x6-sprite_199: -1654650762
       zero-megaman-x6-sprite_79: -873620993
       walk_10: 1436532261
+      jumpSlash_1: 1176388722
       zero-megaman-x6-sprite_178: -173492698
-      zero-megaman-x6-sprite_103: 1131409788
       zero-megaman-x6-sprite_121: -2029102027
       zero-megaman-x6-sprite_137: 797184403
       jump_5: -1738460188
@@ -4350,12 +4350,10 @@ TextureImporter:
       zero-megaman-x6-sprite_45: -1790256785
       fall_1: -1459727060
       zero-megaman-x6-sprite_97: -1359495223
-      zero-megaman-x6-sprite_111: 1906359674
       zero-megaman-x6-sprite_120: 1085173127
       zero-megaman-x6-sprite_77: 2069577785
       zero-megaman-x6-sprite_141: -1171572097
       zero-megaman-x6-sprite_142: 631496659
-      zero-megaman-x6-sprite_106: 1604534698
       zero-megaman-x6-sprite_117: 1336627925
       slash_4: 1837697912
       zero-megaman-x6-sprite_61: -1801218726
@@ -4363,15 +4361,14 @@ TextureImporter:
       jump_3: -22251341
       walk_2: -116545675
       zero-megaman-x6-sprite_78: 184689482
-      zero-megaman-x6-sprite_109: -164901942
       zero-megaman-x6-sprite_185: -507538835
       slash_5: 507855582
       zero-megaman-x6-sprite_93: -1603881742
       zero-megaman-x6-sprite_44: -1204237774
       jump_2: 1938501418
       zero-megaman-x6-sprite_94: -1935715167
+      jumpSlash_12: -1479209025
       zero-megaman-x6-sprite_3: -415690113
-      zero-megaman-x6-sprite_110: -437744720
       walk_6: 2000763315
       zero-megaman-x6-sprite_31: -877261230
       slash_1: -1933416215
@@ -4380,8 +4377,8 @@ TextureImporter:
       zero-megaman-x6-sprite_193: 1647163839
       zero-megaman-x6-sprite_119: 248490920
       dash_2: 658076634
-      zero-megaman-x6-sprite_129: -265014490
       zero-megaman-x6-sprite_162: 1127898390
+      zero-megaman-x6-sprite_129: -265014490
       dash_3: -2143719124
       zero-megaman-x6-sprite_75: 33560203
       zero-megaman-x6-sprite_49: 686503808
@@ -4396,15 +4393,14 @@ TextureImporter:
       zero-megaman-x6-sprite_156: -798038834
       zero-megaman-x6-sprite_11: 381746199
       idle_1: 209077590
-      zero-megaman-x6-sprite_112: -1479209025
       zero-megaman-x6-sprite_196: -999233671
       fall_2: 970484559
+      jumpSlash_2: 1764854556
       zero-megaman-x6-sprite_169: -330401249
       zero-megaman-x6-sprite_181: -1204600635
       zero-megaman-x6-sprite_48: 597718547
       zero-megaman-x6-sprite_12: 318659676
       zero-megaman-x6-sprite_157: 1176638558
-      zero-megaman-x6-sprite_101: 1176388722
       zero-megaman-x6-sprite_60: 1678752062
       slash_7: 1386777066
       zero-megaman-x6-sprite_58: 261527359
@@ -4419,12 +4415,15 @@ TextureImporter:
       zero-megaman-x6-sprite_95: -892494627
       zero-megaman-x6-sprite_80: -1314307722
       zero-megaman-x6-sprite_140: -925105050
+      jumpSlash_5: -1317593039
       zero-megaman-x6-sprite_71: -534281460
       slash_6: 1084304919
       zero-megaman-x6-sprite_2: 1550472091
       zero-megaman-x6-sprite_50: -202086619
+      jumpSlash_3: 1131409788
       zero-megaman-x6-sprite_195: -156060797
       zero-megaman-x6-sprite_194: -1950579246
+      jumpSlash_4: 1379723698
       slash_11: 233890455
       zero-megaman-x6-sprite_168: 321494057
       zero-megaman-x6-sprite_128: 1146560321
@@ -4433,9 +4432,10 @@ TextureImporter:
       zero-megaman-x6-sprite_139: 2118104099
       zero-megaman-x6-sprite_98: 1792346693
       zero-megaman-x6-sprite_176: -765030310
-      land_1: -655157828
+      jumpSlash_11: 1906359674
       zero-megaman-x6-sprite_125: -1767836801
       zero-megaman-x6-sprite_46: -1689813898
+      land_1: -655157828
       zero-megaman-x6-sprite_179: 1290426221
       zero-megaman-x6-sprite_6: 1717082060
       zero-megaman-x6-sprite_159: -590033149
@@ -4444,10 +4444,8 @@ TextureImporter:
       zero-megaman-x6-sprite_166: 73364506
       zero-megaman-x6-sprite_134: -1380639196
       zero-megaman-x6-sprite_76: -866517169
-      zero-megaman-x6-sprite_108: 72194281
-      zero-megaman-x6-sprite_28: -1043602824
       zero-megaman-x6-sprite_147: 558440645
-      zero-megaman-x6-sprite_102: 1764854556
+      zero-megaman-x6-sprite_28: -1043602824
       zero-megaman-x6-sprite_184: 885559532
       zero-megaman-x6-sprite_144: 1682512093
       zero-megaman-x6-sprite_116: -1302552761
@@ -4455,25 +4453,26 @@ TextureImporter:
       zero-megaman-x6-sprite_118: 1507598336
       slash_9: 1952851642
       zero-megaman-x6-sprite_66: 1381188430
+      jumpSlash_9: -164901942
       zero-megaman-x6-sprite_114: -1611037097
       zero-megaman-x6-sprite_154: 252423635
       walk_3: -632783038
       zero-megaman-x6-sprite_192: 1614526845
       zero-megaman-x6-sprite_29: -1292743739
-      zero-megaman-x6-sprite_105: -1317593039
       walk_5: -1541540563
       zero-megaman-x6-sprite_167: -1412673542
       zero-megaman-x6-sprite_145: -423544414
       zero-megaman-x6-sprite_165: 1705136865
       zero-megaman-x6-sprite_0: 1950592249
-      zero-megaman-x6-sprite_186: 1107886191
       zero-megaman-x6-sprite_191: 1941624195
+      jumpSlash_10: -437744720
+      zero-megaman-x6-sprite_186: 1107886191
       zero-megaman-x6-sprite_24: 1428966622
       zero-megaman-x6-sprite_124: -1018657581
       walk_1: 218729839
       zero-megaman-x6-sprite_180: 654425605
+      jumpSlash_8: 72194281
       zero-megaman-x6-sprite_175: -1189285119
-      zero-megaman-x6-sprite_107: 219231508
       jump_1: -305251149
       zero-megaman-x6-sprite_51: 1243915540
       zero-megaman-x6-sprite_187: -1200330174
@@ -4521,8 +4520,8 @@ TextureImporter:
       zero-megaman-x6-sprite_100: 1483306916
       zero-megaman-x6-sprite_126: -1903025817
       zero-megaman-x6-sprite_122: -969590325
-      zero-megaman-x6-sprite_104: 1379723698
       zero-megaman-x6-sprite_164: -1300435930
+      jumpSlash_6: 1604534698
       zero-megaman-x6-sprite_174: 415082940
       zero-megaman-x6-sprite_182: -238439532
       zero-megaman-x6-sprite_47: -407384252
@@ -4536,6 +4535,7 @@ TextureImporter:
       walk_4: -96112713
       zero-megaman-x6-sprite_149: -1869118218
       walk_8: -1539129291
+      jumpSlash_7: 219231508
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
