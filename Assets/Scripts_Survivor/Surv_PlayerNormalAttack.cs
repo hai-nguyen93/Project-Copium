@@ -2,39 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Surv_PlayerNormalAttack : MonoBehaviour
+public class Surv_PlayerNormalAttack : Surv_PlayerAttack
 {
-    private Surv_PlayerController player;
-
-    public float attackCooldown = 1f;
-    public float attackDuration = 0.25f;
-    private float attackTimer;
-    public int damage = 1;
     public Surv_PlayerAttackHitBox hitBox;
+    public float attackDuration = 0.2f;
 
-    private void Start()
+    protected override void Start()
     {
-        FindPlayer();
-        attackTimer = attackCooldown;
+        base.Start();
         hitBox.gameObject.SetActive(false);   
     }
 
     private void Update()
     {
-        if (player.isDead) return;
-
-        if (attackTimer <= 0f )
-        {
-            if (!hitBox.gameObject.activeSelf) Attack();
-        }
-        else
-        {
-            attackTimer -= Time.deltaTime;
-        }
+        UpdateAttack();
     }
 
-    public void Attack()
+    public override void UpdateAttack()
     {
+        base.UpdateAttack();
+    }
+
+    public override void Attack()
+    {
+        if (hitBox.gameObject.activeSelf) return; // skip if attack is still in progress
+
         StopCoroutine(AttackCoroutine());
         StartCoroutine(AttackCoroutine());
     }
@@ -46,10 +38,5 @@ public class Surv_PlayerNormalAttack : MonoBehaviour
         hitBox.gameObject.SetActive(false);
 
         attackTimer = attackCooldown;
-    }
-
-    public void FindPlayer()
-    {
-        player = GetComponentInParent<Surv_PlayerController>();
     }
 }

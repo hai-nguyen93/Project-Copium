@@ -8,11 +8,12 @@ public class Surv_EnemySpawner : MonoBehaviour
     public GameObject[] enemyPrefabs;
 
     [Space]
-    [Tooltip("how many enemies spawned per second")] public float spawnRate = 1f;
+    public float spawnCooldown = 2f;
     private float spawnTimer;
 
     [Space]
-    public BoxCollider stageBounds;
+    public BoxCollider outerBounds;
+    public BoxCollider innerBounds;
     private float minX, maxX;
     private float minZ, maxZ;
 
@@ -23,13 +24,13 @@ public class Surv_EnemySpawner : MonoBehaviour
             player = FindObjectOfType<Surv_PlayerController>();
         }
 
-        minX = stageBounds.bounds.center.x - stageBounds.bounds.extents.x;
-        maxX = stageBounds.bounds.center.x + stageBounds.bounds.extents.x;
-        minZ = stageBounds.bounds.center.z - stageBounds.bounds.extents.z;
-        maxZ = stageBounds.bounds.center.z + stageBounds.bounds.extents.z;
+        minX = outerBounds.bounds.center.x - outerBounds.bounds.extents.x;
+        maxX = outerBounds.bounds.center.x + outerBounds.bounds.extents.x;
+        minZ = outerBounds.bounds.center.z - outerBounds.bounds.extents.z;
+        maxZ = outerBounds.bounds.center.z + outerBounds.bounds.extents.z;
 
         SpawnEnemy(0);
-        spawnTimer = 1 / spawnRate;
+        spawnTimer = spawnCooldown;
     }
     
     private void Update()
@@ -39,7 +40,7 @@ public class Surv_EnemySpawner : MonoBehaviour
         if (spawnTimer <= 0f)
         {
             SpawnEnemy();
-            spawnTimer = 1 / spawnRate;
+            spawnTimer = spawnCooldown;
         }
         else
         {
@@ -57,8 +58,27 @@ public class Surv_EnemySpawner : MonoBehaviour
     {
         if (index < 0 || index >= enemyPrefabs.Length) index = 0;
 
-        Vector3 pos = new Vector3(Random.Range(minX, maxX), 0f, Random.Range(minZ, maxZ));
+        Vector3 pos = GetRandomPosition();
         GameObject go = Instantiate(enemyPrefabs[index], pos, Quaternion.identity);
         go.GetComponent<Surv_Enemy>().SetPlayer(player);
+    }
+
+    public Vector3 GetRandomPosition()
+    {
+        Vector3 pos = new Vector3(Random.Range(minX, maxX), 0f, Random.Range(minZ, maxZ));
+        if (innerBounds.bounds.Contains(pos))
+        {
+            // Debug.Log("Spawn pos inside safe area -> Reposition");
+
+            Ray ray = new Ray(player.transform.position, pos - player.transform.position);
+            float distance;
+            innerBounds.bounds.IntersectRay(ray, out distance);
+            Vector3 newPos = player.transform.position + ray.direction * distance;
+
+            pos.x = newPos.x;
+            pos.z = newPos.z;
+        }
+
+        return pos;
     }
 }

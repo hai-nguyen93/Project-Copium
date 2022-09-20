@@ -7,12 +7,13 @@ using UnityEngine.InputSystem;
 public enum GameState
 {
     Gameplay,
-    Pause
+    Pause,
+    Gameover
 }
 
 public class GameController : MonoBehaviour
 {
-    #region Singleton Patter
+    #region Singleton Pattern
     private static GameController _instance;
     public static GameController Instance
     {
@@ -24,6 +25,11 @@ public class GameController : MonoBehaviour
             }
             return _instance;
         }
+    }
+    private void Awake()
+    {
+        if (_instance == null) _instance = this;
+        else Destroy(gameObject);
     }
     #endregion
 
