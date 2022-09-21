@@ -5,22 +5,30 @@ using UnityEngine;
 public class Surv_Enemy : MonoBehaviour
 {
     private Surv_PlayerController player;
+
+    public Surv_EnemyData data;
+    public int currentHP;
     public bool isDead = false;
     public bool facingRight;
-    public int damage = 1;
-    public float baseSpeed = 2.5f;
+    public int damage { get { return data.damage; } }
     private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         isDead = false;
+        currentHP = data.maxHp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player == null || isDead) return;
+        UpdateBehaviour();
+    }
+
+    public void UpdateBehaviour()
+    {
+        if (player == null || player.isDead || isDead) return;
 
         Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
 
@@ -28,7 +36,7 @@ public class Surv_Enemy : MonoBehaviour
         if (facingRight && directionToPlayer.x < 0f) Flip();
         if (!facingRight && directionToPlayer.x > 0f) Flip();
 
-        speed = baseSpeed;
+        speed = data.baseSpeed;
         transform.Translate(directionToPlayer * speed * Time.deltaTime, Space.World);
     }
 
@@ -40,12 +48,23 @@ public class Surv_Enemy : MonoBehaviour
 
     public void HitPlayer()
     {
-        isDead = true;
         Die();
+    }
+
+    public void HitByPlayer(int damage)
+    {
+        currentHP -= damage;
+
+        if (currentHP <= 0)
+        {
+            player.GainExp(data.exp);
+            Die();
+        }
     }
 
     public void Die()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 

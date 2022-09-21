@@ -7,10 +7,13 @@ public class Surv_PlayerController : MonoBehaviour
 {
     public SpriteRenderer sr;
     private CharacterController controller;
+    private Surv_PlayerHP playerHP;
+    private Surv_PlayerLevel playerLevel;
 
     [Header("Player Status")]
     public bool isDead = false;
     public bool facingRight;
+    public int atk = 0;
 
     [Header("Movement Settings")]
     public float baseMoveSpeed = 2f;
@@ -20,6 +23,8 @@ public class Surv_PlayerController : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        playerHP = GetComponent<Surv_PlayerHP>();
+        playerLevel = GetComponent<Surv_PlayerLevel>();
         isDead = false;
     }
 
@@ -29,6 +34,10 @@ public class Surv_PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             isDead = !isDead;
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            playerHP.HealDamage(1);
         }
         ///
 
@@ -46,13 +55,44 @@ public class Surv_PlayerController : MonoBehaviour
         transform.Rotate(new Vector3(0f, 180f, 0f));
     }
 
+    public void CheckPlayerHP()
+    {
+        isDead = playerHP.CheckIsDead();
+        if (isDead)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Surv_GameController.Instance.GameOver();
+    }
+
+    public void GainExp(int value)
+    {
+        playerLevel.GainExp(value);
+    }
+
+    public void PlayerLevelUp()
+    {
+        playerHP.maxHP += 2;
+        atk += 1;
+        playerHP.HealDamage(playerHP.maxHP);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (isDead) return;
+
         Surv_Enemy enemy = other.GetComponent<Surv_Enemy>();
         if (enemy)
         {
             Debug.Log("Player takes " + enemy.damage + " damage.");
+            playerHP.ReceiveDamage(enemy.damage);
+            CheckPlayerHP();
             enemy.HitPlayer();
+            return;
         }
     }
 

@@ -39,11 +39,12 @@ public class PopupText3D : MonoBehaviour
         }
     }
 
-    public void SimpleSetup(string text)
+    public void SimpleSetup(string text, Color color)
     {
         textMesh.text = text;
-        textMesh.color = textColor;
+        textMesh.color = color;
         direction = Vector3.up;
+        faceCamera = true;
         transform.rotation = Camera.main.transform.rotation;
     }
 

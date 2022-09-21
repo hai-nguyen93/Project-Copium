@@ -32,6 +32,7 @@ public class Surv_GameController : MonoBehaviour
 
     [Header("Game Stats")]
     [Tooltip("the number of seconds player has survived.")] public float elapsedTime;
+    public GameState state;
 
     [Header("UI elements")]
     public TextMeshProUGUI timeText;
@@ -44,12 +45,29 @@ public class Surv_GameController : MonoBehaviour
 
     private void Update()
     {
-        elapsedTime += Time.deltaTime;
-        UpdateElapsedTimeUI();
+        switch (state)
+        {
+            case GameState.Gameplay:
+                elapsedTime += Time.deltaTime;
+                UpdateElapsedTimeUI();
+                break;
+
+            case GameState.Gameover:
+                break;
+
+            case GameState.Pause:
+                break;
+        }
+    }
+
+    public void GameOver()
+    {
+        state = GameState.Gameover;
     }
 
     public void ResetVariables()
     {
+        state = GameState.Gameplay;
         elapsedTime = 0f;
     }
 

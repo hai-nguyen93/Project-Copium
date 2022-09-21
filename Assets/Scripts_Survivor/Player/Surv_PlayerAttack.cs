@@ -8,7 +8,8 @@ public class Surv_PlayerAttack : MonoBehaviour
 
     public float attackCooldown = 1f;
     protected float attackTimer;
-    public int damage = 1;
+    public int baseDamage = 1;
+    protected int damage;
     public bool autoAttack;
 
     protected virtual void Start()

@@ -188,10 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0840adc74da90c4a90df0a7cf8e36e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 2de3abbf6688f83428dd9cb00696d9e9, type: 2}
+  currentHP: 0
   isDead: 0
   facingRight: 1
-  damage: 1
-  baseSpeed: 1.5
 --- !u!1 &8619737878694954013
 GameObject:
   m_ObjectHideFlags: 0

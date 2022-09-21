@@ -32,6 +32,7 @@ public class Surv_PlayerNormalAttack : Surv_PlayerAttack
     }
     public IEnumerator AttackCoroutine()
     {
+        damage = baseDamage + player.atk;
         hitBox.SetDamage(damage);
         hitBox.gameObject.SetActive(true);
         yield return new WaitForSeconds(attackDuration);

@@ -31,7 +31,7 @@ public class Surv_PlayerAttackHitBox : MonoBehaviour
             Bounds b = enemy.GetComponent<BoxCollider>().bounds;
             Vector3 pos = enemy.transform.position + new Vector3(0f, b.size.y + 0.2f, 0f);
             PopUpDamage(pos);
-            enemy.Die();
+            enemy.HitByPlayer(damage);
         }
     }
 }
