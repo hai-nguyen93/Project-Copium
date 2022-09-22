@@ -27,6 +27,7 @@ public class Surv_GameController : MonoBehaviour
     #endregion
 
     [Header("Game Systems")]
+    public bool useMultiThread;
     public Surv_EnemySpawner spawner;
     public Surv_PlayerController player;
 
@@ -36,9 +37,11 @@ public class Surv_GameController : MonoBehaviour
 
     [Header("UI elements")]
     public TextMeshProUGUI timeText;
+    public GameObject lvUpPanel;
 
     private void Start()
     {
+        CloseAllMenuPanel();
         ResetVariables();
         UpdateElapsedTimeUI();
     }
@@ -58,6 +61,23 @@ public class Surv_GameController : MonoBehaviour
             case GameState.Pause:
                 break;
         }
+    }
+
+    public void PlayerLevelUp()
+    {
+        Time.timeScale = 0f;
+        lvUpPanel.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        CloseAllMenuPanel();
+        Time.timeScale = 1f;
+    }
+
+    public void CloseAllMenuPanel()
+    {
+        lvUpPanel.SetActive(false);
     }
 
     public void GameOver()

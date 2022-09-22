@@ -7,6 +7,8 @@ using TMPro;
 public class Surv_PlayerLevel : MonoBehaviour
 {
     private Surv_PlayerController player;
+    private Surv_PlayerHP playerHp;
+
     public int level = 1;
     public int exp = 0;
     public int expToLevelUp = 10;
@@ -14,12 +16,12 @@ public class Surv_PlayerLevel : MonoBehaviour
     [Header("UI elements")]
     public TextMeshProUGUI levelText;
     public HpPanel expPanel;
-    public GameObject pfPopuptext3D;
-    public Color textColor;
+    public TextMeshProUGUI lvlUpInfoText;
 
     private void Start()
     {
         player = GetComponent<Surv_PlayerController>();
+        playerHp = GetComponent<Surv_PlayerHP>();
         ResetLevel();
         UpdateUI();
     }
@@ -27,24 +29,14 @@ public class Surv_PlayerLevel : MonoBehaviour
     public void GainExp(int value)
     {
         exp += value;
-        CheckExp();
         UpdateUI();
+        CheckExp();
     }
 
     public void LevelUp()
     {
-        level++;
-        player.PlayerLevelUp();
-
-        GameObject go = Instantiate(pfPopuptext3D, transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
-        go.GetComponent<PopupText3D>().SimpleSetup("LEVEL UP!", textColor);
-
-        int remainingExp = exp - expToLevelUp;
-        exp = 0;
-        if (remainingExp > 0)
-        {
-            GainExp(remainingExp);
-        }
+        Surv_GameController.Instance.PlayerLevelUp();
+        lvlUpInfoText.text = "Level: " + level + " -> " + (level + 1);      
     }
 
     public void CheckExp()
@@ -55,10 +47,41 @@ public class Surv_PlayerLevel : MonoBehaviour
         }
     }
 
+    public void UpgradeHp(int value)
+    {       
+        playerHp.maxHP += value;
+        FinishLevelUp();
+    }
+
+    public void UpgradeAtk(int value)
+    {
+        player.atk += value;
+        FinishLevelUp();
+    }
+
+    public void FinishLevelUp()
+    {
+        level += 1;
+        playerHp.HealDamage(playerHp.maxHP, false);
+        Surv_GameController.Instance.ResumeGame();
+
+        // check remaining exp after level up
+        int remainingExp = exp - expToLevelUp;
+        exp = 0;
+        if (remainingExp > 0)
+        {
+            GainExp(remainingExp);
+        }
+        else
+        {
+            UpdateUI();
+        }
+    }
+
     public void UpdateUI()
     {
         levelText.text = "Lv: " + level;
-        expPanel.UpdateFillAmount(1f * exp / expToLevelUp);
+        expPanel.UpdateFillAmount(Mathf.Clamp01( 1f * exp / expToLevelUp));
     }
 
     public void ResetLevel()

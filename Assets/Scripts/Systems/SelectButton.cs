@@ -7,8 +7,7 @@ public class SelectButton : MonoBehaviour
 {
     public Button defaultButton;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         defaultButton.Select();
     }

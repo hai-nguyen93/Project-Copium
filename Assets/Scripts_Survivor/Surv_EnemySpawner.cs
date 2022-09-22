@@ -8,6 +8,7 @@ public class Surv_EnemySpawner : MonoBehaviour
     public GameObject[] enemyPrefabs;
 
     [Space]
+    public bool enableSpawner;
     public float spawnCooldown = 2f;
     private float spawnTimer;
 
@@ -29,13 +30,16 @@ public class Surv_EnemySpawner : MonoBehaviour
         minZ = outerBounds.bounds.center.z - outerBounds.bounds.extents.z;
         maxZ = outerBounds.bounds.center.z + outerBounds.bounds.extents.z;
 
-        SpawnEnemy(0);
-        spawnTimer = spawnCooldown;
+        if (enableSpawner)
+        {
+            SpawnEnemy(0);
+            spawnTimer = spawnCooldown;
+        }
     }
     
     private void Update()
     {
-        if (player.isDead) return;
+        if (!enableSpawner || player.isDead) return;
 
         if (spawnTimer <= 0f)
         {

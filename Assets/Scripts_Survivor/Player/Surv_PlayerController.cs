@@ -7,7 +7,7 @@ public class Surv_PlayerController : MonoBehaviour
 {
     public SpriteRenderer sr;
     private CharacterController controller;
-    private Surv_PlayerHP playerHP;
+    private Surv_PlayerHP playerHp;
     private Surv_PlayerLevel playerLevel;
 
     [Header("Player Status")]
@@ -23,7 +23,7 @@ public class Surv_PlayerController : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        playerHP = GetComponent<Surv_PlayerHP>();
+        playerHp = GetComponent<Surv_PlayerHP>();
         playerLevel = GetComponent<Surv_PlayerLevel>();
         isDead = false;
     }
@@ -37,7 +37,7 @@ public class Surv_PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            playerHP.HealDamage(1);
+            playerHp.HealDamage(1);
         }
         ///
 
@@ -57,7 +57,7 @@ public class Surv_PlayerController : MonoBehaviour
 
     public void CheckPlayerHP()
     {
-        isDead = playerHP.CheckIsDead();
+        isDead = playerHp.CheckIsDead();
         if (isDead)
         {
             Die();
@@ -74,13 +74,6 @@ public class Surv_PlayerController : MonoBehaviour
         playerLevel.GainExp(value);
     }
 
-    public void PlayerLevelUp()
-    {
-        playerHP.maxHP += 2;
-        atk += 1;
-        playerHP.HealDamage(playerHP.maxHP);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (isDead) return;
@@ -89,7 +82,7 @@ public class Surv_PlayerController : MonoBehaviour
         if (enemy)
         {
             Debug.Log("Player takes " + enemy.damage + " damage.");
-            playerHP.ReceiveDamage(enemy.damage);
+            playerHp.ReceiveDamage(enemy.damage);
             CheckPlayerHP();
             enemy.HitPlayer();
             return;

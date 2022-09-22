@@ -33,11 +33,11 @@ public class Surv_PlayerHP : MonoBehaviour
         hpPanel.UpdateFillAmount(1f * currentHP / maxHP);
     }
 
-    public void HealDamage(int value)
+    public void HealDamage(int value, bool spawnPopupText = true)
     {
         currentHP = Mathf.Clamp(currentHP + value, 0, maxHP);
-        hpPanel.UpdateFillAmount(1f* currentHP / maxHP);
-        CreatePopupText(value.ToString(), healTextColor);
+        hpPanel.UpdateFillAmount(1f * currentHP / maxHP);
+        if (spawnPopupText) CreatePopupText(value.ToString(), healTextColor);
     }
 
     public bool CheckIsDead()

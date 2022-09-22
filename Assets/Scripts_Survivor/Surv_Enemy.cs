@@ -1,34 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Jobs;
+using Unity.Collections;
 
 public class Surv_Enemy : MonoBehaviour
 {
-    private Surv_PlayerController player;
+    public Surv_PlayerController player;
 
     public Surv_EnemyData data;
     public int currentHP;
     public bool isDead = false;
+    public bool isMoving = true;
     public bool facingRight;
     public int damage { get { return data.damage; } }
     private float speed;
 
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         isDead = false;
         currentHP = data.maxHp;
+        isMoving = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (Surv_GameController.Instance.useMultiThread) return;
+
         UpdateBehaviour();
     }
 
-    public void UpdateBehaviour()
+    public virtual void UpdateBehaviour()
     {
-        if (player == null || player.isDead || isDead) return;
+        if (player == null || player.isDead || !isMoving || isDead) return;
 
         Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
 
@@ -71,5 +75,30 @@ public class Surv_Enemy : MonoBehaviour
     public void SetPlayer(Surv_PlayerController player)
     {
         this.player = player;
+    }
+}
+
+public struct Surv_EnemyTransformJob : IJobParallelForTransform
+{
+    public Vector3 playerPos;
+    public float deltaTime;
+    [ReadOnly] public NativeArray<float> speed;
+    public NativeArray<bool> facingRight;
+
+    public void Execute(int index, TransformAccess transform)
+    {
+        Vector3 directionToPlayer = (playerPos - transform.position).normalized;
+
+        // look at player
+        if (facingRight[index] && directionToPlayer.x < 0f) Flip(index, transform);
+        if (!facingRight[index] && directionToPlayer.x > 0f) Flip(index, transform);
+
+        transform.position += (directionToPlayer * speed[index] * deltaTime);
+    }
+
+    public void Flip(int index, TransformAccess transform)
+    {
+        facingRight[index] = !(facingRight[index]);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 180f, 0));
     }
 }
