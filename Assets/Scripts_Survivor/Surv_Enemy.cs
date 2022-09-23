@@ -7,6 +7,7 @@ using Unity.Collections;
 public class Surv_Enemy : MonoBehaviour
 {
     public Surv_PlayerController player;
+    private Surv_EnemySpawner spawner;
 
     public Surv_EnemyData data;
     public int currentHP;
@@ -27,10 +28,10 @@ public class Surv_Enemy : MonoBehaviour
     {
         if (Surv_GameController.Instance.useMultiThread) return;
 
-        UpdateBehaviour();
+        UpdatePosition();
     }
 
-    public virtual void UpdateBehaviour()
+    public virtual void UpdatePosition()
     {
         if (player == null || player.isDead || !isMoving || isDead) return;
 
@@ -69,7 +70,13 @@ public class Surv_Enemy : MonoBehaviour
     public void Die()
     {
         isDead = true;
+        if (spawner != null) spawner.enemyList.Remove(this);
         Destroy(gameObject);
+    }
+
+    public void SetSpanwer(Surv_EnemySpawner spawner)
+    {
+        this.spawner = spawner;
     }
 
     public void SetPlayer(Surv_PlayerController player)

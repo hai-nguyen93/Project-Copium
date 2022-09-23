@@ -37,6 +37,7 @@ public class Surv_GameController : MonoBehaviour
 
     [Header("UI elements")]
     public TextMeshProUGUI timeText;
+    public GameObject bgPanel;
     public GameObject lvUpPanel;
 
     private void Start()
@@ -66,6 +67,7 @@ public class Surv_GameController : MonoBehaviour
     public void PlayerLevelUp()
     {
         Time.timeScale = 0f;
+        bgPanel.SetActive(true);
         lvUpPanel.SetActive(true);
     }
 
@@ -78,6 +80,7 @@ public class Surv_GameController : MonoBehaviour
     public void CloseAllMenuPanel()
     {
         lvUpPanel.SetActive(false);
+        bgPanel.SetActive(false);
     }
 
     public void GameOver()

@@ -15,4 +15,4 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerMenuScene.unity
     guid: ac8ac5c8f758fa6489acab1b87ad1ed1
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 686d28f0e2924fe46b3bc5ec30ce5db9, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: aa15292635d0c8749b731e1583664250, type: 2}

@@ -14,16 +14,15 @@ public class Surv_PlayerLevel : MonoBehaviour
     public int expToLevelUp = 10;
 
     [Header("UI elements")]
+    public LevelUpPanel lvlUpPanel;
     public TextMeshProUGUI levelText;
     public HpPanel expPanel;
-    public TextMeshProUGUI lvlUpInfoText;
 
     private void Start()
     {
         player = GetComponent<Surv_PlayerController>();
         playerHp = GetComponent<Surv_PlayerHP>();
         ResetLevel();
-        UpdateUI();
     }
 
     public void GainExp(int value)
@@ -36,7 +35,7 @@ public class Surv_PlayerLevel : MonoBehaviour
     public void LevelUp()
     {
         Surv_GameController.Instance.PlayerLevelUp();
-        lvlUpInfoText.text = "Level: " + level + " -> " + (level + 1);      
+        lvlUpPanel.SetLvlUpInfoText(level);    
     }
 
     public void CheckExp()
@@ -81,12 +80,13 @@ public class Surv_PlayerLevel : MonoBehaviour
     public void UpdateUI()
     {
         levelText.text = "Lv: " + level;
-        expPanel.UpdateFillAmount(Mathf.Clamp01( 1f * exp / expToLevelUp));
+        expPanel.UpdateFillAmount(Mathf.Clamp01(1f * exp / expToLevelUp));
     }
 
     public void ResetLevel()
     {
         level = 1;
         exp = 0;
+        UpdateUI();
     }
 }
