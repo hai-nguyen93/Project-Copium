@@ -67,6 +67,7 @@ public class Surv_GameController : MonoBehaviour
     public void PlayerLevelUp()
     {
         Time.timeScale = 0f;
+        state = GameState.Pause;
         bgPanel.SetActive(true);
         lvUpPanel.SetActive(true);
     }
@@ -74,6 +75,7 @@ public class Surv_GameController : MonoBehaviour
     public void ResumeGame()
     {
         CloseAllMenuPanel();
+        state = GameState.Gameplay;
         Time.timeScale = 1f;
     }
 

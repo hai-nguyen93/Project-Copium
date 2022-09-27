@@ -54,7 +54,7 @@ public class Surv_PlayerLevel : MonoBehaviour
 
     public void UpgradeAtk(int value)
     {
-        player.atk += value;
+        player.pCombat.atk += value;
         FinishLevelUp();
     }
 

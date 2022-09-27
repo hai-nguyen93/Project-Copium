@@ -33,6 +33,7 @@ public class Surv_Enemy : MonoBehaviour
 
     public virtual void UpdatePosition()
     {
+        if (Surv_GameController.Instance.state != GameState.Gameplay) return;
         if (player == null || player.isDead || !isMoving || isDead) return;
 
         Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
@@ -70,7 +71,7 @@ public class Surv_Enemy : MonoBehaviour
     public void Die()
     {
         isDead = true;
-        if (spawner != null) spawner.enemyList.Remove(this);
+        if (spawner != null) spawner.OnEnemyDie(this);
         Destroy(gameObject);
     }
 

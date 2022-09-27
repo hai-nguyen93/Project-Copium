@@ -18,10 +18,6 @@ public class Surv_EnemySpawner : MonoBehaviour
     [Space]
     public float minSpawnRadius = 7f;
     public float maxSpawnRadius = 20f;
-    //public BoxCollider outerBounds;
-    //public BoxCollider innerBounds;
-    //private float minX, maxX;
-    //private float minZ, maxZ;
 
     private void Start()
     {
@@ -30,11 +26,6 @@ public class Surv_EnemySpawner : MonoBehaviour
             player = FindObjectOfType<Surv_PlayerController>();
         }
 
-        //minX = outerBounds.bounds.center.x - outerBounds.bounds.extents.x;
-        //maxX = outerBounds.bounds.center.x + outerBounds.bounds.extents.x;
-        //minZ = outerBounds.bounds.center.z - outerBounds.bounds.extents.z;
-        //maxZ = outerBounds.bounds.center.z + outerBounds.bounds.extents.z;
-
         enemyList = new List<Surv_Enemy>();
         if (enableSpawner)
         {
@@ -42,9 +33,10 @@ public class Surv_EnemySpawner : MonoBehaviour
             spawnTimer = spawnCooldown;
         }
     }
-    
+
     private void Update()
     {
+        if (Surv_GameController.Instance.state != GameState.Gameplay) return;
         if (!enableSpawner || player.isDead) return;
 
         if (spawnTimer <= 0f)
@@ -57,7 +49,7 @@ public class Surv_EnemySpawner : MonoBehaviour
             spawnTimer -= Time.deltaTime;
         }
     }
-    
+
     public void SpawnEnemy()
     {
         int i = Random.Range(0, enemyPrefabs.Length);
@@ -78,34 +70,26 @@ public class Surv_EnemySpawner : MonoBehaviour
         enemyList.Add(e);
     }
 
+    public void OnEnemyDie(Surv_Enemy enemy)
+    {
+        enemyList.Remove(enemy);
+    }
+
     public Vector3 GetRandomPosition()
     {
-        /*
-        Vector3 pos = new Vector3(Random.Range(minX, maxX), 0f, Random.Range(minZ, maxZ));
-        if (innerBounds.bounds.Contains(pos))
-        {
-            // Debug.Log("Spawn pos inside safe area -> Reposition");
-
-            Ray ray = new Ray(player.transform.position, pos - player.transform.position);
-            float distance;
-            innerBounds.bounds.IntersectRay(ray, out distance);
-            Vector3 newPos = player.transform.position + (ray.direction * distance);
-
-            pos.x = newPos.x;
-            pos.z = newPos.z;
-        }
-        */
-
         Vector3 direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
         Vector3 pos = player.transform.position + direction * Random.Range(minSpawnRadius, maxSpawnRadius);
 
         return pos;
     }
 
+
+#if UNITY_EDITOR
     public void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
         Handles.DrawWireDisc(player.transform.position + new Vector3(0f, 0.5f, 0f), Vector3.up, minSpawnRadius);
         Handles.DrawWireDisc(player.transform.position + new Vector3(0f, 0.5f, 0f), Vector3.up, maxSpawnRadius);
     }
+#endif
 }

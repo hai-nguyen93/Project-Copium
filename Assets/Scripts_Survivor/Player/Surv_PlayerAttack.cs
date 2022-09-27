@@ -5,6 +5,7 @@ using UnityEngine;
 public class Surv_PlayerAttack : MonoBehaviour
 {
     protected Surv_PlayerController player;
+    protected Surv_PlayerCombat pCombat;
 
     public float attackCooldown = 1f;
     protected float attackTimer;
@@ -40,5 +41,6 @@ public class Surv_PlayerAttack : MonoBehaviour
     public void FindPlayer()
     {
         player = GetComponentInParent<Surv_PlayerController>();
+        pCombat = player.pCombat;
     }
 }

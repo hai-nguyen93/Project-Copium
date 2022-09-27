@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3968356086096299055}
   - component: {fileID: 3968356086096299054}
   - component: {fileID: 3968356086096299049}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 3968356086287305829}
   m_Layer: 7
   m_Name: EnemyCreep
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,9 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0840adc74da90c4a90df0a7cf8e36e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   data: {fileID: 11400000, guid: 2de3abbf6688f83428dd9cb00696d9e9, type: 2}
   currentHP: 0
   isDead: 0
+  isMoving: 1
   facingRight: 1
 --- !u!1 &8619737878694954013
 GameObject:
