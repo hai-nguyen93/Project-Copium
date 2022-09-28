@@ -1465,7 +1465,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.49
-  m_SlopeLimit: 45
+  m_SlopeLimit: 90
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   exp: 0
-  expToLevelUp: 1
+  expToLevelUp: 3
   lvlUpPanel: {fileID: 2056234930}
   levelText: {fileID: 2143077569}
   expPanel: {fileID: 2003967367}
@@ -1711,8 +1711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  pfPopupDmg: {fileID: 225017201334654811, guid: fcad74ed1987835428d3b5b09ae6a4f1, type: 3}
-  textColor: {r: 1, g: 0.55620337, b: 0, a: 1}
 --- !u!1 &859964818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,6 +1811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 889488742}
   - component: {fileID: 889488743}
+  - component: {fileID: 889488744}
   m_Layer: 0
   m_Name: SurvivorGameController
   m_TagString: Untagged
@@ -1855,6 +1854,21 @@ MonoBehaviour:
   timeText: {fileID: 1627095855}
   bgPanel: {fileID: 175575083}
   lvUpPanel: {fileID: 2056234925}
+--- !u!114 &889488744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889488741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f8ca66efdbe794c8df754f0cbc8800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfPopupText: {fileID: 371745296256688608, guid: fcad74ed1987835428d3b5b09ae6a4f1, type: 3}
+  initialCapacity: 25
+  maxCapacity: 100
 --- !u!1 &910992761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8100eb26b5f00c45a0a96db616215c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   attackCooldown: 1.75
   baseDamage: 1
   autoAttack: 1

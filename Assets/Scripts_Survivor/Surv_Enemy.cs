@@ -16,6 +16,7 @@ public class Surv_Enemy : MonoBehaviour
     public bool facingRight;
     public int damage { get { return data.damage; } }
     private float speed;
+    public Color dmgTextColor;
 
     public virtual void Start()
     {
@@ -57,9 +58,19 @@ public class Surv_Enemy : MonoBehaviour
         Die();
     }
 
-    public void HitByPlayer(int damage)
+    public void HitByPlayer(int dmg)
     {
-        currentHP -= damage;
+        Debug.Log(gameObject.name + " takes " + dmg + " damage.");
+        if (PopupTextPool.instance != null)
+        {
+            PopupText3D p = PopupTextPool.instance.GetPopupText3D();
+            Bounds b = GetComponent<BoxCollider>().bounds;
+            Vector3 pos = transform.position + new Vector3(0f, b.size.y + 0.2f, 0f);
+            p.Setup(dmg.ToString(), pos, dmgTextColor, true);
+            //p.gameObject.SetActive(true);
+        }
+        
+        currentHP -= dmg;
 
         if (currentHP <= 0)
         {

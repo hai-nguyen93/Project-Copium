@@ -194,6 +194,7 @@ MonoBehaviour:
   isDead: 0
   isMoving: 1
   facingRight: 1
+  dmgTextColor: {r: 0.9811321, g: 0.29407504, b: 0, a: 1}
 --- !u!1 &8619737878694954013
 GameObject:
   m_ObjectHideFlags: 0

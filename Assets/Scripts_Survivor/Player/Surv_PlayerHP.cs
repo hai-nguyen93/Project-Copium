@@ -47,7 +47,15 @@ public class Surv_PlayerHP : MonoBehaviour
 
     public void CreatePopupText(string text, Color color)
     {
-        GameObject go = Instantiate(pfPopupText3D, transform.position + textSpawnOffset, Quaternion.identity);
-        go.GetComponent<PopupText3D>().SimpleSetup(text, color);
+        if (PopupTextPool.instance != null)
+        {
+            PopupText3D p = PopupTextPool.instance.GetPopupText3D();
+            p.SimpleSetup(text, transform.position + textSpawnOffset, color);
+        }
+        else
+        {
+            GameObject go = Instantiate(pfPopupText3D);
+            go.GetComponent<PopupText3D>().SimpleSetup(text, transform.position + textSpawnOffset, color);
+        }
     }
 }

@@ -10,6 +10,7 @@ public class Surv_PlayerNormalAttack : Surv_PlayerAttack
     protected override void Start()
     {
         base.Start();
+        autoAttack = true;
         hitBox.gameObject.SetActive(false);   
     }
 

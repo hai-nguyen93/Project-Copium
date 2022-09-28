@@ -7,6 +7,7 @@ public class Surv_PlayerAttack : MonoBehaviour
     protected Surv_PlayerController player;
     protected Surv_PlayerCombat pCombat;
 
+    public int level = 1;
     public float attackCooldown = 1f;
     protected float attackTimer;
     public int baseDamage = 1;
@@ -19,6 +20,9 @@ public class Surv_PlayerAttack : MonoBehaviour
         attackTimer = attackCooldown;
     }
 
+    /// <summary>
+    /// Count down timer and call Attack() when timer <= 0
+    /// </summary>
     public virtual void UpdateAttack()
     {
         if (player.isDead) return;
@@ -42,5 +46,12 @@ public class Surv_PlayerAttack : MonoBehaviour
     {
         player = GetComponentInParent<Surv_PlayerController>();
         pCombat = player.pCombat;
+    }
+
+    public virtual void AttackLevelUp()
+    {
+        level += 1;
+        
+        // Upgrade attack (power, cooldown, range, etc.)
     }
 }
