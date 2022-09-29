@@ -39,6 +39,6 @@ public class Surv_PlayerNormalAttack : Surv_PlayerAttack
         yield return new WaitForSeconds(attackDuration);
         hitBox.gameObject.SetActive(false);
 
-        attackTimer = attackCooldown;
+        ResetAttackTimer();
     }
 }

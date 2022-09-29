@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Surv_PlayerController : MonoBehaviour
+public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
 {
     public SpriteRenderer sr;
     private CharacterController controller;
@@ -18,6 +18,7 @@ public class Surv_PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     public float baseMoveSpeed = 2f;
     private float speed;
+    private float speedModifier;
     private Vector3 moveInput;
 
     private void Start()
@@ -26,6 +27,7 @@ public class Surv_PlayerController : MonoBehaviour
         playerHp = GetComponent<Surv_PlayerHP>();
         playerLevel = GetComponent<Surv_PlayerLevel>();
         pCombat = GetComponent<Surv_PlayerCombat>();
+        speedModifier = 1f;
         isDead = false;
     }
 
@@ -46,8 +48,8 @@ public class Surv_PlayerController : MonoBehaviour
 
         if (isDead) return;
 
-        speed = baseMoveSpeed;
-        controller.Move(moveInput * speed * Time.deltaTime);
+        speed = baseMoveSpeed * speedModifier;
+        controller.Move(speed * Time.deltaTime * moveInput);
         if (!facingRight && moveInput.x > 0f) Flip();
         if (facingRight && moveInput.x < 0f) Flip();
     }
@@ -82,6 +84,17 @@ public class Surv_PlayerController : MonoBehaviour
         Debug.Log("Player takes " + damage + " damage.");
         playerHp.ReceiveDamage(damage);
         CheckPlayerHP();
+    }
+
+    public void ChangeSpeedModifier(float duration, float amount)
+    {
+        StartCoroutine(ChangeSpeedCoroutine(duration, amount));
+    }
+    public IEnumerator ChangeSpeedCoroutine(float duration, float amount)
+    {
+        speedModifier = Mathf.Clamp(amount, 0f, 2f);
+        yield return new WaitForSeconds(duration);
+        speedModifier = 1f;
     }
 
     private void OnTriggerEnter(Collider other)

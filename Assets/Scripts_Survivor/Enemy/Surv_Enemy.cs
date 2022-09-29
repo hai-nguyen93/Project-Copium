@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using Unity.Collections;
 
-public class Surv_Enemy : MonoBehaviour
+public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 {
     public Surv_PlayerController player;
     private Surv_EnemySpawner spawner;
@@ -15,6 +15,7 @@ public class Surv_Enemy : MonoBehaviour
     public bool isMoving = true;
     public bool facingRight;
     public int damage { get { return data.damage; } }
+    public float speedModifier = 1f;
     private float speed;
     public Color dmgTextColor;
 
@@ -23,6 +24,7 @@ public class Surv_Enemy : MonoBehaviour
         isDead = false;
         currentHP = data.maxHp;
         isMoving = true;
+        speedModifier = 1f;
     }
 
     void Update()
@@ -43,8 +45,8 @@ public class Surv_Enemy : MonoBehaviour
         if (facingRight && directionToPlayer.x < 0f) Flip();
         if (!facingRight && directionToPlayer.x > 0f) Flip();
 
-        speed = data.baseSpeed;
-        transform.Translate(directionToPlayer * speed * Time.deltaTime, Space.World);
+        speed = data.baseSpeed * speedModifier;
+        transform.Translate(speed * Time.deltaTime * directionToPlayer, Space.World);
     }
 
     public void Flip()
@@ -58,7 +60,7 @@ public class Surv_Enemy : MonoBehaviour
         Die();
     }
 
-    public void HitByPlayer(int dmg)
+    public void ReceiveDamage(int dmg)
     {
         Debug.Log(gameObject.name + " takes " + dmg + " damage.");
         if (PopupTextPool.instance != null)
@@ -74,7 +76,7 @@ public class Surv_Enemy : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            player.GainExp(data.exp);
+            if (player != null) player.GainExp(data.exp);
             Die();
         }
     }
@@ -94,6 +96,18 @@ public class Surv_Enemy : MonoBehaviour
     public void SetPlayer(Surv_PlayerController player)
     {
         this.player = player;
+    }
+
+    public void ChangeSpeedModifier(float duration, float amount)
+    {
+        if (!data.canBeCC) return;
+        StartCoroutine(ChangeSpeedCoroutine(duration, amount));
+    }
+    public IEnumerator ChangeSpeedCoroutine(float duration, float amount)
+    {
+        speedModifier = Mathf.Clamp(amount, 0f, 2f);
+        yield return new WaitForSeconds(duration);
+        speedModifier = 1f;
     }
 }
 

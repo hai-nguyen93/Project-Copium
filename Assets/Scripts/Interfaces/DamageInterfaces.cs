@@ -4,10 +4,15 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    public void Damage(int dmg);
+    public void ReceiveDamage(int dmg);
 }
 
 public interface IKillable
 {
     public void Kill();
+}
+
+public interface ISpeedChange
+{
+    public void ChangeSpeedModifier(float duration, float amount);
 }

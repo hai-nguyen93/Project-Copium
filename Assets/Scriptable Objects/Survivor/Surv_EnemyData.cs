@@ -9,6 +9,7 @@ public class Surv_EnemyData : ScriptableObject
     public int maxHp = 1;
     public int damage = 1;
     public float baseSpeed = 1.5f;
+    public bool canBeCC = true;
     public int exp = 1;
 }
 

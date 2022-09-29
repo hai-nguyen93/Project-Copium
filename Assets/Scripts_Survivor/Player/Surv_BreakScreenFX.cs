@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class Surv_BreakScreenFX : MonoBehaviour
 {
+    public Animator anim;
     public Material mat;
+    public Camera cam;
+    public ParticleSystem slashPS;
+    private float psDuration;
 
-    public IEnumerator CoroutineScreenShot()
+    public float animationLength;
+
+    private void OnEnable()
+    {
+        cam.gameObject.SetActive(false);
+        anim.enabled = false;
+        slashPS.Stop();
+        psDuration = slashPS.main.duration;
+    }
+
+    public IEnumerator CoroutineBreakScreen()
     {
         yield return new WaitForEndOfFrame();
 
@@ -18,5 +32,13 @@ public class Surv_BreakScreenFX : MonoBehaviour
         scTex.Apply();
 
         mat.SetTexture("_BaseMap", scTex);
+        cam.gameObject.SetActive(true);
+
+        slashPS.Play();
+        yield return new WaitForSecondsRealtime(psDuration + 0.1f);
+        anim.enabled = true;
+        anim.Play("BreakScreen");
+        yield return new WaitForSecondsRealtime(animationLength);
+        anim.enabled = false;
     }
 }

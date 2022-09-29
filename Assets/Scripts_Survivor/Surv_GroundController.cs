@@ -5,6 +5,8 @@ using UnityEngine;
 public class Surv_GroundController : MonoBehaviour
 {
     public Surv_PlayerController player;
+    private Transform pTransform;
+    private Transform t; // to cache transform of grounds
     public float referenceSize = 100;
     private float repositionThreshold;
     [Tooltip("yOffset to make sure ground surface is at y = 0")] public float yOffset = 0.5f;
@@ -17,6 +19,7 @@ public class Surv_GroundController : MonoBehaviour
     {
         grounds = new List<GameObject>();
         repositionThreshold = 1.5f * referenceSize;
+        pTransform = player.transform;
 
         CreateStartGrounds();
     }
@@ -27,8 +30,9 @@ public class Surv_GroundController : MonoBehaviour
 
         foreach (var g in grounds)
         {
-            float dx = player.transform.position.x - g.transform.position.x;
-            float dz = player.transform.position.z - g.transform.position.z;
+            t = g.transform;
+            float dx = pTransform.position.x - t.position.x;
+            float dz = pTransform.position.z - t.position.z;
 
             if ((Mathf.Abs(dx) <= repositionThreshold) && (Mathf.Abs(dz) <= repositionThreshold)) continue;
 
@@ -41,7 +45,7 @@ public class Surv_GroundController : MonoBehaviour
             {
                 translation.z = Mathf.Sign(dz) * 3 * referenceSize;
             }
-            RepositionGround(g, g.transform.position.x + translation.x, g.transform.position.z + translation.z);
+            RepositionGround(g, t.position.x + translation.x, t.position.z + translation.z);
         }
     }
 

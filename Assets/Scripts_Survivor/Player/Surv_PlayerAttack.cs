@@ -45,7 +45,12 @@ public class Surv_PlayerAttack : MonoBehaviour
     public void FindPlayer()
     {
         player = GetComponentInParent<Surv_PlayerController>();
-        pCombat = player.pCombat;
+        pCombat = player.GetComponent<Surv_PlayerCombat>();
+    }
+
+    public void ResetAttackTimer()
+    {
+        attackTimer = attackCooldown;
     }
 
     public virtual void AttackLevelUp()

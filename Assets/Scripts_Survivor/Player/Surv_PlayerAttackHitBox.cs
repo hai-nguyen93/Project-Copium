@@ -16,7 +16,7 @@ public class Surv_PlayerAttackHitBox : MonoBehaviour
         Surv_Enemy enemy = other.GetComponent<Surv_Enemy>();
         if (enemy)
         {
-            enemy.HitByPlayer(damage);        
+            enemy.ReceiveDamage(damage);        
         }
     }
 }

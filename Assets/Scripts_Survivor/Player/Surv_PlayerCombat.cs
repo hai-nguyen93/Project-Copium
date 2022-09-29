@@ -7,13 +7,33 @@ public class Surv_PlayerCombat : MonoBehaviour
     private Surv_PlayerController player;
 
     public int atk = 0;
-    public Surv_PlayerNormalAttack normalAttack;
     public List<Surv_PlayerAttack> attackList;
+
+    private Surv_PlayerUltAttack pUlt;
+
+    [Header("UI elements")]
+    public HpPanel ultPanel;
 
     private void Start()
     {
+        ultPanel.gameObject.SetActive(false);
         attackList = new List<Surv_PlayerAttack>();
-        attackList.Add(normalAttack);
+        var attacks = GetComponentsInChildren<Surv_PlayerAttack>();
+        foreach(var a in attacks)
+        {
+            attackList.Add(a);
+            if (a.CompareTag("PlayerUltimate"))
+            {
+                pUlt = a.GetComponent<Surv_PlayerUltAttack>();
+                ultPanel.gameObject.SetActive(true);
+                UpdateUltimateUI();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        UpdateUltimateUI();
     }
 
     public void AddAttack(Surv_PlayerAttack newAttack)
@@ -26,5 +46,10 @@ public class Surv_PlayerCombat : MonoBehaviour
 
         // Generate newAttack GameObject then attach to player
         attackList.Add(newAttack);
+    }
+
+    public void UpdateUltimateUI()
+    {
+        ultPanel.UpdateFillAmount(pUlt.GetCooldownFillAmount());
     }
 }

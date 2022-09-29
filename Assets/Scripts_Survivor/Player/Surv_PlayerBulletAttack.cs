@@ -12,7 +12,9 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
     public ObjectPool<Surv_Bullet> bulletPool;
 
     [Header("Bullet Attack Settings")]
+    public Transform firePoint;
     public int fireAmount = 1;
+    public float angleBetweenBullets = 15f;
     public float bulletSpeed = 10f;
     public List<Surv_Bullet> activeBullets;
 
@@ -25,7 +27,9 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
         // set up bullet pool
         bulletPool = new ObjectPool<Surv_Bullet>(() => // Create function
         {
-            return Instantiate(pfBullet);
+            Surv_Bullet b = Instantiate(pfBullet);
+            b.SetPool(bulletPool);
+            return b;
         }, bullet =>    // Get bullet function
         {
             bullet.gameObject.SetActive(true);
@@ -47,6 +51,20 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
 
     public override void Attack()
     {
-        var b = bulletPool.Get();
+        damage = baseDamage + pCombat.atk;
+        float startAngle = angleBetweenBullets * (fireAmount - 1);
+        for (int i = 0; i < fireAmount; ++i)
+        {
+            var b = bulletPool.Get();
+            b.Setup(firePoint.position, firePoint.right, bulletSpeed, damage);
+        }
+        ResetAttackTimer();
+    }
+
+    public override void AttackLevelUp()
+    {
+        base.AttackLevelUp();
+
+
     }
 }
