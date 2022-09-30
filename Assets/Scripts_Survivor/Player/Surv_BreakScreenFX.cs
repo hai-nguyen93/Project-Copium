@@ -9,6 +9,7 @@ public class Surv_BreakScreenFX : MonoBehaviour
     public Camera cam;
     public ParticleSystem slashPS;
     private float psDuration;
+    public float psDurationWaitOffset;
 
     public float animationLength;
 
@@ -35,7 +36,7 @@ public class Surv_BreakScreenFX : MonoBehaviour
         cam.gameObject.SetActive(true);
 
         slashPS.Play();
-        yield return new WaitForSecondsRealtime(psDuration + 0.1f);
+        yield return new WaitForSecondsRealtime(psDuration + Mathf.Abs(psDurationWaitOffset));
         anim.enabled = true;
         anim.Play("BreakScreen");
         yield return new WaitForSecondsRealtime(animationLength);

@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
 {
     public SpriteRenderer sr;
+    public Animator anim;
     private CharacterController controller;
-    private Surv_PlayerHP playerHp;
-    private Surv_PlayerLevel playerLevel;
+    public Surv_PlayerHP playerHp { get; private set; }
+    public Surv_PlayerLevel playerLevel { get; private set; }
     public Surv_PlayerCombat pCombat { get; private set; }
 
     [Header("Player Status")]

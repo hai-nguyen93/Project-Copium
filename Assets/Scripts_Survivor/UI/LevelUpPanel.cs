@@ -7,6 +7,10 @@ public class LevelUpPanel : MonoBehaviour
 {
     public ParticleSystem lvlUpPs;
     public TextMeshProUGUI lvlUpInfoText;
+    public TextMeshProUGUI hpText;
+    public TextMeshProUGUI atkText;
+    public TextMeshProUGUI speedText;
+
 
     private void OnEnable()
     {
@@ -23,8 +27,11 @@ public class LevelUpPanel : MonoBehaviour
         if (lvlUpPs != null) lvlUpPs.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
-    public void SetLvlUpInfoText(int level)
+    public void SetLvlUpPanel(int level, int hp, int maxHp, int atk, float speed)
     {
         lvlUpInfoText.text = "Level: " + level + " -> " + (level + 1);
+        hpText.text = "HP: " + hp + " / " +  maxHp;
+        atkText.text = "ATTACK: " + atk;
+        speedText.text = "SPEED: " + speed;
     }
 }

@@ -35,7 +35,7 @@ public class Surv_PlayerLevel : MonoBehaviour
     public void LevelUp()
     {
         Surv_GameController.Instance.PlayerLevelUp();
-        lvlUpPanel.SetLvlUpInfoText(level);    
+        lvlUpPanel.SetLvlUpPanel(level, playerHp.currentHP, playerHp.maxHP, player.pCombat.atk, player.baseMoveSpeed);    
     }
 
     public void CheckExp()
@@ -60,7 +60,11 @@ public class Surv_PlayerLevel : MonoBehaviour
 
     public void FinishLevelUp()
     {
+        // Calculate next exp need to lvl up
+        expToLevelUp += (int)(Mathf.Ceil(level / 10f) * 3);
+        
         level += 1;
+        
         playerHp.HealDamage(playerHp.maxHP, false);
         Surv_GameController.Instance.ResumeGame();
 

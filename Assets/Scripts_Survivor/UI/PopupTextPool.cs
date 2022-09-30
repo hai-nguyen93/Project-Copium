@@ -32,6 +32,13 @@ public class PopupTextPool : MonoBehaviour
         {
             Destroy(popup.gameObject);
         }, true, initialCapacity, maxCapacity);
+
+        // Prepare objs in pool
+        for (int i = 0; i < initialCapacity; ++i)
+        {
+            var p = Instantiate(pfPopupText, this.transform);
+            ReleasePopupText3D(p);
+        }
     }
 
     public PopupText3D GetPopupText3D()
@@ -43,5 +50,4 @@ public class PopupTextPool : MonoBehaviour
     {
         pool.Release(obj);
     }
-
 }

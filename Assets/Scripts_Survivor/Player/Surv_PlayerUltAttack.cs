@@ -35,6 +35,7 @@ public class Surv_PlayerUltAttack : Surv_PlayerAttack
     {
         ResetAttackTimer();
         Time.timeScale = 0f;
+        Surv_GameController.Instance.state = GameState.CannotPause;
         StartCoroutine(UltimateCoroutine());
     }
     public IEnumerator UltimateCoroutine()
@@ -49,6 +50,7 @@ public class Surv_PlayerUltAttack : Surv_PlayerAttack
     {
         breakScreenFX.gameObject.SetActive(false);
         Time.timeScale = 1f;
+        Surv_GameController.Instance.state = GameState.Gameplay;
 
         // check collision
         var hits = Physics.OverlapSphere(player.transform.position, attackRadius, layerToCollide);

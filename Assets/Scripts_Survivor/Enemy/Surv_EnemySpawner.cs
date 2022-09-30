@@ -72,7 +72,7 @@ public class Surv_EnemySpawner : MonoBehaviour
 
     public void OnEnemyDie(Surv_Enemy enemy)
     {
-        enemyList.Remove(enemy);
+        enemyList.Remove(enemy);       
     }
 
     public Vector3 GetRandomPosition()

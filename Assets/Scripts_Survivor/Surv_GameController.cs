@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Surv_GameController : MonoBehaviour
 {
@@ -29,14 +30,17 @@ public class Surv_GameController : MonoBehaviour
     [Header("Game Systems")]
     public bool useMultiThread;
     public Surv_EnemySpawner spawner;
+    public EnemyDiePSPool diePsPool;
     public Surv_PlayerController player;
 
     [Header("Game Stats")]
     [Tooltip("the number of seconds player has survived.")] public float elapsedTime;
+    public int killCount = 0;
     public GameState state;
 
     [Header("UI elements")]
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI killCountText;
     public GameObject bgPanel;
     public GameObject lvUpPanel;
 
@@ -45,6 +49,7 @@ public class Surv_GameController : MonoBehaviour
         CloseAllMenuPanel();
         ResetVariables();
         UpdateElapsedTimeUI();
+        UpdateKillCountUI();
     }
 
     private void Update()
@@ -57,6 +62,9 @@ public class Surv_GameController : MonoBehaviour
                 break;
 
             case GameState.Gameover:
+                break;
+
+            case GameState.CannotPause:
                 break;
 
             case GameState.Pause:
@@ -93,7 +101,25 @@ public class Surv_GameController : MonoBehaviour
     public void ResetVariables()
     {
         state = GameState.Gameplay;
+        killCount = 0;
         elapsedTime = 0f;
+    }
+
+    public void OnEnemyKilled(Surv_Enemy enemy)
+    {
+        killCount++;
+        UpdateKillCountUI();
+
+        var ps = diePsPool.Get();
+        ps.transform.position = enemy.transform.position + new Vector3(0, 0.5f, 0);
+        var m = ps.main;
+        m.startColor = enemy.dieParticleColor;
+        ps.Play();
+    }
+
+    private void UpdateKillCountUI()
+    {
+        killCountText.text = killCount.ToString();
     }
 
     public void UpdateElapsedTimeUI()

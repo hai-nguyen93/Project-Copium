@@ -18,6 +18,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     public float speedModifier = 1f;
     private float speed;
     public Color dmgTextColor;
+    public Color dieParticleColor;
 
     public virtual void Start()
     {
@@ -69,14 +70,17 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
             Bounds b = GetComponent<BoxCollider>().bounds;
             Vector3 pos = transform.position + new Vector3(0f, b.size.y + 0.2f, 0f);
             p.Setup(dmg.ToString(), pos, dmgTextColor, true);
-            //p.gameObject.SetActive(true);
         }
         
         currentHP -= dmg;
 
         if (currentHP <= 0)
         {
-            if (player != null) player.GainExp(data.exp);
+            if (player != null)
+            {
+                player.GainExp(data.exp);
+                Surv_GameController.Instance.OnEnemyKilled(this);
+            }
             Die();
         }
     }
