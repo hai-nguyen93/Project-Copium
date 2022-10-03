@@ -59,7 +59,7 @@ public class Surv_PlayerUltAttack : Surv_PlayerAttack
             var target = hit.GetComponent<IDamageable>();
             if (target != null)
             {
-                target.ReceiveDamage((baseDamage + pCombat.atk) * 10);
+                target.ReceiveDamage(damage);
             }
         }
 

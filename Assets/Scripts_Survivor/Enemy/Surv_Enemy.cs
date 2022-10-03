@@ -9,36 +9,48 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     public Surv_PlayerController player;
     private Surv_EnemySpawner spawner;
 
+    // Stats
     public Surv_EnemyData data;
     public int currentHP;
-    public bool isDead = false;
-    public bool isMoving = true;
-    public bool facingRight;
-    public int damage { get { return data.damage; } }
+    public int damage;
+    public int exp;
     public float speedModifier = 1f;
     private float speed;
+    
+    public bool isDead = false;
+    public bool canMove = true;
+    public bool facingRight;
     public Color dmgTextColor;
     public Color dieParticleColor;
 
-    public virtual void Start()
+    public virtual void OnEnable()
     {
         isDead = false;
-        currentHP = data.maxHp;
-        isMoving = true;
+        canMove = true;
         speedModifier = 1f;
+        InitStat();        
+    }
+
+    public void InitStat()
+    {
+        currentHP = data.maxHp;
+        damage = data.damage;
+        exp = data.exp;
     }
 
     void Update()
     {
         if (Surv_GameController.Instance.useMultiThread) return;
 
+        if (Surv_GameController.Instance.state != GameState.Gameplay) return;
+        canMove = !(player == null || player.isDead || isDead);
+
         UpdatePosition();
     }
 
     public virtual void UpdatePosition()
     {
-        if (Surv_GameController.Instance.state != GameState.Gameplay) return;
-        if (player == null || player.isDead || !isMoving || isDead) return;
+        if (!canMove) return;
 
         Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
 
@@ -78,7 +90,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         {
             if (player != null)
             {
-                player.GainExp(data.exp);
+                player.GainExp(exp);
                 Surv_GameController.Instance.OnEnemyKilled(this);
             }
             Die();

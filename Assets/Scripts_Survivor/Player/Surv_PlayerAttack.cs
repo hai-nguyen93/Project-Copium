@@ -10,8 +10,8 @@ public class Surv_PlayerAttack : MonoBehaviour
     public int level = 1;
     public float attackCooldown = 1f;
     protected float attackTimer;
-    public int baseDamage = 1;
-    protected int damage;
+    public float dmgPotency = 1;
+    public int damage { get => Mathf.CeilToInt((player.pCombat.atk * dmgPotency * Random.Range(0.9f, 1.25f))); }
     public bool autoAttack;
 
     protected virtual void Start()
@@ -58,5 +58,10 @@ public class Surv_PlayerAttack : MonoBehaviour
         level += 1;
         
         // Upgrade attack (power, cooldown, range, etc.)
+    }
+
+    public void OnValidate()
+    {
+        dmgPotency = Mathf.Abs(dmgPotency);
     }
 }

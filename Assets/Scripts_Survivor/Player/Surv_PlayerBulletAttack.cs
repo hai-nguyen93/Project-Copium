@@ -50,8 +50,7 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
     }
 
     public override void Attack()
-    {
-        damage = baseDamage + pCombat.atk;
+    {       
         float startAngle = angleBetweenBullets * (fireAmount - 1);
         for (int i = 0; i < fireAmount; ++i)
         {

@@ -6,13 +6,13 @@ using UnityEditor;
 public class Surv_EnemySpawner : MonoBehaviour
 {
     public Surv_PlayerController player;
-    public GameObject[] enemyPrefabs;
+    public Surv_EnemySpawnerPool spawnerPool;
 
     [Space]
     public bool enableSpawner;
     public float spawnCooldown = 2f;
     private float spawnTimer;
-    public int maxEnemyCount = 50;
+    public int maxEnemyCount = 80;
     public List<Surv_Enemy> enemyList;
 
     [Space]
@@ -29,7 +29,7 @@ public class Surv_EnemySpawner : MonoBehaviour
         enemyList = new List<Surv_Enemy>();
         if (enableSpawner)
         {
-            SpawnEnemy(0);
+            SpawnEnemy();
             spawnTimer = spawnCooldown;
         }
     }
@@ -52,19 +52,11 @@ public class Surv_EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        int i = Random.Range(0, enemyPrefabs.Length);
-        SpawnEnemy(i);
-    }
-
-    public void SpawnEnemy(int index)
-    {
         if (enemyList.Count >= maxEnemyCount) return;
 
-        if (index < 0 || index >= enemyPrefabs.Length) index = 0;
-
+        var e = spawnerPool.Get();        
         Vector3 pos = GetRandomPosition();
-        GameObject go = Instantiate(enemyPrefabs[index], pos, Quaternion.identity);
-        var e = go.GetComponent<Surv_Enemy>();
+        e.transform.position = pos;
         e.SetPlayer(player);
         e.SetSpanwer(this);
         enemyList.Add(e);
@@ -78,7 +70,7 @@ public class Surv_EnemySpawner : MonoBehaviour
     public Vector3 GetRandomPosition()
     {
         Vector3 direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
-        Vector3 pos = player.transform.position + direction * Random.Range(minSpawnRadius, maxSpawnRadius);
+        Vector3 pos = player.transform.position + Random.Range(minSpawnRadius, maxSpawnRadius) * direction;
 
         return pos;
     }
