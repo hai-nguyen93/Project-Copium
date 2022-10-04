@@ -6,7 +6,7 @@ using UnityEditor;
 public class Surv_EnemySpawner : MonoBehaviour
 {
     public Surv_PlayerController player;
-    public Surv_EnemySpawnerPool spawnerPool;
+    public Surv_EnemySpawnCollection spawnPfCollection;
 
     [Space]
     public bool enableSpawner;
@@ -54,7 +54,7 @@ public class Surv_EnemySpawner : MonoBehaviour
     {
         if (enemyList.Count >= maxEnemyCount) return;
 
-        var e = spawnerPool.Get();        
+        var e = Instantiate(spawnPfCollection.Get(), transform);       
         Vector3 pos = GetRandomPosition();
         e.transform.position = pos;
         e.SetPlayer(player);

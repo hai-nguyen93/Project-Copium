@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Survivor Enemy", menuName = "Survivor/Enemy")]
+[CreateAssetMenu(fileName = "NewSurvivorEnemy", menuName = "Survivor/Enemy")]
 public class Surv_EnemyData : ScriptableObject
 {
     public string enemyName = "New Enemy";
