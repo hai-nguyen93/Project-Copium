@@ -50,8 +50,8 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
         if (isDead) return;
 
         speed = baseMoveSpeed * speedModifier;
-        Vector3 moveVector = speed * Time.deltaTime * moveInput;
-        controller.Move(moveVector);
+        Vector3 moveVector = speed * moveInput;
+        controller.Move(Time.deltaTime * moveVector);
         anim.SetFloat("move", moveVector.magnitude);
 
         if (!facingRight && moveInput.x > 0f) Flip();

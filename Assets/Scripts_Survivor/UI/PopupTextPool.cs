@@ -16,6 +16,9 @@ public class PopupTextPool : MonoBehaviour
     public int maxCapacity = 200;
     public ObjectPool<PopupText3D> pool;
 
+    [Header("Pre-defined Text Color")]
+    public Color dmgTextColor;
+
     private void Start()
     {
         pool = new ObjectPool<PopupText3D>(() => // Create function

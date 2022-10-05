@@ -20,7 +20,6 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     public bool isDead = false;
     public bool canMove = true;
     public bool facingRight;
-    public Color dmgTextColor;
     public Color dieParticleColor;
 
     public virtual void OnEnable()
@@ -76,17 +75,17 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     public void ReceiveDamage(int dmg)
     {
         Debug.Log(gameObject.name + " takes " + dmg + " damage.");
-        if (PopupTextPool.instance != null)
+        if (PopupTextPool.instance != null) // create pop up damage number
         {
             PopupText3D p = PopupTextPool.instance.GetPopupText3D();
             Bounds b = GetComponent<BoxCollider>().bounds;
             Vector3 pos = transform.position + new Vector3(0f, b.size.y + 0.2f, 0f);
-            p.Setup(dmg.ToString(), pos, dmgTextColor, true);
+            p.Setup(dmg.ToString(), pos, PopupTextPool.instance.dmgTextColor, true);
         }
         
         currentHP -= dmg;
 
-        if (currentHP <= 0)
+        if (currentHP <= 0) // check hp whether enemy dies or not
         {
             if (player != null)
             {
