@@ -7,17 +7,26 @@ public class Surv_PlayerAttack : MonoBehaviour
     protected Surv_PlayerController player;
     protected Surv_PlayerCombat pCombat;
 
+    [Header("Attack info")]
+    public int attackID;
+    public string attackName;
+    public Sprite attackIcon;
+
+    [Header("Attack Stat")]
     public int level = 1;
-    public float attackCooldown = 1f;
+    public float baseAtkCD = 1f;
+    protected float atkCD;
     protected float attackTimer;
-    public float dmgPotency = 1;
+    public float baseDmgPotency = 1;
+    protected float dmgPotency;
     public int damage { get => Mathf.CeilToInt((player.pCombat.atk * dmgPotency * Random.Range(0.9f, 1.25f))); }
     public bool autoAttack;
 
     protected virtual void Start()
     {
         FindPlayer();
-        attackTimer = attackCooldown;
+        ResetAttackStat();
+        attackTimer = atkCD;
     }
 
     /// <summary>
@@ -40,7 +49,7 @@ public class Surv_PlayerAttack : MonoBehaviour
         }
     }
 
-    public virtual void Attack() { }
+    public virtual void Attack() { ResetAttackTimer(); }
 
     public void FindPlayer()
     {
@@ -50,7 +59,7 @@ public class Surv_PlayerAttack : MonoBehaviour
 
     public void ResetAttackTimer()
     {
-        attackTimer = attackCooldown;
+        attackTimer = atkCD;
     }
 
     public virtual void AttackLevelUp()
@@ -60,8 +69,15 @@ public class Surv_PlayerAttack : MonoBehaviour
         // Upgrade attack (power, cooldown, range, etc.)
     }
 
+    public void ResetAttackStat()
+    {
+        level = 1;
+        atkCD = baseAtkCD;
+        dmgPotency = baseDmgPotency;
+    }
+
     public void OnValidate()
     {
-        dmgPotency = Mathf.Abs(dmgPotency);
+        baseDmgPotency = Mathf.Abs(baseDmgPotency);
     }
 }

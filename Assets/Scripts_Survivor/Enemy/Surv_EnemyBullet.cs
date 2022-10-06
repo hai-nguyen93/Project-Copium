@@ -43,6 +43,8 @@ public class Surv_EnemyBullet : MonoBehaviour
 
     public void HitPlayer(Surv_PlayerController player)
     {
+        if (player.isDead) return;
+
         player.ReceiveDamage(damage);
 
         foreach(var e in effects)

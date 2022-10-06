@@ -34,22 +34,40 @@ public class Surv_PlayerCombat : MonoBehaviour
     private void Update()
     {
         UpdateUltimateUI();
-    }
 
-    public void AddAttack(Surv_PlayerAttack newAttack)
-    {
-        if (attackList.Contains(newAttack))
+        // testing
+        if (Input.GetKeyDown(KeyCode.R) && pUlt.ultReady)
         {
-            Debug.Log("Player already has " + newAttack.name);
-            return;
+            pUlt.UseUltimate();
         }
-
-        // Generate newAttack GameObject then attach to player
-        attackList.Add(newAttack);
+        //
     }
 
     public void UpdateUltimateUI()
     {
         ultPanel.UpdateFillAmount(pUlt.GetCooldownFillAmount());
+    }
+
+    public void LearnAttack(int attackID)
+    {
+        //  get the attack prefab from databse
+        var attackPrefab = Surv_GameController.Instance.playerAttackDB.GetPlayerAttack(attackID); 
+
+        // check if already learned the attack
+        foreach( var a in attackList)
+        {
+            if (a.attackID == attackPrefab.attackID)
+            {
+                Debug.Log("Already learned this attack or invalid attackID: " + attackID + " (ID fot from database: " + attackPrefab.attackID + ")");
+                return;
+            }
+        }
+
+        // instantiate the attack gameObj if valid
+        var attack = Instantiate(attackPrefab, transform);
+        attack.transform.localPosition = Vector3.zero;
+        attack.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        attack.transform.localScale = Vector3.one;
+        attackList.Add(attack);
     }
 }

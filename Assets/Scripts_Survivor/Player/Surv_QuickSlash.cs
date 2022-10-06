@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Surv_PlayerNormalAttack : Surv_PlayerAttack
+public class Surv_QuickSlash : Surv_PlayerAttack
 {
     public Surv_PlayerAttackHitBox hitBox;
     public float attackDuration = 0.2f;

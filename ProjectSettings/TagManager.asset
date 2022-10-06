@@ -10,7 +10,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TriggerCollider
   - Water
   - UI
   - Ground
@@ -18,7 +18,7 @@ TagManager:
   - Bullet
   - PlayerSprite
   - EnemySprite
-  - 
+  - CollideGroundOnly
   - 
   - 
   - 

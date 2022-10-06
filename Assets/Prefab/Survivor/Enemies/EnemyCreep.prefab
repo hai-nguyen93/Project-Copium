@@ -178,11 +178,12 @@ MonoBehaviour:
   player: {fileID: 0}
   data: {fileID: 11400000, guid: 2de3abbf6688f83428dd9cb00696d9e9, type: 2}
   currentHP: 0
-  isDead: 0
-  isMoving: 1
-  facingRight: 1
+  damage: 0
+  exp: 0
   speedModifier: 1
-  dmgTextColor: {r: 1, g: 0.58181894, b: 0.24056602, a: 1}
+  isDead: 0
+  canMove: 1
+  facingRight: 1
   dieParticleColor: {r: 0.87843144, g: 0.3529412, b: 0.07450981, a: 1}
 --- !u!1 &8619737878694954013
 GameObject:
@@ -194,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8213287674653575083}
   - component: {fileID: 4729638033300105990}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SolidBoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -32,6 +32,7 @@ public class Surv_GameController : MonoBehaviour
     public Surv_EnemySpawner spawner;
     public EnemyDiePSPool diePsPool;
     public Surv_PlayerController player;
+    public Surv_PlayerAttackDatabase playerAttackDB;
 
     [Header("Game Stats")]
     [Tooltip("the number of seconds player has survived.")] public float elapsedTime;

@@ -7,6 +7,7 @@ public class Surv_PlayerUltAttack : Surv_PlayerAttack
     public Surv_BreakScreenFX breakScreenFX;
     public float attackRadius = 15f;
     public LayerMask layerToCollide;
+    public bool ultReady { get => attackTimer <= 0f; }
 
     protected override void Start()
     {
@@ -22,13 +23,6 @@ public class Surv_PlayerUltAttack : Surv_PlayerAttack
         {
             attackTimer -= Time.deltaTime;
         }
-        
-        // testing
-        if (Input.GetKeyDown(KeyCode.R) && attackTimer <= 0f)
-        {
-            UseUltimate();
-        }
-        //
     }
 
     public void UseUltimate()
@@ -68,7 +62,7 @@ public class Surv_PlayerUltAttack : Surv_PlayerAttack
 
     public float GetCooldownFillAmount()
     {
-        return 1 - (attackTimer / attackCooldown);
+        return 1 - (attackTimer / baseAtkCD);
     }
 
     private void OnDrawGizmosSelected()
