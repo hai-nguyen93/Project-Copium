@@ -15,7 +15,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     public int damage;
     public int exp;
     public float speedModifier = 1f;
-    private float speed;
+    public float speed;
     
     public bool isDead = false;
     public bool canMove = true;
@@ -92,14 +92,14 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
                 player.GainExp(exp);
                 Surv_GameController.Instance.OnEnemyKilled(this);
             }
-            Die();
+            Die(true);
         }
     }
 
-    public void Die()
+    public void Die(bool spawnItem = false)
     {
         isDead = true;
-        if (spawner != null) spawner.OnEnemyDie(this);
+        if (spawner != null) spawner.OnEnemyDie(this, spawnItem);
         Destroy(gameObject);
     }
 

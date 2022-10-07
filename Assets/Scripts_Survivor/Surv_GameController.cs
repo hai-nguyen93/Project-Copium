@@ -44,6 +44,8 @@ public class Surv_GameController : MonoBehaviour
     public TextMeshProUGUI killCountText;
     public GameObject bgPanel;
     public GameObject lvUpPanel;
+    public GameObject atkUpPanel;
+    public GameObject pausePanel;
 
     private void Start()
     {
@@ -81,6 +83,34 @@ public class Surv_GameController : MonoBehaviour
         lvUpPanel.SetActive(true);
     }
 
+    public void PlayerAtkUp()
+    {
+        Time.timeScale = 0f;
+        state = GameState.Pause;
+        bgPanel.SetActive(true);
+        atkUpPanel.SetActive(true);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        state = GameState.Pause;
+        bgPanel.SetActive(true);
+        pausePanel.SetActive(true);
+        pausePanel.GetComponent<Surv_PausePanel>().SetupStatusPanel(player);
+    }
+    
+    public void ReturnToTitle()
+    {
+        Debug.Log("Return to Title Screen");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
+
     public void ResumeGame()
     {
         CloseAllMenuPanel();
@@ -92,6 +122,8 @@ public class Surv_GameController : MonoBehaviour
     {
         lvUpPanel.SetActive(false);
         bgPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        atkUpPanel.SetActive(false);
     }
 
     public void GameOver()

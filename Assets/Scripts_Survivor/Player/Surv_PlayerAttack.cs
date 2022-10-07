@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Surv_PlayerAttack : MonoBehaviour
 {
+    public const int ATTACK_MAX_LV = 5;
+
     protected Surv_PlayerController player;
     protected Surv_PlayerCombat pCombat;
 
@@ -12,21 +14,23 @@ public class Surv_PlayerAttack : MonoBehaviour
     public string attackName;
     public Sprite attackIcon;
 
+    [Header("Base stats at each level (x=cooldown; y=dmgPotency")]
+    public List<Vector2> statsAtLevel;
+
     [Header("Attack Stat")]
     public int level = 1;
-    public float baseAtkCD = 1f;
-    protected float atkCD;
+    public float baseAtkCD { get => statsAtLevel[level - 1].x; }
     protected float attackTimer;
-    public float baseDmgPotency = 1;
-    protected float dmgPotency;
-    public int damage { get => Mathf.CeilToInt((player.pCombat.atk * dmgPotency * Random.Range(0.9f, 1.25f))); }
+
+    public float baseDmgPotency { get => statsAtLevel[level - 1].y; }
+    public int damage { get => Mathf.CeilToInt((player.pCombat.atk * baseDmgPotency * Random.Range(0.9f, 1.25f))); }
     public bool autoAttack;
 
     protected virtual void Start()
     {
         FindPlayer();
-        ResetAttackStat();
-        attackTimer = atkCD;
+        ResetAttackLevel();
+        attackTimer = baseAtkCD;
     }
 
     /// <summary>
@@ -59,25 +63,33 @@ public class Surv_PlayerAttack : MonoBehaviour
 
     public void ResetAttackTimer()
     {
-        attackTimer = atkCD;
+        attackTimer = baseAtkCD;
     }
 
     public virtual void AttackLevelUp()
     {
-        level += 1;
-        
-        // Upgrade attack (power, cooldown, range, etc.)
+        level = Mathf.Clamp(level + 1, 1, ATTACK_MAX_LV);
     }
 
-    public void ResetAttackStat()
+    public void ResetAttackLevel()
     {
         level = 1;
-        atkCD = baseAtkCD;
-        dmgPotency = baseDmgPotency;
     }
 
     public void OnValidate()
-    {
-        baseDmgPotency = Mathf.Abs(baseDmgPotency);
+    {    
+        // Resize stats at each level list
+        if (statsAtLevel.Count < ATTACK_MAX_LV)
+        {
+            for (int i = statsAtLevel.Count; i < ATTACK_MAX_LV; ++i)
+            {
+                statsAtLevel.Add(Vector2.one);
+            }
+        }
+        if (statsAtLevel.Count > ATTACK_MAX_LV)
+        {
+            int numberToRemove = statsAtLevel.Count - ATTACK_MAX_LV;
+            statsAtLevel.RemoveRange(ATTACK_MAX_LV, numberToRemove);
+        }
     }
 }

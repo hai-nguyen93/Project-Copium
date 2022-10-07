@@ -17,6 +17,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
     public bool facingRight;
 
     [Header("Movement Settings")]
+    public float startMoveSpeed = 3f;
     public float baseMoveSpeed = 2f;
     private float speed;
     private float speedModifier;
@@ -28,6 +29,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
         playerHp = GetComponent<Surv_PlayerHP>();
         playerLevel = GetComponent<Surv_PlayerLevel>();
         pCombat = GetComponent<Surv_PlayerCombat>();
+        baseMoveSpeed = startMoveSpeed;
         speedModifier = 1f;
         isDead = false;
     }
@@ -119,6 +121,22 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
     {
         Vector2 input = value.Get<Vector2>();
         moveInput = new Vector3(input.x, 0f, input.y).normalized;
+    }
+
+    public void OnPause(InputValue value)
+    {
+        float input = value.Get<float>();
+        if (input > 0.5f)
+        {
+            if (Surv_GameController.Instance.state == GameState.Gameplay)
+            {
+                Surv_GameController.Instance.PauseGame();
+            }
+            else if (Surv_GameController.Instance.state == GameState.Pause)
+            {
+                Surv_GameController.Instance.ResumeGame();
+            }
+        }
     }
     #endregion
 }

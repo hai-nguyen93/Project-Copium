@@ -5161,9 +5161,13 @@ MonoBehaviour:
   attackID: 10
   attackName: Wibu Cut
   attackIcon: {fileID: 0}
+  statsAtLevel:
+  - {x: 90, y: 4}
+  - {x: 90, y: 4.5}
+  - {x: 80, y: 5}
+  - {x: 75, y: 6}
+  - {x: 70, y: 7}
   level: 1
-  baseAtkCD: 90
-  baseDmgPotency: 1
   autoAttack: 0
   breakScreenFX: {fileID: 2995909509549677923}
   attackRadius: 13

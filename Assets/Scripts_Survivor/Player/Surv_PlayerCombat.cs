@@ -6,28 +6,31 @@ public class Surv_PlayerCombat : MonoBehaviour
 {
     private Surv_PlayerController player;
 
-    public int atk = 0;
+    public int startAtk = 1;
+    public int atk = 1;
     public List<Surv_PlayerAttack> attackList;
 
-    private Surv_PlayerUltAttack pUlt;
+    public Surv_PlayerUltAttack pUlt;
 
     [Header("UI elements")]
     public HpPanel ultPanel;
 
     private void Start()
     {
+        atk = startAtk;
         ultPanel.gameObject.SetActive(false);
         attackList = new List<Surv_PlayerAttack>();
         var attacks = GetComponentsInChildren<Surv_PlayerAttack>();
         foreach(var a in attacks)
         {
-            attackList.Add(a);
             if (a.CompareTag("PlayerUltimate"))
             {
                 pUlt = a.GetComponent<Surv_PlayerUltAttack>();
                 ultPanel.gameObject.SetActive(true);
                 UpdateUltimateUI();
+                continue;
             }
+            attackList.Add(a);
         }
     }
 

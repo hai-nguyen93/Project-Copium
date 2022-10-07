@@ -19,6 +19,10 @@ public class Surv_EnemySpawner : MonoBehaviour
     public float minSpawnRadius = 7f;
     public float maxSpawnRadius = 20f;
 
+    [Header("Dropped Item Prefabs")]
+    public GameObject pfHealItem;
+    public GameObject pfAtkItem;
+
     private void Start()
     {
         if (player == null)
@@ -63,9 +67,29 @@ public class Surv_EnemySpawner : MonoBehaviour
         enemyList.Add(e);
     }
 
-    public void OnEnemyDie(Surv_Enemy enemy)
+    public void OnEnemyDie(Surv_Enemy enemy, bool spawnItem = false)
     {
-        enemyList.Remove(enemy);       
+        if (spawnItem)
+        {
+            if (Random.value <= enemy.data.chanceToSpawnHealItem)
+            {             
+                SpawnItem(pfHealItem, enemy.transform.position);
+            }
+
+            if (Random.value <= enemy.data.chanceToSpawnAtkItem)
+            {              
+                SpawnItem(pfAtkItem, enemy.transform.position);
+            }
+        }
+
+        enemyList.Remove(enemy);
+    }
+
+    public void SpawnItem(GameObject pfItem, Vector3 basePos)
+    {
+        Vector3 direction = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+        Vector3 pos = basePos + Random.Range(0.5f, 1.5f) * direction;
+        var go = Instantiate(pfItem, pos, Quaternion.identity, null);
     }
 
     public Vector3 GetRandomPosition()

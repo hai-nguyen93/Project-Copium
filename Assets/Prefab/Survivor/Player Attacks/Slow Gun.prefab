@@ -48,9 +48,13 @@ MonoBehaviour:
   attackID: 2
   attackName: Slow Gun
   attackIcon: {fileID: 0}
+  statsAtLevel:
+  - {x: 3, y: 0.8}
+  - {x: 2.75, y: 0.9}
+  - {x: 2.5, y: 1}
+  - {x: 2.25, y: 1.25}
+  - {x: 2, y: 1.5}
   level: 1
-  baseAtkCD: 3
-  baseDmgPotency: 0.8
   autoAttack: 1
   pfBullet: {fileID: 3185411002161563668, guid: c1b691a1bb0e9144297daa38d2a422c3, type: 3}
   initialAmount: 15

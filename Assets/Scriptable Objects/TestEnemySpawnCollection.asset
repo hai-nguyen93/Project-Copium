@@ -9,17 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f3354ad8f564042b627d19c106118f, type: 3}
-  m_Name: EnemyCloudTurtle
+  m_Script: {fileID: 11500000, guid: 4f166db1496a86c46b7bea16bffccd6b, type: 3}
+  m_Name: TestEnemySpawnCollection
   m_EditorClassIdentifier: 
-  enemyName: CloudTurtle
-  baseMaxHp: 1
-  baseDmg: 1
-  baseSpeed: 2
-  canBeCC: 1
-  baseExp: 1
-  timeStartToLevelUp: 0
-  timeToLevelUp: 45
-  hpUpAmount: 2
-  dmgUpAmount: 1
-  expUpAmount: 2
+  collection:
+  - startTime: 0
+    set:
+    - {fileID: 2511217319461247886, guid: adfaf1ab12d71304f9561e962b33d6ca, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Surv_PlayerHP : MonoBehaviour
 {
     public bool godMode = false;
+    public int startMaxHP = 10;
     public int maxHP = 20;
     public int currentHP;
 
@@ -17,6 +18,7 @@ public class Surv_PlayerHP : MonoBehaviour
 
     private void Start()
     {
+        maxHP = startMaxHP;
         currentHP = maxHP;
         hpPanel.UpdateFillAmount(1f);
     }

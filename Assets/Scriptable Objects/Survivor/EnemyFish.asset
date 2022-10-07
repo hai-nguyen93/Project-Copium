@@ -10,11 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f3354ad8f564042b627d19c106118f, type: 3}
-  m_Name: Bowser
+  m_Name: EnemyFish
   m_EditorClassIdentifier: 
-  enemyName: Bowser
-  maxHp: 50
-  damage: 1
-  baseSpeed: 2
-  canBeCC: 0
-  exp: 10
+  enemyName: Fish
+  baseMaxHp: 2
+  baseDmg: 2
+  baseSpeed: 3
+  canBeCC: 1
+  baseExp: 2
+  chanceToSpawnHealItem: 0.1
+  chanceToSpawnAtkItem: 0.01
+  timeStartToLevelUp: 60
+  timeToLevelUp: 60
+  hpUpAmount: 3
+  dmgUpAmount: 1
+  expUpAmount: 2

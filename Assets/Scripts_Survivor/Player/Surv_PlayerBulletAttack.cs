@@ -59,11 +59,4 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
         }
         ResetAttackTimer();
     }
-
-    public override void AttackLevelUp()
-    {
-        base.AttackLevelUp();
-
-
-    }
 }

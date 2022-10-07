@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: EnemyCreep
   m_EditorClassIdentifier: 
   enemyName: Creep
-  maxHp: 1
-  damage: 1
+  baseMaxHp: 1
+  baseDmg: 1
   baseSpeed: 1.5
   canBeCC: 1
-  exp: 1
+  baseExp: 1
+  timeStartToLevelUp: 0
+  timeToLevelUp: 30
+  hpUpAmount: 1
+  dmgUpAmount: 1
+  expUpAmount: 1

@@ -48,9 +48,13 @@ MonoBehaviour:
   attackID: 1
   attackName: Quick Slash
   attackIcon: {fileID: 0}
+  statsAtLevel:
+  - {x: 2, y: 1}
+  - {x: 2, y: 1.1}
+  - {x: 1.8, y: 1.5}
+  - {x: 1.5, y: 1.7}
+  - {x: 1.5, y: 2}
   level: 1
-  baseAtkCD: 2
-  baseDmgPotency: 1
   autoAttack: 1
   hitBox: {fileID: 1489826133321543471}
   attackDuration: 0.5
