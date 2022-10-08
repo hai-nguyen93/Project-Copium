@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Surv_GameController : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class Surv_GameController : MonoBehaviour
 
     [Header("Game Stats")]
     [Tooltip("the number of seconds player has survived.")] public float elapsedTime;
+    public float winTime = 60f;
     public int killCount = 0;
     public GameState state;
 
@@ -46,6 +48,7 @@ public class Surv_GameController : MonoBehaviour
     public GameObject lvUpPanel;
     public GameObject atkUpPanel;
     public GameObject pausePanel;
+    public GameObject gameOverPanel;
 
     private void Start()
     {
@@ -100,6 +103,11 @@ public class Surv_GameController : MonoBehaviour
         pausePanel.GetComponent<Surv_PausePanel>().SetupStatusPanel(player);
     }
     
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void ReturnToTitle()
     {
         Debug.Log("Return to Title Screen");
@@ -124,11 +132,26 @@ public class Surv_GameController : MonoBehaviour
         bgPanel.SetActive(false);
         pausePanel.SetActive(false);
         atkUpPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
     }
 
     public void GameOver()
     {
         state = GameState.Gameover;
+        bgPanel.SetActive(true);
+        gameOverPanel.SetActive(true);
+
+        // Temporary win condition
+        if (elapsedTime > winTime)
+        {
+            Debug.Log("Win");
+            gameOverPanel.GetComponent<Surv_GameOverPanel>().SetupResult(elapsedTime, killCount, true);
+        }
+        else
+        {
+            Debug.Log("Loss");
+            gameOverPanel.GetComponent<Surv_GameOverPanel>().SetupResult(elapsedTime, killCount, false);
+        }
     }
 
     public void ResetVariables()

@@ -5,13 +5,15 @@ using UnityEngine;
 public class Surv_QuickSlash : Surv_PlayerAttack
 {
     public Surv_PlayerAttackHitBox hitBox;
+    public Surv_PlayerAttackHitBox hitBox2;
     public float attackDuration = 0.2f;
 
     protected override void Start()
     {
         base.Start();
         autoAttack = true;
-        hitBox.gameObject.SetActive(false);   
+        hitBox.gameObject.SetActive(false);
+        hitBox2.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -35,8 +37,14 @@ public class Surv_QuickSlash : Surv_PlayerAttack
     {
         hitBox.SetDamage(damage);
         hitBox.gameObject.SetActive(true);
+        if (level >= 3)
+        {
+            hitBox2.SetDamage(damage);
+            hitBox2.gameObject.SetActive(true);
+        }
         yield return new WaitForSeconds(attackDuration);
         hitBox.gameObject.SetActive(false);
+        hitBox2.gameObject.SetActive(false);
 
         ResetAttackTimer();
     }

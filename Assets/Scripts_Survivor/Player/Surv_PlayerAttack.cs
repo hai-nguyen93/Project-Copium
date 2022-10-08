@@ -19,10 +19,10 @@ public class Surv_PlayerAttack : MonoBehaviour
 
     [Header("Attack Stat")]
     public int level = 1;
-    public float baseAtkCD { get => statsAtLevel[level - 1].x; }
+    public float baseAtkCD { get => statsAtLevel[Mathf.Min(level, ATTACK_MAX_LV) - 1].x; }
     protected float attackTimer;
 
-    public float baseDmgPotency { get => statsAtLevel[level - 1].y; }
+    public float baseDmgPotency { get => statsAtLevel[Mathf.Min(level, ATTACK_MAX_LV) - 1].y; }
     public int damage { get => Mathf.CeilToInt((player.pCombat.atk * baseDmgPotency * Random.Range(0.9f, 1.25f))); }
     public bool autoAttack;
 
