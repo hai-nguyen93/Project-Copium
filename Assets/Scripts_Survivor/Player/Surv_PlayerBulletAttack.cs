@@ -7,13 +7,13 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
 {
     [Header("Bullet Pool Settings")]
     public Surv_Bullet pfBullet;
-    public int initialAmount = 10;
+    public int initialAmount = 20;
     public int maxAmount = 20;
     public ObjectPool<Surv_Bullet> bulletPool;
 
     [Header("Bullet Attack Settings")]
     public Transform firePoint;
-    public int fireAmount = 1;
+    public List<int> numOfBulletsAtLevel;
     public float angleBetweenBullets = 15f;
     public float bulletSpeed = 10f;
     public List<Surv_Bullet> activeBullets;
@@ -50,13 +50,30 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
     }
 
     public override void Attack()
-    {       
-        float startAngle = angleBetweenBullets * (fireAmount - 1);
-        for (int i = 0; i < fireAmount; ++i)
+    {
+        int numOfBullets = numOfBulletsAtLevel[Mathf.Min(level, ATTACK_MAX_LV) - 1];
+        float startAngle = angleBetweenBullets * (numOfBullets - 1) / 2;
+
+        for (int i = 0; i < numOfBullets; ++i)
         {
             var b = bulletPool.Get();
-            b.Setup(firePoint.position, firePoint.right, bulletSpeed, damage);
+            b.Setup(firePoint.position, Quaternion.Euler(0, startAngle, 0) * firePoint.right, bulletSpeed, damage);
+            startAngle -= angleBetweenBullets;
         }
         ResetAttackTimer();
+    }
+
+    public override void OnValidate()
+    {
+        base.OnValidate();
+
+        // Resize number of bullets fired at each level list
+        if (numOfBulletsAtLevel.Count < ATTACK_MAX_LV)
+        {
+            for (int i = numOfBulletsAtLevel.Count; i < ATTACK_MAX_LV; ++i)
+            {
+                numOfBulletsAtLevel.Add(1);
+            }
+        }
     }
 }

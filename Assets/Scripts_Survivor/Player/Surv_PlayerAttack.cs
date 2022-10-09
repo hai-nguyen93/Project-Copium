@@ -76,7 +76,7 @@ public class Surv_PlayerAttack : MonoBehaviour
         level = 1;
     }
 
-    public void OnValidate()
+    public virtual void OnValidate()
     {    
         // Resize stats at each level list
         if (statsAtLevel.Count < ATTACK_MAX_LV)
@@ -85,11 +85,6 @@ public class Surv_PlayerAttack : MonoBehaviour
             {
                 statsAtLevel.Add(Vector2.one);
             }
-        }
-        if (statsAtLevel.Count > ATTACK_MAX_LV)
-        {
-            int numberToRemove = statsAtLevel.Count - ATTACK_MAX_LV;
-            statsAtLevel.RemoveRange(ATTACK_MAX_LV, numberToRemove);
         }
     }
 }

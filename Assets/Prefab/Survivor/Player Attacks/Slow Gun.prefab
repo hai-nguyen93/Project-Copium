@@ -57,11 +57,11 @@ MonoBehaviour:
   level: 1
   autoAttack: 1
   pfBullet: {fileID: 3185411002161563668, guid: c1b691a1bb0e9144297daa38d2a422c3, type: 3}
-  initialAmount: 15
-  maxAmount: 50
+  initialAmount: 20
+  maxAmount: 30
   firePoint: {fileID: 2610416886504216870}
-  fireAmount: 1
-  angleBetweenBullets: 15
+  numOfBulletsAtLevel: 010000000300000005000000070000000a000000
+  angleBetweenBullets: 20
   bulletSpeed: 7.5
   activeBullets: []
 --- !u!1 &2610416886504216871
