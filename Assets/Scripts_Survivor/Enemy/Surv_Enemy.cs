@@ -74,6 +74,8 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 
     public void ReceiveDamage(int dmg)
     {
+        if (isDead) return;
+
         Debug.Log(gameObject.name + " takes " + dmg + " damage.");
         if (PopupTextPool.instance != null) // create pop up damage number
         {

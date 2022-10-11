@@ -5158,7 +5158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2b259e4d5e6a945b9e19805513b26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackID: 10
+  attackID: 1000
   attackName: Wibu Cut
   attackIcon: {fileID: 0}
   statsAtLevel:
