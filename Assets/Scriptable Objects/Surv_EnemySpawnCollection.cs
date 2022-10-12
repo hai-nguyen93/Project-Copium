@@ -9,11 +9,13 @@ public class Surv_EnemySpawnCollection : ScriptableObject
     public List<EnemySpawnSet> collection;
     private int currentSetIndex;
 
-    private void OnEnable()
+    public void Reset()
     {
         collection.Sort((x, y) => x.startTime.CompareTo(y.startTime));
         currentSetIndex = 0;
     }
+
+    public float GetSpawnCooldown() => collection[currentSetIndex].spawnCooldown;
 
     public Surv_Enemy Get()
     {
@@ -33,6 +35,7 @@ public class Surv_EnemySpawnCollection : ScriptableObject
 public class EnemySpawnSet
 {
     [Tooltip("Time to start using this set")] public float startTime = 0f;
+    public float spawnCooldown = 2f;
 
     public List<Surv_Enemy> set;
 

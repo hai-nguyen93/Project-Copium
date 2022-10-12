@@ -10,7 +10,7 @@ public class Surv_EnemySpawner : MonoBehaviour
 
     [Space]
     public bool enableSpawner;
-    public float spawnCooldown = 2f;
+    public float spawnCooldown { get => spawnPfCollection.GetSpawnCooldown(); }
     private float spawnTimer;
     public int maxEnemyCount = 80;
     public List<Surv_Enemy> enemyList;
@@ -25,6 +25,8 @@ public class Surv_EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        spawnPfCollection.Reset();
+
         if (player == null)
         {
             player = FindObjectOfType<Surv_PlayerController>();

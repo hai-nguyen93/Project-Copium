@@ -14,5 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collection:
   - startTime: 0
+    spawnCooldown: 2
+    set:
+    - {fileID: 3968356086287305829, guid: 5012003f9d05b9a4eb4f5424b87505b2, type: 3}
+    - {fileID: 2511217319461247886, guid: adfaf1ab12d71304f9561e962b33d6ca, type: 3}
+  - startTime: 30
+    spawnCooldown: 2
+    set:
+    - {fileID: 4131720800284235601, guid: a7e23b03c6e4c8c4481cbf9a788f523b, type: 3}
+    - {fileID: 3968356086287305829, guid: 5012003f9d05b9a4eb4f5424b87505b2, type: 3}
+  - startTime: 60
+    spawnCooldown: 2
     set:
     - {fileID: 2511217319461247886, guid: adfaf1ab12d71304f9561e962b33d6ca, type: 3}

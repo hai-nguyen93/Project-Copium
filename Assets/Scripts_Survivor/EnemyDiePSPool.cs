@@ -13,7 +13,7 @@ public class EnemyDiePSPool : MonoBehaviour
 
     private void Start()
     {
-        pool = new ObjectPool<ParticleSystem>(CreatePoolObj, OnGetPoolObj, OnReleasePoolObj, OnDestroyPoolObj, true, initialCapacity, maxCapacity);
+        pool = new ObjectPool<ParticleSystem>(CreatePoolObj, OnGetPoolObj, OnReleasePoolObj, OnDestroyPoolObj, false, initialCapacity, maxCapacity);
 
         // Prepare objs in pool
         for (int i =0; i < initialCapacity; ++i)

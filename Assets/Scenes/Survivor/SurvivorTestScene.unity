@@ -508,7 +508,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31446
+  m_Name: pb_Mesh-1374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1541,7 +1541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &208234912
 Transform:
   m_ObjectHideFlags: 0
@@ -1572,7 +1572,6 @@ MonoBehaviour:
   player: {fileID: 524933010}
   spawnPfCollection: {fileID: 11400000, guid: ffa21a42867d65140a2048c8fbeee0b7, type: 2}
   enableSpawner: 1
-  spawnCooldown: 2
   maxEnemyCount: 75
   enemyList: []
   minSpawnRadius: 19
@@ -2653,7 +2652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360036446}
   m_LocalRotation: {x: 0.39044833, y: 0.34682897, z: -0.161729, w: 0.8373192}
-  m_LocalPosition: {x: -2.33, y: 4.56, z: 0.9}
+  m_LocalPosition: {x: -2.33, y: 3, z: 0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3308,7 +3307,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31586
+  m_Name: pb_Mesh-1384
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3623,9 +3622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e27f756f2464345b7b9a3e3bd144d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAttackDB: {fileID: 11400000, guid: 03cd9db400d28ee45bc322d198f2e6b5, type: 2}
+  MAX_NUM_OF_ATTACKS: 10
   startAtk: 1
   atk: 1
-  attackList: []
+  learnedAttacks: []
   pUlt: {fileID: 0}
   ultPanel: {fileID: 281123153}
 --- !u!1 &540376168
@@ -4008,6 +4009,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkUpPs: {fileID: 1042887320}
+  upgradeButtons:
+  - {fileID: 1996980519}
+  - {fileID: 2019369574}
+  - {fileID: 1742941914}
 --- !u!1 &634358064
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,7 +4937,6 @@ MonoBehaviour:
   spawner: {fileID: 208234913}
   diePsPool: {fileID: 1132695924}
   player: {fileID: 524933010}
-  playerAttackDB: {fileID: 11400000, guid: 03cd9db400d28ee45bc322d198f2e6b5, type: 2}
   elapsedTime: 0
   winTime: 120
   killCount: 0
@@ -21312,7 +21316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2995909508676173559, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2995909508676173559, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21362,10 +21366,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 101053604}
+    - target: {fileID: 2995909509253964165, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}
+      propertyPath: m_VersionIndex
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2995909509636752033, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 505045224}
+    - target: {fileID: 2995909509636752033, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}
+      propertyPath: m_VersionIndex
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2995909509636752062, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}
       propertyPath: m_Mesh
       value: 

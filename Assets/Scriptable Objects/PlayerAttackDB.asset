@@ -15,4 +15,6 @@ MonoBehaviour:
   attackList:
   - {fileID: 1489826133193798670, guid: bfdb9ad647b2c1c489eefafcec664e1e, type: 3}
   - {fileID: 2610416886309442306, guid: f20466db08bad704091d7405146700cc, type: 3}
+  - {fileID: 6440044625528448764, guid: d515209a66c0cc440ac7cfdf181f9344, type: 3}
+  ultList:
   - {fileID: 2995909508676173558, guid: 8b12bda4a56b3054cba073faadff67db, type: 3}

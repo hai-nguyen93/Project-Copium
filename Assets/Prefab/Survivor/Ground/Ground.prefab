@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bonfire
       objectReference: {fileID: 0}
+    - target: {fileID: 6673361914833745515, guid: 8d9025738bd035e4390426096861a3c9, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4063
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9025738bd035e4390426096861a3c9, type: 3}
 --- !u!4 &4384836005868826188 stripped

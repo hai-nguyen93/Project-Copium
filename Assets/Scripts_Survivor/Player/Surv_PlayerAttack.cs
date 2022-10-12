@@ -19,6 +19,7 @@ public class Surv_PlayerAttack : MonoBehaviour
 
     [Header("Attack Stat")]
     public int level = 1;
+    public bool maxedLvl { get => level >= ATTACK_MAX_LV; }
     public float baseAtkCD { get => statsAtLevel[Mathf.Min(level, ATTACK_MAX_LV) - 1].x; }
     protected float attackTimer;
 

@@ -23,12 +23,16 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
     private float speedModifier;
     private Vector3 moveInput;
 
-    private void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
         playerHp = GetComponent<Surv_PlayerHP>();
         playerLevel = GetComponent<Surv_PlayerLevel>();
         pCombat = GetComponent<Surv_PlayerCombat>();
+    }
+
+    private void Start()
+    {       
         baseMoveSpeed = startMoveSpeed;
         speedModifier = 1f;
         isDead = false;

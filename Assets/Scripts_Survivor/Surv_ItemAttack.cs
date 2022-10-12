@@ -14,7 +14,9 @@ public class Surv_ItemAttack : Surv_ItemBase
             {
                 Surv_GameController.Instance.PlayerAtkUp();
             }
+            else // ult item 
+            { } 
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

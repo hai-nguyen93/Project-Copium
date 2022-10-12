@@ -15,6 +15,7 @@ public class Surv_BreakScreenFX : MonoBehaviour
 
     private void OnEnable()
     {
+        gameObject.transform.rotation = Quaternion.identity;
         cam.gameObject.SetActive(false);
         anim.enabled = false;
         slashPS.Stop();

@@ -41,7 +41,7 @@ public class Surv_PlayerBulletAttack : Surv_PlayerAttack
         }, bullet =>    // Destroy bullet function
         {
             Destroy(bullet.gameObject);
-        }, true, initialAmount, maxAmount);
+        }, false, initialAmount, maxAmount);
     }
 
     private void Update()
