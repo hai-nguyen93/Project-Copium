@@ -52,12 +52,12 @@ public class Surv_PlayerHP : MonoBehaviour
         if (PopupTextPool.instance != null)
         {
             PopupText3D p = PopupTextPool.instance.GetPopupText3D();
-            p.SimpleSetup(text, transform.position + textSpawnOffset, color);
+            p.Setup(text, transform.position + textSpawnOffset, color);
         }
         else
         {
             GameObject go = Instantiate(pfPopupText3D);
-            go.GetComponent<PopupText3D>().SimpleSetup(text, transform.position + textSpawnOffset, color);
+            go.GetComponent<PopupText3D>().Setup(text, transform.position + textSpawnOffset, color);
         }
     }
 }

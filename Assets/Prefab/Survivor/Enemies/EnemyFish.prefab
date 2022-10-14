@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  sr: {fileID: 2511217318764152586}
   data: {fileID: 11400000, guid: 778a3e5d1267eaf439fd84dab5dc325c, type: 2}
   currentHP: 0
   damage: 0
@@ -169,5 +170,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.5}
+  m_Size: {x: 1, y: 1, z: 0.7}
   m_Center: {x: 0, y: 1, z: 0}

@@ -7,6 +7,7 @@ using Unity.Collections;
 public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 {
     public Surv_PlayerController player;
+    public SpriteRenderer sr;
     private Surv_EnemySpawner spawner;
 
     // Stats
@@ -37,28 +38,33 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         exp = data.exp;
     }
 
-    void Update()
+    public virtual void Update()
     {
         if (Surv_GameController.Instance.useMultiThread) return;
 
         if (Surv_GameController.Instance.state != GameState.Gameplay) return;
         canMove = !(player == null || player.isDead || isDead);
 
-        UpdatePosition();
+        LookAtPlayer();
+        ChasePlayer();
     }
 
-    public virtual void UpdatePosition()
+    public void ChasePlayer()
     {
         if (!canMove) return;
 
-        Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
-
-        // look at player
-        if (facingRight && directionToPlayer.x < 0f) Flip();
-        if (!facingRight && directionToPlayer.x > 0f) Flip();
+        Vector3 playerPos = player.transform.position;
+        Vector3 directionToPlayer = new Vector3(playerPos.x - transform.position.x, 0, playerPos.z - transform.position.z).normalized;       
 
         speed = data.baseSpeed * speedModifier;
         transform.Translate(speed * Time.deltaTime * directionToPlayer, Space.World);
+    }
+
+    public void LookAtPlayer()
+    {
+        float xDirToPlayer = player.transform.position.x - transform.position.x;
+        if (facingRight && xDirToPlayer < 0f) Flip();
+        if (!facingRight && xDirToPlayer > 0f) Flip();
     }
 
     public void Flip()
@@ -67,7 +73,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         transform.Rotate(new Vector3(0f, 180f, 0f));
     }
 
-    public void HitPlayer()
+    public virtual void HitPlayer()
     {
         Die();
     }
@@ -85,7 +91,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
             p.Setup(dmg.ToString(), pos, PopupTextPool.instance.dmgTextColor, true);
         }
         
-        currentHP -= dmg;
+        currentHP -= dmg;       
 
         if (currentHP <= 0) // check hp whether enemy dies or not
         {
@@ -95,10 +101,22 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
                 Surv_GameController.Instance.OnEnemyKilled(this);
             }
             Die(true);
+            return;
         }
+
+        // Play take dmg animation
+        StopCoroutine(FlashSprite());
+        StartCoroutine(FlashSprite());
     }
 
-    public void Die(bool spawnItem = false)
+    public IEnumerator FlashSprite()
+    {
+        sr.material.SetColor("_TintColor", Color.red);
+        yield return new WaitForSeconds(0.2f);
+        sr.material.SetColor("_TintColor", Color.white);
+    }
+
+    public virtual void Die(bool spawnItem = false)
     {
         isDead = true;
         if (spawner != null) spawner.OnEnemyDie(this, spawnItem);

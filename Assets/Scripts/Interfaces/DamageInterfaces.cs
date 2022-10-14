@@ -16,3 +16,8 @@ public interface ISpeedChange
 {
     public void ChangeSpeedModifier(float duration, float amount);
 }
+
+public interface IBossAttack
+{
+    public void Activate();
+}

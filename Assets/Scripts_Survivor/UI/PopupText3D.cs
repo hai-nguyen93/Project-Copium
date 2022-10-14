@@ -27,7 +27,7 @@ public class PopupText3D : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(direction * _speed * Time.deltaTime, Space.World);
+        transform.Translate( _speed * Time.deltaTime * direction, Space.World);
 
         _speed = Mathf.Lerp(_speed, 0f, 1 - timer / lifeSpan);
         timer -= Time.deltaTime;
@@ -75,6 +75,6 @@ public class PopupText3D : MonoBehaviour
 
     public Vector3 GetRandomDirection()
     {
-        return new Vector3(Random.Range(-1f, 1f), Random.Range(0.65f, 1f), Random.Range(-0.5f, 0.5f)).normalized;
+        return new Vector3(Random.Range(-2f, 2f), Random.Range(0.65f, 1f), Random.Range(-0.3f, 0.3f)).normalized;
     }
 }

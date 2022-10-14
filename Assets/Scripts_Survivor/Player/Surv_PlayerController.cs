@@ -17,6 +17,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
     public bool facingRight;
 
     [Header("Movement Settings")]
+    public bool canMove = true;
     public float startMoveSpeed = 3f;
     public float baseMoveSpeed = 2f;
     private float speed;
@@ -32,7 +33,9 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
     }
 
     private void Start()
-    {       
+    {
+        sr.enabled = true;
+        canMove = true;
         baseMoveSpeed = startMoveSpeed;
         speedModifier = 1f;
         isDead = false;
@@ -56,7 +59,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
         if (isDead) return;
 
         speed = baseMoveSpeed * speedModifier;
-        Vector3 moveVector = speed * moveInput;
+        Vector3 moveVector = (canMove)? speed * moveInput : Vector3.zero;
         controller.Move(Time.deltaTime * moveVector);
         anim.SetFloat("move", moveVector.magnitude);
 
@@ -81,6 +84,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
 
     public void Die()
     {
+        sr.enabled = false;
         Surv_GameController.Instance.GameOver();
     }
 
