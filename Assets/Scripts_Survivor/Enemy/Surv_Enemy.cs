@@ -44,8 +44,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 
         if (Surv_GameController.Instance.state != GameState.Gameplay) return;
         canMove = !(player == null || player.isDead || isDead);
-
-        LookAtPlayer();
+        
         ChasePlayer();
     }
 
@@ -53,6 +52,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     {
         if (!canMove) return;
 
+        LookAtPlayer();
         Vector3 playerPos = player.transform.position;
         Vector3 directionToPlayer = new Vector3(playerPos.x - transform.position.x, 0, playerPos.z - transform.position.z).normalized;       
 

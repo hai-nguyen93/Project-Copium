@@ -19,7 +19,7 @@ MonoBehaviour:
   canBeCC: 1
   baseExp: 2
   chanceToSpawnHealItem: 0.1
-  chanceToSpawnAtkItem: 0.01
+  chanceToSpawnAtkItem: 1
   timeStartToLevelUp: 60
   timeToLevelUp: 60
   hpUpAmount: 3
