@@ -36,6 +36,8 @@ public class Surv_Bomb : MonoBehaviour
             telegraph.transform.localScale = new Vector3(explodeRadius * 2, explodeRadius * 2, 0);
             telegraph.SetActive(false);
         }
+
+        explosionVFX.SetFloat("Radius", explodeRadius);
         explosionVFX.Stop();
 
         timer = timeToExplode;
