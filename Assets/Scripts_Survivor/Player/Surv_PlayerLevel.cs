@@ -58,6 +58,12 @@ public class Surv_PlayerLevel : MonoBehaviour
         FinishLevelUp();
     }
 
+    public void UpgradeMoveSpeed(float value)
+    {
+        player.baseMoveSpeed += value;
+        FinishLevelUp();
+    }
+
     public void FinishLevelUp()
     {
         // Calculate next exp need to lvl up
