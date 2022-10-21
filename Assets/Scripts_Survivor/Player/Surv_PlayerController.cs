@@ -18,7 +18,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
 
     [Header("Movement Settings")]
     public bool canMove = true;
-    public float startMoveSpeed = 3f;
+    [Tooltip("Speed at level 1")] public float startMoveSpeed = 3f;
     public float baseMoveSpeed = 2f;
     private float speed;
     private float speedModifier;

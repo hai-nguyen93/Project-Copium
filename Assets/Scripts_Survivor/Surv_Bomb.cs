@@ -37,8 +37,11 @@ public class Surv_Bomb : MonoBehaviour
             telegraph.SetActive(false);
         }
 
-        explosionVFX.SetFloat("Radius", explodeRadius);
-        explosionVFX.Stop();
+        if (explosionVFX)
+        {
+            explosionVFX.SetFloat("Radius", explodeRadius);
+            explosionVFX.Stop();
+        }
 
         timer = timeToExplode;
         exploded = false;
@@ -72,7 +75,7 @@ public class Surv_Bomb : MonoBehaviour
         exploded = true;
         if (telegraph) { telegraph.SetActive(false); }
         sprite.enabled = false;
-        explosionVFX.Play();
+        if (explosionVFX) explosionVFX.Play();
 
         var hits = Physics.OverlapSphere(transform.position + originOffset, explodeRadius, targetLayer);
 

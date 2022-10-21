@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Teemo
   baseMaxHp: 10
   baseDmg: 3
-  baseSpeed: 3.5
+  baseSpeed: 4
   canBeCC: 1
   baseExp: 5
   chanceToSpawnHealItem: 0.2

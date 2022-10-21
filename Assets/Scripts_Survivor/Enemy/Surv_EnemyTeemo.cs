@@ -53,7 +53,10 @@ public class Surv_EnemyTeemo : Surv_Enemy
 
     public void PickNewDestination()
     {
-        destination = player ? player.transform.position : Vector3.zero;
+        if (player) {
+            destination = new Vector3(player.transform.position.x + Random.Range(-4f, 4f), 0,
+                player.transform.position.z + Random.Range(-4f, 4f));           
+        } else { destination = Vector3.zero; }
         direction = new Vector3(destination.x - transform.position.x, 0, destination.z - transform.position.z).normalized;
     }
 }
