@@ -64,17 +64,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _NoiseScale: 8
+    - _NoiseScale: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.7
-    - _StripeScale: 10
+    - _SmoothstepHigh: 0.65
+    - _SmoothstepLow: 0.3
+    - _StripeScale: 6
     m_Colors:
     - _BaseColor: {r: 0.16696332, g: 0.5283019, b: 0.47668213, a: 0.65882355}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ScrollSpeed: {r: 0, g: -0.8, b: 0, a: 0}
+    - _ScrollSpeed: {r: 0.3, g: -0.3, b: 0, a: 0}
     - _StripeColor: {r: 0.1433848, g: 1.3314303, b: 1.4406759, a: 0.5019608}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
