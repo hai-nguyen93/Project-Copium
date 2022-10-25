@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2610416886309442307}
   - component: {fileID: 2610416886309442306}
   m_Layer: 0
-  m_Name: Slow Gun
+  m_Name: a2_SlowGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1489826133193798671}
   - component: {fileID: 1489826133193798670}
   m_Layer: 0
-  m_Name: Quick Slash
+  m_Name: a1_Quick Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,6 +8,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 {
     public Surv_PlayerController player;
     public SpriteRenderer sr;
+    private MaterialPropertyBlock matPropBlock;
     private Surv_EnemySpawner spawner;
 
     // Stats
@@ -28,7 +29,8 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         isDead = false;
         canMove = true;
         speedModifier = 1f;
-        InitStat();        
+        InitStat();
+        matPropBlock = new MaterialPropertyBlock();
     }
 
     public void InitStat()
@@ -111,9 +113,12 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 
     public IEnumerator FlashSprite()
     {
-        sr.material.SetColor("_TintColor", Color.red);
+        sr.GetPropertyBlock(matPropBlock);
+        matPropBlock.SetColor("_TintColor", Color.red);
+        sr.SetPropertyBlock(matPropBlock);
         yield return new WaitForSeconds(0.2f);
-        sr.material.SetColor("_TintColor", Color.white);
+        matPropBlock.SetColor("_TintColor", Color.white);
+        sr.SetPropertyBlock(matPropBlock);
     }
 
     public virtual void Die(bool spawnItem = false)

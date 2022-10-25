@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &503482191141490490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503482191141490488}
+  - component: {fileID: 503482191141490491}
+  m_Layer: 0
+  m_Name: a5_EnergyBomb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503482191141490488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503482191141490490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &503482191141490491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503482191141490490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570f5a900f061c5479ceadcaa9ebca78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackID: 5
+  attackName: EnergyBomb
+  attackIcon: {fileID: 0}
+  statsAtLevel:
+  - {x: 6, y: 1.5}
+  - {x: 5.5, y: 1.65}
+  - {x: 5, y: 1.8}
+  - {x: 4.5, y: 2}
+  - {x: 3, y: 2.25}
+  level: 1
+  autoAttack: 1
+  pfBomb: {fileID: 1434723748500294766, guid: d57fd32183a0c2549a25d9c79f12cec5, type: 3}
+  radiusAtLevel:
+  - 2.5
+  - 3
+  - 3.5
+  - 4
+  - 5
