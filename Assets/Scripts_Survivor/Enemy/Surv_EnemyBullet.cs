@@ -6,6 +6,7 @@ using UnityEngine;
 public class Surv_EnemyBullet : MonoBehaviour
 {
     public float lifeSpan = 2f;
+    private float timer;
     public Vector3 direction;
     public float speed = 5f;
     public int damage = 1;
@@ -14,23 +15,19 @@ public class Surv_EnemyBullet : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(DestroyAfterSeconds(lifeSpan));
+        timer = lifeSpan;
     }
 
     private void Update()
     {
-        transform.position += speed * Time.deltaTime * direction;
-    }
+        if (timer <= 0f) { DestroyBullet(); }
+        else { timer -= Time.deltaTime; }
 
-    private IEnumerator DestroyAfterSeconds(float time)
-    {
-        yield return new WaitForSeconds(time);
-        DestroyBullet();
+        transform.position += speed * Time.deltaTime * direction;
     }
 
     public void DestroyBullet()
     {
-        StopAllCoroutines();
         Destroy(gameObject);
     }
 

@@ -7,9 +7,10 @@ using Unity.Collections;
 public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 {
     public Surv_PlayerController player;
+    protected Rigidbody rb;
     public SpriteRenderer sr;
-    private MaterialPropertyBlock matPropBlock;
-    private Surv_EnemySpawner spawner;
+    protected MaterialPropertyBlock matPropBlock;
+    protected Surv_EnemySpawner spawner;
 
     // Stats
     public Surv_EnemyData data;
@@ -38,6 +39,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         currentHP = data.maxHp;
         damage = data.damage;
         exp = data.exp;
+        rb = GetComponent<Rigidbody>();
     }
 
     public virtual void Update()
@@ -45,8 +47,8 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         if (Surv_GameController.Instance.useMultiThread) return;
 
         if (Surv_GameController.Instance.state != GameState.Gameplay) return;
-        canMove = !(player == null || player.isDead || isDead);
-        
+        if (player == null || player.isDead || isDead) return;       
+
         ChasePlayer();
     }
 
@@ -148,6 +150,19 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         speedModifier = Mathf.Clamp(amount, 0f, 2f);
         yield return new WaitForSeconds(duration);
         speedModifier = 1f;
+    }
+
+    public void PushBack(Vector3 direction, float power)
+    {
+        if (!data.canBeCC) return;
+
+        rb.AddForce(power * direction, ForceMode.Impulse);
+    }
+
+    [ContextMenu("Test Push back")]
+    public void TestPushBack()
+    {
+        PushBack(Vector3.right, 10f);
     }
 }
 

@@ -14,7 +14,7 @@ public class Surv_EnemyData : ScriptableObject
     [Range(0f, 1f)] public float chanceToSpawnHealItem = 0.1f;
     [Range(0f, 1f)] public float chanceToSpawnAtkItem = 0.01f;
 
-    [Header("Bonus stats over time (timeToLevelUp <= 0: no increasing stat over time)")]
+    [Header("Bonus stats over time \n(timeToLevelUp <= 0: no increasing stat over time)")]
     public float timeStartToLevelUp = 0f;
     public float timeToLevelUp = 60f;
     public int hpUpAmount = 2;

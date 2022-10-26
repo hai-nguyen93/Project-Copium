@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Surv_EnemyBullet))]
 public class Surv_EnemyBulletCollision : MonoBehaviour
 {
     private Surv_EnemyBullet bullet;
@@ -18,6 +19,7 @@ public class Surv_EnemyBulletCollision : MonoBehaviour
 
     private void Update()
     {
+        if (!collideWithGround) return;
         var hits = Physics.OverlapSphere(detectOrigin.position, detectRange, groundLayer);
         if (hits.Length > 0)
         {

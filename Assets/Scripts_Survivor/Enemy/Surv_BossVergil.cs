@@ -20,7 +20,7 @@ public class Surv_BossVergil : Surv_Enemy
         if (Surv_GameController.Instance.useMultiThread) return;
 
         if (Surv_GameController.Instance.state != GameState.Gameplay || player == null || isActing) return;
-        canMove = !(player == null || player.isDead || isDead);
+        if (player == null || player.isDead || isDead) return;
 
         ChooseAction();
     }

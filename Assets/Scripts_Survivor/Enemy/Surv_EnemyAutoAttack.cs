@@ -8,7 +8,7 @@ public class Surv_EnemyAutoAttackBase : MonoBehaviour
     public float constantCdTime;
     public float minCdTime;
     public float maxCdTime;
-    private float timer;
+    protected float timer;
 
     protected virtual void Start()
     {

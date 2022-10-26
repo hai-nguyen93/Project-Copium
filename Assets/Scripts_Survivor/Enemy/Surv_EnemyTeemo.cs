@@ -19,9 +19,9 @@ public class Surv_EnemyTeemo : Surv_Enemy
     public override void Update()
     {
         if (Surv_GameController.Instance.state != GameState.Gameplay) return;
-        canMove = !(player == null || player.isDead || isDead);
+        if (player == null || player.isDead || isDead) return;
 
-        if (isIdling) return;
+        if (isIdling || !canMove) return;
 
         if (ReachDestination()) { StartCoroutine(Idling()); }
         else {
