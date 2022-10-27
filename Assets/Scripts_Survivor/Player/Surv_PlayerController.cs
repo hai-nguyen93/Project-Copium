@@ -48,7 +48,12 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
         /// for testing
         if (Input.GetKeyDown(KeyCode.J))
         {
-            isDead = !isDead;
+            Surv_DamagedOverTime dot;
+            if (!TryGetComponent<Surv_DamagedOverTime>(out dot))
+            {
+                dot = gameObject.AddComponent<Surv_DamagedOverTime>();
+            }
+            dot.Setup(1, 5);
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -98,6 +103,9 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
         Debug.Log("Player takes " + damage + " damage.");
         playerHp.ReceiveDamage(damage);
         CheckPlayerHP();
+
+        // play damaged animation if not dead
+        if (!isDead) { anim.Play("player_damaged"); }
     }
 
     public void ChangeSpeedModifier(float duration, float amount)

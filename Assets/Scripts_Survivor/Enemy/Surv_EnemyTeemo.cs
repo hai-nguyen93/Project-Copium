@@ -26,7 +26,7 @@ public class Surv_EnemyTeemo : Surv_Enemy
         if (ReachDestination()) { StartCoroutine(Idling()); }
         else {
             speed = data.baseSpeed * speedModifier;
-            transform.Translate(speed * Time.deltaTime * direction, Space.World);
+            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
             // Look at moving direction
             if (facingRight && direction.x < 0f) Flip();
@@ -45,10 +45,8 @@ public class Surv_EnemyTeemo : Surv_Enemy
     public override void HitPlayer() { }
 
     public bool ReachDestination()
-    {
-        //Vector3 delta = new Vector3(destination.x - transform.position.x, 0, destination.z - transform.position.z);
-        return (Mathf.Abs(destination.x - transform.position.x) < 0.1f &&
-            Mathf.Abs(destination.z - transform.position.z) < 0.1f);
+    {     
+        return (Vector3.Distance(destination, transform.position) < 0.05f);
     }
 
     public void PickNewDestination()

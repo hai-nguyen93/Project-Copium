@@ -3170,15 +3170,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_146
+      name: damaged_1
       rect:
         serializedVersion: 2
         x: 229
         y: 252
         width: 39
         height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3191,15 +3191,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_147
+      name: damaged_2
       rect:
         serializedVersion: 2
         x: 273
         y: 252
         width: 37
         height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3212,15 +3212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zero-megaman-x6-sprite_148
+      name: damaged_3
       rect:
         serializedVersion: 2
         x: 316
         y: 247
         width: 47
         height: 56
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4347,7 +4347,6 @@ TextureImporter:
       jump_5: -1738460188
       zero-megaman-x6-sprite_63: -403606920
       zero-megaman-x6-sprite_62: -103209401
-      zero-megaman-x6-sprite_148: 1857899151
       zero-megaman-x6-sprite_45: -1790256785
       fall_1: -1459727060
       zero-megaman-x6-sprite_97: -1359495223
@@ -4374,6 +4373,7 @@ TextureImporter:
       zero-megaman-x6-sprite_31: -877261230
       entrance_2: 2045290697
       slash_1: -1933416215
+      damaged_3: 1857899151
       zero-megaman-x6-sprite_160: 1182256551
       zero-megaman-x6-sprite_193: 1647163839
       zero-megaman-x6-sprite_119: 248490920
@@ -4420,6 +4420,7 @@ TextureImporter:
       jumpSlash_5: -1317593039
       zero-megaman-x6-sprite_71: -534281460
       slash_6: 1084304919
+      damaged_2: 558440645
       zero-megaman-x6-sprite_50: -202086619
       jumpSlash_3: 1131409788
       zero-megaman-x6-sprite_195: -156060797
@@ -4438,13 +4439,13 @@ TextureImporter:
       zero-megaman-x6-sprite_125: -1767836801
       zero-megaman-x6-sprite_46: -1689813898
       zero-megaman-x6-sprite_179: 1290426221
+      damaged_1: 1015047402
       zero-megaman-x6-sprite_159: -590033149
       zero-megaman-x6-sprite_70: 756228026
       zero-megaman-x6-sprite_65: 277243396
       zero-megaman-x6-sprite_166: 73364506
       zero-megaman-x6-sprite_134: -1380639196
       zero-megaman-x6-sprite_76: -866517169
-      zero-megaman-x6-sprite_147: 558440645
       zero-megaman-x6-sprite_28: -1043602824
       zero-megaman-x6-sprite_184: 885559532
       entrance_5: 1334051791
@@ -4501,9 +4502,9 @@ TextureImporter:
       zero-megaman-x6-sprite_197: 1499598391
       zero-megaman-x6-sprite_27: 2016262721
       zero-megaman-x6-sprite_163: -74858288
-      idle_2: 12471850
-      zero-megaman-x6-sprite_132: 2087212706
       entrance_3: 1550472091
+      zero-megaman-x6-sprite_132: 2087212706
+      idle_2: 12471850
       zero-megaman-x6-sprite_188: 62470579
       zero-megaman-x6-sprite_59: 1031381837
       zero-megaman-x6-sprite_170: -761298777
@@ -4531,10 +4532,9 @@ TextureImporter:
       zero-megaman-x6-sprite_136: 374230255
       zero-megaman-x6-sprite_151: -945957540
       zero-megaman-x6-sprite_32: -781079790
-      zero-megaman-x6-sprite_146: 1015047402
+      walk_8: -1539129291
       walk_4: -96112713
       zero-megaman-x6-sprite_149: -1869118218
-      walk_8: -1539129291
       jumpSlash_7: 219231508
   spritePackingTag: 
   pSDRemoveMatte: 0
