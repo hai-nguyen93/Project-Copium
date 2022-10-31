@@ -60,7 +60,7 @@ public class Surv_EnemySpawner : MonoBehaviour
     {
         if (enemyList.Count >= maxEnemyCount) return;
 
-        var e = Instantiate(spawnPfCollection.Get(), transform);
+        var e = Instantiate(spawnPfCollection.Get(Surv_GameController.Instance.elapsedTime), transform);
         e.gameObject.SetActive(true);
         Vector3 pos = GetRandomPosition();
         e.transform.position = pos;

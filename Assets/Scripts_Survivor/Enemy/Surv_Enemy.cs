@@ -159,7 +159,7 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
         rb.AddForce(power * direction, ForceMode.Impulse);
     }
 
-    [ContextMenu("Test Push back")]
+    [ContextMenu("Test Push back, force = 10")]
     public void TestPushBack()
     {
         PushBack(Vector3.right, 10f);

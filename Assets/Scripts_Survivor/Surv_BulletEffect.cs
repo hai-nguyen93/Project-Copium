@@ -2,32 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BulletEffectType { DmgOverTime, Slow, Damage}
-
 public class Surv_BulletEffect : MonoBehaviour
 {
-    public BulletEffectType type;
+    public bool slow, dmgOverTime;
 
-    public float duration = 1f;
+    [Header("Slow effect settings")]
+    public float slowDuration = 1f;
     public float speedModifier = 0.1f;
+
+    [Header("Dmg Over Time effect settings")]
+    public int dmgPerTick = 1;
+    public float dotDuration = 5f;
+    public float dotTickDuration = 1f;
 
     public void Activate(GameObject target)
     {
-        switch (type)
+        if (slow)
         {
-            case BulletEffectType.Damage:
-                break;
-
-            case BulletEffectType.DmgOverTime:
-                break;
-
-            case BulletEffectType.Slow:
-                var t = target.GetComponent<ISpeedChange>();
-                if (t != null)
-                {
-                    t.ChangeSpeedModifier(duration, speedModifier);
-                }
-                break;
+            var t = target.GetComponent<ISpeedChange>();
+            if (t != null)
+            {
+                t.ChangeSpeedModifier(slowDuration, speedModifier);
+            }
         }
+
+        if (dmgOverTime)
+        {
+            var t = target.GetComponent<IDamageable>();
+            if (t != null)
+            {
+                var dot = target.AddComponent<Surv_DamagedOverTime>();
+                dot.Setup(dmgPerTick, dotDuration, dotTickDuration);
+            }
+        }
+    }
+
+    public void SetSlowEffect(float slowDuration = 1f, float speedModifier = 0.2f)
+    {
+        this.slow = true;
+        this.slowDuration = slowDuration;
+        this.speedModifier = speedModifier;
+    }
+
+    public void SetDotEffect(int dmgPerTick = 1, float dotDuration = 5f, float tickDuration = 1f)
+    {
+        this.dmgOverTime = true;
+        this.dmgPerTick = dmgPerTick;
+        this.dotDuration = dotDuration;
+        this.dotTickDuration = tickDuration;
     }
 }

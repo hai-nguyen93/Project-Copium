@@ -17,12 +17,14 @@ public class Surv_EnemySpawnCollection : ScriptableObject
 
     public float GetSpawnCooldown() => collection[currentSetIndex].spawnCooldown;
 
-    public Surv_Enemy Get()
+    public Surv_Enemy Get(float elapsedTime = -1)
     {
+        if (elapsedTime < 0f) { return collection[0].Get(); }
+
         // change set based on game time
         if (currentSetIndex < (collection.Count - 1))
         {
-            if (Surv_GameController.Instance.elapsedTime >= collection[currentSetIndex + 1].startTime)
+            if (elapsedTime >= collection[currentSetIndex + 1].startTime)
             {
                 currentSetIndex += 1;
             }

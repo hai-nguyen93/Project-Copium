@@ -11,7 +11,7 @@ public class Surv_Bullet : MonoBehaviour
     public float lifeSpan = 2f;
     public List<Surv_BulletEffect> effects; 
     protected float timer;
-    protected ObjectPool<Surv_Bullet> pool;
+    protected ObjectPool<Surv_Bullet> pool; // pool is created in specific Surv_PlayerAttack scripts
 
     [Header("Bullet Collision Settings")]
     public Transform detectPointOrigin;
@@ -31,7 +31,7 @@ public class Surv_Bullet : MonoBehaviour
         UpdateBulletCollision();
     }
 
-    public void Setup(Vector3 position, Vector3 direction, float speed, int damage)
+    public virtual void Setup(Vector3 position, Vector3 direction, float speed, int damage)
     {
         transform.position = position;
         this.direction = direction;

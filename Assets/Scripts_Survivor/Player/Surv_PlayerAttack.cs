@@ -13,6 +13,7 @@ public class Surv_PlayerAttack : MonoBehaviour
     public int attackID;
     public string attackName;
     public Sprite attackIcon;
+    [TextArea(2, 4)] public string description;
 
     [Header("Base stats at each level (x=cooldown; y=dmgPotency")]
     public List<Vector2> statsAtLevel;

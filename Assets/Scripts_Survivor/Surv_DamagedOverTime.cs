@@ -9,6 +9,7 @@ public class Surv_DamagedOverTime : MonoBehaviour
     public float duration = 5f;
     private float timer;
     private float tickTimer;
+    private IDamageable target;
 
     private void Awake()
     {
@@ -18,7 +19,7 @@ public class Surv_DamagedOverTime : MonoBehaviour
 
     private void Update()
     {
-        if (timer<= 0f) { Destroy(this); return; }
+        if (timer <= 0f || target == null) { Destroy(this); return; }
         if (tickTimer <= 0f)
         {
             ApplyDamage();
@@ -31,10 +32,7 @@ public class Surv_DamagedOverTime : MonoBehaviour
 
     private void ApplyDamage()
     {
-        if (TryGetComponent<IDamageable>(out var target))
-        {
-            target.ReceiveDamage(damagePerTick);
-        }
+        target.ReceiveDamage(damagePerTick);
     }
 
     public void Setup(int dmgPerTick, float duration, float tickDuration=1f)
@@ -42,6 +40,18 @@ public class Surv_DamagedOverTime : MonoBehaviour
         this.damagePerTick = dmgPerTick;
         this.duration = duration;
         this.tickDuration = tickDuration;
+        target = GetComponent<IDamageable>();
+
+        timer = duration;
+        tickTimer = tickDuration;
+    }
+
+    public void Setup(IDamageable target, int dmgPerTick, float duration, float tickDuration = 1f)
+    {
+        this.damagePerTick = dmgPerTick;
+        this.duration = duration;
+        this.tickDuration = tickDuration;
+        this.target = target;
 
         timer = duration;
         tickTimer = tickDuration;

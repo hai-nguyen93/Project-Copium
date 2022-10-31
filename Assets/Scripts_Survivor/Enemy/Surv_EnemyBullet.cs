@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider), typeof(Surv_EnemyBulletCollision))]
 public class Surv_EnemyBullet : MonoBehaviour
 {
     public float lifeSpan = 2f;
