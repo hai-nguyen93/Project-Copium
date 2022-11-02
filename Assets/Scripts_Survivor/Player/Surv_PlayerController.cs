@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,7 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
     private float speed;
     private float speedModifier;
     private Vector3 moveInput;
+    public event Action<bool> OnPlayerFlipped;
 
     private void Awake()
     {
@@ -69,13 +71,14 @@ public class Surv_PlayerController : MonoBehaviour, IDamageable, ISpeedChange
         anim.SetFloat("move", moveVector.magnitude);
 
         if (!facingRight && moveInput.x > 0f) Flip();
-        if (facingRight && moveInput.x < 0f) Flip();
+        if (facingRight && moveInput.x < 0f) Flip();       
     }
 
     public void Flip()
     {
         facingRight = !facingRight;
         transform.Rotate(new Vector3(0f, 180f, 0f));
+        OnPlayerFlipped?.Invoke(facingRight);
     }
 
     public void CheckPlayerHP()

@@ -18,15 +18,33 @@ public class Surv_YameroWave : Surv_PlayerAttack
     private Renderer vfxRenderer;
     private MaterialPropertyBlock vfxMatPropBlock;
     public float visualDuration = 0.5f;
+    public float checkHitDelay = 0.2f;
 
     protected override void Start()
     {
         base.Start();
         telegraph.SetActive(false);
+        if (player)
+        {
+            player.OnPlayerFlipped += AdjustRotation;
+        }
 
         visualEffect.gameObject.SetActive(false);
         vfxMatPropBlock = new MaterialPropertyBlock();
         vfxRenderer = visualEffect.GetComponent<Renderer>();
+    }
+
+    private void OnDestroy()
+    {
+        if (player)
+        {
+            player.OnPlayerFlipped -= AdjustRotation;
+        }
+    }
+
+    private void AdjustRotation(bool facingRight)
+    {
+        visualEffect.localRotation = facingRight ? Quaternion.Euler(90, 0, 0) : Quaternion.Euler(90, 180, 0);
     }
 
     private void Update()
@@ -36,8 +54,11 @@ public class Surv_YameroWave : Surv_PlayerAttack
 
     public override void Attack()
     {
-        StartCoroutine(ShowVFX());
-
+        StartCoroutine(AttackCoroutine());
+        ResetAttackTimer();
+    }
+    private void CheckHit()
+    {
         var hits = Physics.OverlapSphere(transform.position, attackradius, enemyLayer);
         foreach (var hit in hits)
         {
@@ -48,9 +69,13 @@ public class Surv_YameroWave : Surv_PlayerAttack
                 enemy.PushBack(pushDirection, pushBackForce);
             }
         }
-        ResetAttackTimer();
     }
-
+    private IEnumerator AttackCoroutine()
+    {
+        StartCoroutine(ShowVFX());
+        yield return new WaitForSeconds(checkHitDelay);
+        CheckHit();
+    }
     private IEnumerator ShowVFX()
     {
         telegraph.SetActive(true);
