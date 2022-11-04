@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Surv_DamageAreaSphere : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Surv_DamageAreaSphere : MonoBehaviour
     public float areaTickDuration = 0.5f;
     private float areaTickTimer;
     private float timer;
+    public VisualEffect puddleVfx;
+    public Transform telegraph;
+    private bool active;
 
     [Header("Dmg Over Time Settings")]
     public bool applyDot;
@@ -25,13 +29,28 @@ public class Surv_DamageAreaSphere : MonoBehaviour
 
     private void Start()
     {
+        active = true;
         timer = lifespan;
         areaTickTimer = areaTickDuration;
+
+        if (telegraph)
+        {
+            telegraph.localScale = new Vector3(2 * radius, 2 * radius, 0);
+        }
+
+        puddleVfx.SetFloat("Radius", radius);
+        puddleVfx.SetFloat("Lifetime", lifespan);
+        puddleVfx.Play();
     }
 
     private void Update()
     {
-        if (timer <= 0f) { Destroy(gameObject); }
+        if (!active) return;
+        if (timer <= 0f) {
+            active = false;
+            Destroy(gameObject, 1f);
+            telegraph.gameObject.SetActive(false);
+        }
 
         if (areaTickTimer <= 0f) {
             DoDamage();
