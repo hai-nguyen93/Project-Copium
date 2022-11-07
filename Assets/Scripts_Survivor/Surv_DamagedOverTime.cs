@@ -13,8 +13,8 @@ public class Surv_DamagedOverTime : MonoBehaviour
 
     private void Awake()
     {
-        timer = 9999f;
-        tickTimer = 9999f;
+        timer = 5f;
+        tickTimer = 1f;
     }
 
     private void Update()
@@ -42,8 +42,7 @@ public class Surv_DamagedOverTime : MonoBehaviour
         this.tickDuration = tickDuration;
         target = GetComponent<IDamageable>();
 
-        timer = duration;
-        tickTimer = tickDuration;
+        ResetTimer();
     }
 
     public void Setup(IDamageable target, int dmgPerTick, float duration, float tickDuration = 1f)
@@ -53,8 +52,7 @@ public class Surv_DamagedOverTime : MonoBehaviour
         this.tickDuration = tickDuration;
         this.target = target;
 
-        timer = duration;
-        tickTimer = tickDuration;
+        ResetTimer();
     }
 
     [ContextMenu("Reset DoT timer")]

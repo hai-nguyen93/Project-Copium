@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Jobs;
 using Unity.Collections;
@@ -25,6 +26,9 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
     public bool facingRight;
     public Color dieParticleColor;
 
+    // Events
+    public event Action<Surv_Enemy> OnEnemyDie;
+    
     public virtual void OnEnable()
     {
         isDead = false;
@@ -125,6 +129,8 @@ public class Surv_Enemy : MonoBehaviour, IDamageable, ISpeedChange
 
     public virtual void Die(bool spawnItem = false)
     {
+        OnEnemyDie?.Invoke(this);
+
         isDead = true;
         if (spawner != null) spawner.OnEnemyDie(this, spawnItem);
         Destroy(gameObject);

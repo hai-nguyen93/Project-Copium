@@ -49,6 +49,7 @@ MonoBehaviour:
   attackID: 1
   attackName: Quick Slash
   attackIcon: {fileID: 0}
+  description: 
   statsAtLevel:
   - {x: 2, y: 1}
   - {x: 2, y: 1.1}
@@ -121,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
+  hitOnce: 1
 --- !u!95 &1489826133321543470
 Animator:
   serializedVersion: 4
@@ -370,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
+  hitOnce: 1
 --- !u!95 &4820983144137558902
 Animator:
   serializedVersion: 4

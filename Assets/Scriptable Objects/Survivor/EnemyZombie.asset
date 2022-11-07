@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f3354ad8f564042b627d19c106118f, type: 3}
-  m_Name: EnemyCreep
+  m_Name: EnemyZombie
   m_EditorClassIdentifier: 
-  enemyName: Creep
-  baseMaxHp: 1
-  baseDmg: 1
-  baseExp: 1
-  baseSpeed: 1.5
+  enemyName: Zombie
+  baseMaxHp: 10
+  baseDmg: 5
+  baseExp: 5
+  baseSpeed: 1
   canBeCC: 1
   chanceToSpawnHealItem: 0.1
   chanceToSpawnAtkItem: 0.01
-  timeStartToLevelUp: 0
-  timeToLevelUp: 30
-  hpUpAmount: 1
+  timeStartToLevelUp: 60
+  timeToLevelUp: 40
+  hpUpAmount: 5
   dmgUpAmount: 1
-  expUpAmount: 1
+  expUpAmount: 3

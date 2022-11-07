@@ -15,13 +15,13 @@ MonoBehaviour:
   enemyName: MotivatedVergil
   baseMaxHp: 200
   baseDmg: 1
+  baseExp: 500
   baseSpeed: 4
   canBeCC: 0
-  baseExp: 500
   chanceToSpawnHealItem: 1
   chanceToSpawnAtkItem: 1
   timeStartToLevelUp: 0
-  timeToLevelUp: 60
+  timeToLevelUp: -1
   hpUpAmount: 0
   dmgUpAmount: 0
   expUpAmount: 0
